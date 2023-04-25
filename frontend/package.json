@@ -38,6 +38,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
+    "start:build": "npm i && npm run start",
     "https": " HTTPS=true npm start",
     "build": "react-scripts build",
     "test": "react-scripts test",
