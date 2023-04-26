@@ -36,9 +36,9 @@ app.use(cookieParser())
 app.use(helmet())
 app.use('/api', routes)
 
-app.get('/test', (_req: Request, res: Response) => {
+app.get('/healthz', (_req: Request, res: Response) => {
 	res.json({
-		message: 'hello',
+		message: 'pes✌️',
 	})
 })
 
