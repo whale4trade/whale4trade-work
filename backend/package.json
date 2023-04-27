@@ -11,7 +11,8 @@
 		"jasmine": "jasmine-ts  --config=./spec/support/jasmine.json",
 		"test": "export NODE_ENV=test  && db-migrate up --config ./database.json -e test && tsc && yarn jasmine && db-migrate reset",
 		"lint": "eslint . --ext .ts",
-		"format": "yarn lint --fix"
+		"format": "yarn lint --fix",
+		"rebuild:be": "docker compose build  && docker compose rm --stop backend && docker compose up -d backend"
 	},
 	"dependencies": {
 		"@mui/material": "^5.11.16",

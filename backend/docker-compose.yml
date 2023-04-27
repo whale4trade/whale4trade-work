@@ -1,1 +1,17 @@
-   
+version: '3'
+
+services:
+ app:
+  build: .
+  ports:
+   - '5000:5000'
+  depends_on:
+   - db
+ db:
+  image: postgres:15
+  environment:
+   POSTGRES_USER: postgres
+   POSTGRES_PASSWORD: 4523asdf
+   POSTGRES_DB: whale
+  ports:
+   - '5432:5432'
