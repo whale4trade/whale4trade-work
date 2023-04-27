@@ -31,7 +31,7 @@ app.use(express.json())
 // )
 app.use(
 	cors({
-		origin: 'https://main--shimmering-phoenix-977e7f.netlify.app/',
+		origin: 'https://shimmering-phoenix-977e7f.netlify.app/',
 	})
 )
 app.use(cookieParser())
