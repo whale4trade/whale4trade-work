@@ -31,7 +31,7 @@ app.use(express.json())
 // )
 app.use(
 	cors({
-		origin: 'https://6449bf12a15099183f40ac46--timely-taiyaki-6420c5.netlify.app',
+		origin: 'https://timely-taiyaki-6420c5.netlify.app',
 	})
 )
 app.use(cookieParser())
