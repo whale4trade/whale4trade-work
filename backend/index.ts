@@ -20,16 +20,20 @@ app.use(errorHandelMiddleware)
 
 app.use(morgan('common'))
 app.use(express.json())
+// app.use(
+// 	cors({
+// 		credentials: true,
+// 		origin: [
+// 			'http://localhost:3000',
+// 			'https://6449bf12a15099183f40ac46--timely-taiyaki-6420c5.netlify.app',
+// 		],
+// 	})
+// )
 app.use(
 	cors({
-		credentials: true,
-		origin: [
-			'http://localhost:3000',
-			'https://6449bf12a15099183f40ac46--timely-taiyaki-6420c5.netlify.app',
-		],
+		origin: 'https://6449bf12a15099183f40ac46--timely-taiyaki-6420c5.netlify.app',
 	})
 )
-
 app.use(cookieParser())
 
 app.use(helmet())
