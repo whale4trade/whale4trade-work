@@ -23,9 +23,10 @@ app.use(express.json())
 
 app.use(
 	cors({
+		credentials: true,
 		origin: [
+			'https://shimmering-phoenix-977e7f.netlify.app',
 			'http://localhost:3000',
-			'https://shimmering-phoenix-977e7f.netlify.app/',
 		],
 	})
 )
