@@ -23,7 +23,7 @@ app.use(express.json())
 app.use(
 	cors({
 		origin: '*',
-		credentials: true, //access-control-allow-credentials:true
+		credentials: true,
 		optionSuccessStatus: 200,
 	})
 )
@@ -33,7 +33,6 @@ app.use(
 // 			'http://localhost:3000',
 // 			'https://shimmering-phoenix-977e7f.netlify.app/',
 // 		],
-// 		// origin: '*',
 // 	})
 // )
 app.use(cookieParser())
