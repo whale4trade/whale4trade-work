@@ -15,6 +15,7 @@ const {
 	TOKEN_SECRET,
 	UE,
 	PE,
+	DBConnLink,
 } = process.env
 export default {
 	port: PORT,
@@ -28,4 +29,5 @@ export default {
 	tokenSecret: TOKEN_SECRET,
 	uE: UE,
 	pU: PE,
+	ConnLink: DBConnLink,
 }
