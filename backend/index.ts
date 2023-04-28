@@ -25,7 +25,7 @@ app.use(
 	cors({
 		credentials: true,
 		origin: [
-			'https://shimmering-phoenix-977e7f.netlify.app/',
+			'https://shimmering-phoenix-977e7f.netlify.app',
 			'http://localhost:3000',
 		],
 	})
@@ -36,9 +36,7 @@ app.use(helmet())
 app.use('/api', routes)
 
 app.get('/healthz', (_req: Request, res: Response) => {
-	res.json({
-		message: 'pes✌️',
-	})
+	res.send({status: 'ok✌️'})
 })
 
 app.post('/upload', upload.single('image'), (req: any, res) => {
