@@ -22,11 +22,9 @@ app.use(morgan('common'))
 app.use(express.json())
 app.use(
 	cors({
-		origin: [
-			'http://localhost:3000',
-			'https://shimmering-phoenix-977e7f.netlify.app/',
-		],
-		// origin: '*',
+		origin: '*',
+		credentials: true,
+		optionSuccessStatus: 200,
 	})
 )
 app.use(cookieParser())
