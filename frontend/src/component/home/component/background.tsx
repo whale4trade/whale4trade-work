@@ -1,4 +1,4 @@
-import imgBackground from "../../../image/1001504.jpg";
+import imgBackground from "../../../image/wallpaperflare.com_wallpaper (6).jpg";
 const Background = (props) => {
   return (
     <>
