@@ -29,11 +29,11 @@ const Contact = (props) => {
           icon={faCommentSms}
         />
         <div className="icon">
-          <NavLink to="">
+          {/* <NavLink to="">
             <span className="co">Chat</span>
             <FontAwesomeIcon icon={faComment} />
-          </NavLink>
-          <NavLink to="https://t.me/Whale4trade">
+          </NavLink> */}
+          <NavLink target="_blank" to="https://t.me/Whale4trade">
             <span className="co">Telegram</span>
             <FontAwesomeIcon icon={faTelegram} />
           </NavLink>
