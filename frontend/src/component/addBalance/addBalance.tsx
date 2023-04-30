@@ -178,7 +178,7 @@ const AddBalance = (props) => {
               readOnly
               className="form-control-plaintext"
               id="staticEmail"
-              value={`${Number(input.price) * Number(price)}$`}
+              value={`${Number(input.price) / Number(price)}$`}
             />
           </div>
         </div>
