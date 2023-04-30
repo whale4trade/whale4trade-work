@@ -12,7 +12,6 @@ import errorHandelMiddleware from './middleware/error.handel.middleware'
 import routes from './routes'
 import upload from './upload_img/index'
 import sendMail from './send_email/index'
-console.log(config)
 
 const app: Application = express()
 const port = config.port || 3000

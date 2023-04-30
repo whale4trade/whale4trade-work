@@ -3,7 +3,7 @@ import { faCopy } from "@fortawesome/free-solid-svg-icons";
 import { NavLink } from "react-router-dom";
 
 const URL = (props) => {
-  const text = `http://localhost:3000/register/aff${
+  const text = `https://shimmering-phoenix-977e7f.netlify.app/register/aff${
     JSON.parse(localStorage.user).id
   }`;
   const copy = () => {
@@ -14,7 +14,7 @@ const URL = (props) => {
       <span>URL:</span>
       <NavLink
         to={`/register/aff/${JSON.parse(localStorage.user).id}`}
-      >{`http://localhost:3000/register/aff/${
+      >{`https://shimmering-phoenix-977e7f.netlify.app/register/aff/${
         JSON.parse(localStorage.user).id
       }`}</NavLink>
       <span className="icon " onClick={() => copy()}>
