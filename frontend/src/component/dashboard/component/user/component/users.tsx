@@ -26,12 +26,13 @@ const UsersF = (props) => {
   const getTransaction = async (id) => {
     try {
       await axios
-        .get(`${env.url}/transaction/${id}`)
+        .get(`${env.url}/transaction/user/${id}`)
         .then((res) => setTransaction(res.data.data));
     } catch (error) {
       console.log(error);
     }
   };
+
   const [input, setInput] = useState({
     statusAccess: "",
   });
@@ -53,7 +54,6 @@ const UsersF = (props) => {
       console.log(error);
     }
   };
-  console.log(input);
 
   return (
     <>
@@ -63,16 +63,13 @@ const UsersF = (props) => {
             className="container-user"
             data-bs-toggle="modal"
             data-bs-target={`#staticBackdrop${u.id}`}
+            onClick={() => {
+              getOrders(u.id);
+              getTransaction(u.id);
+            }}
           >
             <div className="photo">
-              <img
-                className="img"
-                src={photo}
-                onClick={() => {
-                  getOrders(u.id);
-                  getTransaction(u.id);
-                }}
-              />
+              <img alt="" className="img" src={photo} />
             </div>
 
             <div className="email">
