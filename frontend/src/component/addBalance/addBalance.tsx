@@ -59,7 +59,9 @@ const AddBalance = (props) => {
         .post("https://accept.paymob.com/api/ecommerce/orders", data)
         .then((res) => thirdStep(res.data.id))
         .then(() => handleClick());
-    } catch (error) {}
+    } catch (error) {
+      console.log(error);
+    }
   };
   //third
   const thirdStep = async (id) => {
@@ -128,10 +130,10 @@ const AddBalance = (props) => {
               await axios
                 .post("https://accept.paymob.com/api/acceptance/payments/pay", {
                   source: {
-                    identifier: "01029939183",
+                    identifier: "010299391383",
                     subtype: "WALLET",
                   },
-                  payment_token: res.data.token,
+                  payment_token: `${res.data.token}`, // token obtained in step 3
                 })
 
                 .then(
