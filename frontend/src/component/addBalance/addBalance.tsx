@@ -23,8 +23,7 @@ const AddBalance = (props) => {
   };
 
   const API =
-    // "ZXlKaGJHY2lPaUpJVXpVeE1pSXNJblI1Y0NJNklrcFhWQ0o5LmV5SmpiR0Z6Y3lJNklrMWxjbU5vWVc1MElpd2ljSEp2Wm1sc1pWOXdheUk2TnpNM05UTXhMQ0p1WVcxbElqb2lhVzVwZEdsaGJDSjkuQzRTSjlxVTVrUUVvcklKYkVkcDd0bS1YSWZ2QW9EclJoU09BYXpCTk1zWGRhNlI5MHFieWdPZW02ZmN5SlFEcWhTRDRHZ3V1Tl9ISkJZSEJTUFV1Z0E=";
-    "ZXlKMGVYQWlPaUpLVjFRaUxDSmhiR2NpT2lKSVV6VXhNaUo5LmV5SndjbTltYVd4bFgzQnJJam95TXpNMU1qWXNJbTVoYldVaU9pSnBibWwwYVdGc0lpd2lZMnhoYzNNaU9pSk5aWEpqYUdGdWRDSjkuRHpYeDdWNEUxOHZtV2hCRXlzZzhNVDdqR1BtYWtwR3A5a0x4UzU2SEFleFJwczlYS0hNaHRESTNiRlhpTnQwWFFxclA2TllZMWxKYVgwUkpVUnJNclE=";
+    "ZXlKaGJHY2lPaUpJVXpVeE1pSXNJblI1Y0NJNklrcFhWQ0o5LmV5SmpiR0Z6Y3lJNklrMWxjbU5vWVc1MElpd2ljSEp2Wm1sc1pWOXdheUk2TnpNM05UTXhMQ0p1WVcxbElqb2lhVzVwZEdsaGJDSjkuQzRTSjlxVTVrUUVvcklKYkVkcDd0bS1YSWZ2QW9EclJoU09BYXpCTk1zWGRhNlI5MHFieWdPZW02ZmN5SlFEcWhTRDRHZ3V1Tl9ISkJZSEJTUFV1Z0E=";
 
   // payment pay
   const payment = async () => {
@@ -97,12 +96,12 @@ const AddBalance = (props) => {
               state: "Utah",
             },
             currency: "EGP",
-            integration_id: 2363368,
+            integration_id: 3716690,
           })
 
           .then(
             (res) =>
-              (window.location.href = `https://accept.paymob.com/api/acceptance/iframes/423821?payment_token=${res.data.token}`)
+              (window.location.href = `https://accept.paymob.com/api/acceptance/iframes/750171?payment_token=${res.data.token}`)
           )
           .then(() => console.log("step 3 card"));
       } catch (error) {
@@ -132,7 +131,7 @@ const AddBalance = (props) => {
               state: "Utah",
             },
             currency: "EGP",
-            integration_id: 3771428,
+            integration_id: 3716756,
           })
           .then((res) => {
             axios
