@@ -8,6 +8,6 @@
  price VARCHAR(200),
  win VARCHAR(200),
  timeCreated DATE ,
- ImgBundle VARCHAR(400),
+ ImgBundle TEXT NOT NULL,
  category VARCHAR(200)
  )

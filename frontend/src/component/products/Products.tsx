@@ -35,7 +35,11 @@ const Products = (props) => {
               p.category === "bronze" ? (
                 <div onClick={handleClick} className="container">
                   <div className="con-img">
-                    <img src={img} alt="" />
+                    <img
+                      src={`${env.ver}/image/${p.imgbundle}`}
+                      alt=""
+                      className="rounded"
+                    />
                   </div>
 
                   <div className="pra">
@@ -64,7 +68,11 @@ const Products = (props) => {
               p.category === "silver" ? (
                 <div onClick={handleClick} className="container">
                   <div className="con-img">
-                    <img src={p.imgbundle} alt="" />
+                    <img
+                      src={`${env.ver}/image/${p.imgbundle}`}
+                      alt=""
+                      className="rounded"
+                    />
                   </div>
 
                   <div className="pra">
@@ -93,7 +101,11 @@ const Products = (props) => {
               p.category === "gold" ? (
                 <div onClick={handleClick} className="container">
                   <div className="con-img">
-                    <img src={p.imgbundle} alt="" />
+                    <img
+                      src={`${env.ver}/image/${p.imgbundle}`}
+                      alt=""
+                      className="rounded"
+                    />
                   </div>
 
                   <div className="pra">
@@ -122,7 +134,11 @@ const Products = (props) => {
               p.category === "platinum" ? (
                 <div onClick={handleClick} className="container">
                   <div className="con-img">
-                    <img src={p.imgbundle} alt="" />
+                    <img
+                      src={`${env.ver}/image/${p.imgbundle}`}
+                      alt=""
+                      className="rounded"
+                    />
                   </div>
 
                   <div className="pra">
@@ -151,7 +167,11 @@ const Products = (props) => {
               p.category === "vip" ? (
                 <div onClick={handleClick} className="container">
                   <div className="con-img">
-                    <img src={p.imgbundle} alt="" />
+                    <img
+                      src={`${env.ver}/image/${p.imgbundle}`}
+                      alt=""
+                      className="rounded"
+                    />
                   </div>
 
                   <div className="pra">

@@ -52,21 +52,9 @@ const Bundle = (props) => {
         .then(() => window.location.reload());
     } catch (error) {}
   };
-  const [images, setImages] = useState<any>("");
+  console.log(input);
 
-  useEffect(() => {
-    axios
-      .get(`${env.ver}/image/image-1682416960929.png`, {
-        headers: { "Content-Type": "application/json" },
-      })
-      .then((res) => {
-        // setImages(response.data);
-        console.log(res);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  }, []);
+  // const
   return (
     <>
       <div className="container c-bundle">
@@ -76,13 +64,11 @@ const Bundle = (props) => {
           {bundleDash.map((b: any) => (
             <>
               <div className="con-bundle" key={b.id}>
-                {/* <img src={b.imgbundle} alt="" className="rounded" /> */}
-                {/* <img src={`${im}`} alt="" className="rounded" /> */}
-                {/* {images.map((image) => (
-                  <img key={image} src={`/uploads/${image}`} alt={image} />
-
-                ))} */}
-                {images && images}
+                <img
+                  src={`${env.ver}/image/${b.imgbundle}`}
+                  alt=""
+                  className="rounded"
+                />
                 <div className="info">
                   <div className="name">
                     <span className="s">name:</span>

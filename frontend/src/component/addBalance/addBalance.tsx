@@ -13,17 +13,18 @@ const AddBalance = (props) => {
   const handleClick = () => {
     setIsActive((current) => !current);
   };
-  const [tokenFirst, setTokenFirst] = useState("");
   const [input, setInput] = useState({
     price: "0",
     flexRadioDefault: "w",
+    number: "",
   });
   const handelChange = (e) => {
     setInput((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
 
   const API =
-    "ZXlKaGJHY2lPaUpJVXpVeE1pSXNJblI1Y0NJNklrcFhWQ0o5LmV5SmpiR0Z6Y3lJNklrMWxjbU5vWVc1MElpd2ljSEp2Wm1sc1pWOXdheUk2TnpNM05UTXhMQ0p1WVcxbElqb2lhVzVwZEdsaGJDSjkuQzRTSjlxVTVrUUVvcklKYkVkcDd0bS1YSWZ2QW9EclJoU09BYXpCTk1zWGRhNlI5MHFieWdPZW02ZmN5SlFEcWhTRDRHZ3V1Tl9ISkJZSEJTUFV1Z0E=";
+    // "ZXlKaGJHY2lPaUpJVXpVeE1pSXNJblI1Y0NJNklrcFhWQ0o5LmV5SmpiR0Z6Y3lJNklrMWxjbU5vWVc1MElpd2ljSEp2Wm1sc1pWOXdheUk2TnpNM05UTXhMQ0p1WVcxbElqb2lhVzVwZEdsaGJDSjkuQzRTSjlxVTVrUUVvcklKYkVkcDd0bS1YSWZ2QW9EclJoU09BYXpCTk1zWGRhNlI5MHFieWdPZW02ZmN5SlFEcWhTRDRHZ3V1Tl9ISkJZSEJTUFV1Z0E=";
+    "ZXlKMGVYQWlPaUpLVjFRaUxDSmhiR2NpT2lKSVV6VXhNaUo5LmV5SndjbTltYVd4bFgzQnJJam95TXpNMU1qWXNJbTVoYldVaU9pSnBibWwwYVdGc0lpd2lZMnhoYzNNaU9pSk5aWEpqYUdGdWRDSjkuRHpYeDdWNEUxOHZtV2hCRXlzZzhNVDdqR1BtYWtwR3A5a0x4UzU2SEFleFJwczlYS0hNaHRESTNiRlhpTnQwWFFxclA2TllZMWxKYVgwUkpVUnJNclE=";
 
   // payment pay
   const payment = async () => {
@@ -39,41 +40,48 @@ const AddBalance = (props) => {
       try {
         await axios
           .post("https://accept.paymob.com/api/auth/tokens", data)
-          .then((res) => setTokenFirst(res.data.token))
-          .then(() => secStep());
+          .then((res) => secStep(res.data.token))
+          .then(() => {
+            console.log("step 1");
+          });
       } catch (error) {}
     }
   };
 
   //sect
-  const secStep = async () => {
+  const secStep = (token) => {
     const data = {
-      auth_token: tokenFirst,
+      auth_token: token,
       delivery_needed: "false",
       amount_cents: `${Number(input.price) * 100}`,
       currency: "EGP",
       items: [],
     };
     try {
-      await axios
+      axios
         .post("https://accept.paymob.com/api/ecommerce/orders", data)
-        .then((res) => thirdStep(res.data.id))
+        .then((res) => {
+          thirdStep(res.data.id, token);
+        })
+        .then(() => {
+          console.log("step 2");
+        })
         .then(() => handleClick());
     } catch (error) {
       console.log(error);
     }
   };
   //third
-  const thirdStep = async (id) => {
+  const thirdStep = (id, token) => {
     if (input.flexRadioDefault === "card") {
       try {
-        await axios
+        axios
           .post("https://accept.paymob.com/api/acceptance/payment_keys", {
-            auth_token: tokenFirst,
+            auth_token: token,
             amount_cents: `${Number(input.price) * 100}`,
             expiration: 3600,
             order_id: `${id}`,
-            billing_data: {
+            billing_datatokenFi: {
               apartment: "803",
               email: "claudette09@exa.com",
               floor: "42",
@@ -89,21 +97,22 @@ const AddBalance = (props) => {
               state: "Utah",
             },
             currency: "EGP",
-            integration_id: 3716690,
+            integration_id: 2363368,
           })
 
           .then(
             (res) =>
-              (window.location.href = `https://accept.paymob.com/api/acceptance/iframes/750171?payment_token=${res.data.token}`)
-          );
+              (window.location.href = `https://accept.paymob.com/api/acceptance/iframes/423821?payment_token=${res.data.token}`)
+          )
+          .then(() => console.log("step 3 card"));
       } catch (error) {
         console.log(error);
       }
     } else {
       try {
-        await axios
+        axios
           .post("https://accept.paymob.com/api/acceptance/payment_keys", {
-            auth_token: tokenFirst,
+            auth_token: token,
             amount_cents: `${Number(input.price) * 100}`,
             expiration: 3600,
             order_id: `${id}`,
@@ -123,24 +132,21 @@ const AddBalance = (props) => {
               state: "Utah",
             },
             currency: "EGP",
-            integration_id: 3716756,
+            integration_id: 3771428,
           })
-          .then(
-            async (res) =>
-              await axios
-                .post("https://accept.paymob.com/api/acceptance/payments/pay", {
-                  source: {
-                    identifier: "010299391383",
-                    subtype: "WALLET",
-                  },
-                  payment_token: `${res.data.token}`, // token obtained in step 3
-                })
+          .then((res) => {
+            axios
+              .post("https://accept.paymob.com/api/acceptance/payments/pay", {
+                source: {
+                  identifier: input.number,
+                  subtype: "WALLET",
+                },
+                payment_token: res.data.token, // token obtained in step 3
+              })
 
-                .then(
-                  // (res) => (window.location.href = res.data.redirection_url)
-                  (res) => console.log(res.data)
-                )
-          );
+              .then((res) => (window.location.href = res.data.redirect_url));
+          })
+          .then(() => console.log("step 3 voda"));
       } catch (error) {
         console.log(error);
       }
@@ -152,7 +158,6 @@ const AddBalance = (props) => {
       axios.get(`${env.url}/dol`).then((res) => setPrice(res.data.data.dollar));
     } catch (error) {}
   }, []);
-  console.log();
 
   return (
     <>
@@ -186,6 +191,16 @@ const AddBalance = (props) => {
         </div>
         <div className="choice">
           <Choice handelChange={handelChange} />
+          <>
+            {input.flexRadioDefault === "vodafone" ? (
+              <input
+                type="phone"
+                onChange={handelChange}
+                name="number"
+                placeholder="enter your number"
+              />
+            ) : null}
+          </>
         </div>
         <div
           className={`btn btn-primary balance ${isActive ? "active" : ""}`}

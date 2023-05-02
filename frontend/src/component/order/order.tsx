@@ -108,7 +108,11 @@ const Order = (props) => {
   return (
     <div className="container-order">
       <div>
-        <img className="img " src={dataBundle.imgbundle} />
+        <img
+          src={`${env.ver}/image/${dataBundle.imgbundle}`}
+          alt=""
+          className="rounded"
+        />
         <div className="con">
           <div className="price">
             <span className="title">price: </span>

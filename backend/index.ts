@@ -26,12 +26,14 @@ app.use(
 		origin: [
 			'https://shimmering-phoenix-977e7f.netlify.app',
 			'http://localhost:3000',
+			'http://localhost:3001',
 		],
 	})
 )
 app.use(cookieParser())
 
-app.use(helmet())
+// app.use(helmet())
+app.use(helmet.crossOriginResourcePolicy({policy: 'cross-origin'}))
 app.use('/api', routes)
 
 app.get('/healthz', (_req: Request, res: Response) => {
@@ -46,7 +48,8 @@ app.use('/uploads', express.static('uploads'))
 
 app.get('/image/:filename', (req, res) => {
 	const {filename} = req.params
-	res.sendFile(`${__dirname}/uploads/${filename}`)
+	// res.sendFile(`${__dirname}/uploads/${filename}`)
+	res.sendFile(req.params.filename, {root: path.join(__dirname, '/uploads')})
 })
 app.post('/ver', (req: Request, res: Response) => {
 	sendMail(req.body.email, req.body.number), res.json({message: 'Email send'})
