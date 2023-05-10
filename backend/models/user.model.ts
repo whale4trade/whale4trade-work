@@ -126,8 +126,8 @@ class UserModel {
 				u.imgprofile,
 				u.bundleName,
 				u.bundleId,
-				u.id,
 				u.statusAccess,
+				u.id,
 			])
 			//release connect
 			connect.release()
