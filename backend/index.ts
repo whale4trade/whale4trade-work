@@ -58,3 +58,7 @@ app.post('/ver', (req: Request, res: Response) => {
 app.listen(port, () => {
 	console.log(`server is start with port :${port}`)
 })
+
+app.get('/mohamed', (res, req) => {
+	console.log('')
+})

@@ -91,6 +91,19 @@ div.container.home-page {
     }
     .carousel-inner {
       border-radius: 15px;
+      .carousel-item {
+        transition-duration: 0.1s;
+        &.active {
+          transition-duration: 0.1s;
+          display: flex !important;
+
+          justify-content: center !important;
+          img {
+            border-radius: 32px;
+            cursor: pointer;
+          }
+        }
+      }
     }
   }
 }

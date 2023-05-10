@@ -101,7 +101,7 @@ const AddBalance = (props) => {
 
           .then(
             (res) =>
-              (window.location.href = `https://accept.paymob.com/api/acceptance/iframes/750171?payment_token=${res.data.token}`)
+              (window.location.href = `https://accept.paymob.com/api/acceptance/iframes/750171  ?payment_token=${res.data.token}`)
           )
           .then(() => console.log("step 3 card"));
       } catch (error) {
