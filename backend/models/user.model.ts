@@ -117,19 +117,17 @@ class UserModel {
 		try {
 			//open connect with DB
 			const connect = await db.connect()
-			const sql = `UPDATE users SET email=$1, username=$2,  number=$3, imgprofile=$4 , bundleName=$5, bundleId=$6  WHERE id=$7 RETURNING *`
+			const sql = `UPDATE users SET email=$1, username=$2,  number=$3, imgprofile=$4 , bundleName=$5, bundleId=$6 , statusAccess=$7 WHERE id=$8 RETURNING *`
 			//run query
 			const result = await connect.query(sql, [
 				u.email,
 				u.username,
 				u.number,
-				u.imgprofile === ''
-					? (u.imgprofile =
-							'http://localhost:3000/static/media/blank-profile-picture-gc8e2267bd_1280.c3f945216dc12c9498dc.png')
-					: u.imgprofile,
+				u.imgprofile,
 				u.bundleName,
 				u.bundleId,
 				u.id,
+				u.statusAccess,
 			])
 			//release connect
 			connect.release()
