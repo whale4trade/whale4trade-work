@@ -5,19 +5,17 @@
 
 .img {
   position: relative;
-  width: 99vw;
-  height: 80vh;
+  width: 99.9vw;
   overflow: hidden;
   z-index: -3461;
 }
 .img img.img-background {
-  width: 99vw;
+  width: 100vw;
   border-radius: 15px;
   position: relative;
   top: 0;
   left: 0;
   height: 70vh;
-  animation: kenburns-top 5s ease-out both;
 }
 
 div.container.home-page {

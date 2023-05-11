@@ -9,3 +9,4 @@ iamEmail VARCHAR(255) UNIQUE NOT NULL REFERENCES users(email),
 timeJoin date,
 bundle VARCHAR(255)
 )
+;

@@ -12,3 +12,4 @@
  win VARCHAR(200),
  timeBuy Date
  )
+;

@@ -11,3 +11,4 @@
  ImgBundle TEXT NOT NULL,
  category VARCHAR(200)
  )
+;
