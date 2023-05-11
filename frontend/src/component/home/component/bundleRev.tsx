@@ -44,7 +44,6 @@ const Bundle = (props) => {
                   alt="..."
                 />
               </div>
-              ;
             </>
           ))}
         </div>
