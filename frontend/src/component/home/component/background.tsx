@@ -3,9 +3,9 @@ const Background = (props) => {
   return (
     <>
       {" "}
-      <div className="img">
-        <img src={imgBackground} className="d-block  img-background" alt="" />
-      </div>
+      {/* <div className="img"> */}
+      <img src={imgBackground} className="d-block  img-background" alt="" />
+      {/* </div> */}
     </>
   );
 };

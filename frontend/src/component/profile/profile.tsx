@@ -59,6 +59,7 @@ const Profile = (props: any) => {
   const changeCPage = (id) => {
     setCurrentPage(id);
   };
+  console.log(dataBundle);
 
   return (
     <>

@@ -40,7 +40,7 @@ const Order = (props) => {
     userId: JSON.parse(localStorage.user).id,
     bundleId: window.location.search.slice(1),
     price: dataBundle.win,
-    timeBuy: new Date(),
+    timeBuy: Date.now(),
     win: dataBundle.price,
     name: dataBundle.name,
   };

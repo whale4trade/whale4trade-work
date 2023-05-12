@@ -361,7 +361,7 @@ div.products .vip .container.con-platinum .container .con-img img,
 div.products .vip .container.con-vip .container .con-img img {
   width: 100%;
   cursor: pointer;
-  border-radius: 17px;
+  border-radius: 34px !important;
   margin: 0 auto;
   transition-duration: 0.3s;
 }

@@ -7,19 +7,17 @@
 nav {
   overflow: hidden;
   position: fixed !important;
-  z-index: 2456456;
+  z-index: 124;
   top: 0;
   width: 80%;
-  margin: 20px auto;
+  margin: 10px auto;
   transform: translateX(15%);
-
   border-radius: 15px;
   padding: 10px 15px 5px 20px;
   transition-duration: 0.3s;
   &.bg-light {
-    margin: 25px auto;
+    margin: 0 auto;
     background-color: rgba(0, 0, 0, 0.12);
-    padding: 15px 15px 5px 20px;
     .container-fluid {
       .navbar-toggler {
         border: none;

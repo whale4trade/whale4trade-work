@@ -10,10 +10,9 @@ const Bundle = (props) => {
   const [hours, setHours] = useState(0);
   const [minutes, setMinutes] = useState(0);
   const [seconds, setSeconds] = useState(0);
-
   useEffect(() => {
     const target = new Date(`${props.bundleInfo.timebuy}`);
-    target.setDate(target.getDate() + 31);
+    target.setDate(target.getDate() + 30);
     target.toDateString();
 
     const interval = setInterval(() => {
