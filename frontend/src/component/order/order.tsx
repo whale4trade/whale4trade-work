@@ -6,6 +6,8 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 const Order = (props) => {
   const navigate = useNavigate();
+  const [isActive, setIsActive] = useState(false);
+
   const checkUser = () => {
     if (JSON.parse(localStorage.user) === null) {
       window.location.pathname = "/login";
@@ -93,7 +95,12 @@ const Order = (props) => {
                         price: `${dataBundle.price}`,
                         timeJoin: new Date(),
                       })
-                      .then(() => navigate("/profile"));
+                      .then(() => setIsActive((current) => !current))
+                      .then(() =>
+                        setTimeout(() => {
+                          navigate("/profile");
+                        }, 3000)
+                      );
                   } catch (error) {}
                 });
             } catch (error) {}
@@ -136,7 +143,29 @@ const Order = (props) => {
             className="btn btn-primary"
             value="order"
             onClick={handleOrder}
+            id="liveToastBtn"
           />
+          <div className="toast-container position-fixed bottom-0 end-0 p-3">
+            <div
+              id="liveToast"
+              className={`toast fade ${isActive ? "show" : "hide"} `}
+              role="alert"
+              aria-live="assertive"
+              aria-atomic="true"
+            >
+              <div className="toast-header">
+                <strong className="me-auto">Whale4trade</strong>
+                <small>11 mins ago</small>
+                <button
+                  type="button"
+                  className="btn-close"
+                  data-bs-dismiss="toast"
+                  aria-label="Close"
+                ></button>
+              </div>
+              <div className="toast-body">Done, your bought it</div>
+            </div>
+          </div>
         </div>
       </div>
     </div>

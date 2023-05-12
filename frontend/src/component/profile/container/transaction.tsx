@@ -31,18 +31,22 @@ const Transaction = (props) => {
       <div className="title">transaction</div>
 
       <div className="list">
-        {records.map((t: any) => (
-          <>
-            <div key={t.id} className="with">
-              <div className="prog">{t.category}</div>
-              <div className="price">
-                <span>price:</span>
-                <span className="cont">{`-${t.price}$`}</span>
+        {records
+          .sort((a, b) => (a.timejoin < b.timejoin ? 1 : -1))
+          .map((t: any) => (
+            <>
+              <div key={t.id} className="with">
+                <div className="prog">{t.category}</div>
+                <div className="price">
+                  <span>price:</span>
+                  <span className="cont">{`-${t.price}$`}</span>
+                </div>
+                <div className="time">
+                  {new Date(t.timejoin).toDateString()}
+                </div>
               </div>
-              <div className="time">{new Date(t.timejoin).toDateString()}</div>
-            </div>
-          </>
-        ))}
+            </>
+          ))}
         <nav aria-label="Page navigation example" className="nav">
           <ul className="pagination">
             {numbers.map((n, i) => (
