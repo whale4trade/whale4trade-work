@@ -20,26 +20,29 @@ div.container.home-page {
   div.container-usd {
     position: relative;
     transition-duration: 1s;
-    background-color: white;
     padding: 2.5em 3em 2em;
     z-index: 345456;
     border-radius: 15px;
-    box-shadow: rgba(0, 0, 0, 0.4) 0px 30px 90px;
     width: fit-content;
     transform: translateX(25%);
     margin: 0em auto 10vh;
     height: fit-content;
     > div {
+      background-color: white;
+      padding: 10px 15px 5px;
+      border-radius: 23px;
       align-items: center;
+      box-shadow: rgba(0, 0, 0, 0.4) 0px 30px 90px;
       text-align: center;
       display: flex;
       flex-wrap: wrap;
-      justify-content: center;
+      justify-content: start;
       align-items: center;
       font-size: 1em;
       margin: 2em 0;
       img {
         max-width: 3em;
+        height: 2em;
         border-radius: 18px;
       }
       span.name-usd {
@@ -86,9 +89,9 @@ div.container.home-page {
     .carousel-inner {
       border-radius: 15px;
       .carousel-item {
-        transition-duration: 0.1s;
+        transition-duration: 0.3s;
         &.active {
-          transition-duration: 0.1s;
+          transition-duration: 0.3s;
           display: flex !important;
 
           justify-content: center !important;
@@ -261,13 +264,15 @@ div.footer {
     }
   }
   .carousel {
-    top: -40em !important;
+    top: -33em !important;
   }
 
   div.footer {
+    top: 25vh !important;
     .typing {
       font-size: 0.7em !important;
       line-height: 1.5em;
+      width: 90% !important;
     }
   }
 }
@@ -297,8 +302,14 @@ div.footer {
       }
     }
   }
-  .carousel {
-    top: -30em !important;
+  .carousel-inner {
+    .carousel-item {
+      &.active {
+        img {
+          width: 100% !important;
+        }
+      }
+    }
   }
 }
 
