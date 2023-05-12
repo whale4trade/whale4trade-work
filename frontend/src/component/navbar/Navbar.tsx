@@ -45,9 +45,7 @@ class Navbar extends React.Component<NavbarProps, NavbarState> {
             Whale4Trade
           </NavLink>
           <button
-            className={`navbar-toggler animate__animated ${
-              this.state.showBox ? " animate__shakeX" : ""
-            } `}
+            className={`navbar-toggler`}
             onMouseOver={this.handleBoxToggle}
             type="button"
             data-bs-toggle="collapse"

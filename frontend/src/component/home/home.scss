@@ -21,7 +21,6 @@ div.container.home-page {
     position: relative;
     transition-duration: 1s;
     padding: 2.5em 3em 2em;
-    z-index: 345456;
     border-radius: 15px;
     width: fit-content;
     transform: translateX(25%);
@@ -246,6 +245,7 @@ div.footer {
     justify-content: space-between;
     > div {
       margin: 10px !important;
+      justify-content: center !important;
       box-shadow: rgba(0, 0, 0, 0.4) 0px 30px 90px;
       width: 40%;
       border-radius: 15px;
