@@ -29,7 +29,6 @@ class Navbar extends React.Component<NavbarProps, NavbarState> {
     const handleLogoutClick = () => {
       axios
         .post(`${env.url}/users/logout`)
-        .then(() => console.log("done"))
         .then(() => localStorage.clear())
         .then(() =>
           setTimeout(() => {

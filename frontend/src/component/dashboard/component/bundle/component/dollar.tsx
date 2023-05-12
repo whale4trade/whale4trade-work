@@ -10,14 +10,11 @@ const Dollar = () => {
   const handelChange = (e) => {
     setInput((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
-  console.log(input);
 
   const doll = async () => {
     try {
       await axios.get(`${env.url}/dol`).then((res) => setDollar(res.data.data));
-    } catch (error) {
-      console.log(error);
-    }
+    } catch (error) {}
   };
   const updateDollar = async () => {
     try {
@@ -27,9 +24,7 @@ const Dollar = () => {
           dollar: input.dollar,
         })
         .then((res) => window.location.reload());
-    } catch (error) {
-      console.log(error);
-    }
+    } catch (error) {}
   };
   useEffect(() => {
     doll();

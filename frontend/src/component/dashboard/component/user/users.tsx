@@ -12,9 +12,7 @@ const Users = (props) => {
       await axios
         .get(`${env.url}/users/`)
         .then((res: any) => setDataUser(res.data.data));
-    } catch (error) {
-      console.log(error);
-    }
+    } catch (error) {}
   };
   useEffect(() => {
     userDash();

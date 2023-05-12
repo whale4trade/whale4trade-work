@@ -22,10 +22,7 @@ const Forex = () => {
         .then((res) => {
           setChart(res.data.results);
         });
-    } catch (error) {
-      console.log(error);
-    }
-    // 501bb05aa12ab502f23bd0ef1b2c97a643a46d45
+    } catch (error) {}
   };
   useEffect(() => {
     fetchForex();
@@ -38,9 +35,7 @@ const Forex = () => {
       .then((response) => {
         setBtcToUsd(response.data.bpi.USD.rate);
       })
-      .catch((error) => {
-        console.log(error);
-      });
+      .catch((error) => {});
   }, []);
 
   return (

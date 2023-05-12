@@ -20,9 +20,7 @@ const Dashboard = () => {
             navigate("/");
           }
         });
-    } catch (error) {
-      console.log(error);
-    }
+    } catch (error) {}
   };
   useEffect(() => {
     check();

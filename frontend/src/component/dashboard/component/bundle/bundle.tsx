@@ -12,20 +12,15 @@ const Bundle = (props) => {
       await axios
         .get(`${env.url}/bundle`)
         .then((res: any) => setBundleDash(res.data.data));
-    } catch (error) {
-      console.log(error);
-    }
+    } catch (error) {}
   };
   const deleteBundle = async (id) => {
     try {
       await axios
         .delete(`${env.url}/bundle/${id}`)
         .then(() => window.location.reload());
-    } catch (error) {
-      console.log(error);
-    }
+    } catch (error) {}
   };
-  // console.log(bundleDash[0].imgbundle);
 
   useEffect(() => {
     getBundleDash();
@@ -52,7 +47,6 @@ const Bundle = (props) => {
         .then(() => window.location.reload());
     } catch (error) {}
   };
-  console.log(input);
 
   // const
   return (

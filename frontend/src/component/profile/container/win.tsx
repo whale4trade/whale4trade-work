@@ -21,15 +21,7 @@ const Win = (props) => {
   let sum = data.reduce(function (a, b) {
     return Number(a) + Number(b);
   }, 0);
-  //   useEffect(() => {
-  //     const interval = setInterval(() => {
-  //       setNum((sum / 30) * 2);
-  //       sum = num;
-  //     }, 300);
-  //     return clearInterval(interval);
-  //   }, [num]);
-  //   console.log(num);
-
+ 
   return <>{`${Math.floor((sum / 30) * 7)}$`}</>;
 };
 

@@ -10,27 +10,21 @@ const UsersF = (props) => {
       await axios
         .delete(`${env.url}/users/${id}`)
         .then(() => window.location.reload());
-    } catch (error) {
-      console.log(error);
-    }
+    } catch (error) {}
   };
   const getOrders = async (id) => {
     try {
       await axios
         .get(`${env.url}/order/user/${id}`)
         .then((res) => setOrder(res.data.data));
-    } catch (error) {
-      console.log(error);
-    }
+    } catch (error) {}
   };
   const getTransaction = async (id) => {
     try {
       await axios
         .get(`${env.url}/transaction/user/${id}`)
         .then((res) => setTransaction(res.data.data));
-    } catch (error) {
-      console.log(error);
-    }
+    } catch (error) {}
   };
 
   const [input, setInput] = useState({
@@ -50,9 +44,7 @@ const UsersF = (props) => {
           statusaccess: input.statusAccess,
         })
         .then(() => window.location.reload());
-    } catch (error) {
-      console.log(error);
-    }
+    } catch (error) {}
   };
 
   return (

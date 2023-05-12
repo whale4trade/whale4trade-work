@@ -13,7 +13,6 @@ const Reset = () => {
   const handelChange = (e) => {
     setInput((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
-  console.log(input);
   const search = async () => {
     try {
       await axios
@@ -23,9 +22,7 @@ const Reset = () => {
             ? setErr("not found")
             : navigate(`/reset/auth/${input.email}/`)
         );
-    } catch (error) {
-      console.log(error);
-    }
+    } catch (error) {}
   };
   return (
     <>

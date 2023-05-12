@@ -1,18 +1,29 @@
 .container-order {
   position: relative;
-  margin: 5em auto;
   display: flex;
-  width: 100%;
+  width: 100vw;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+
+  .back {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -5678;
+  }
   justify-content: center;
   > div {
     display: flex;
     justify-content: center;
     align-items: center;
+    height: 80vh;
     flex-wrap: wrap;
     img {
-      width: 60%;
-      height: 90%;
-      border-radius: 20px;
+      width: 40%;
+      border-radius: 32px !important;
     }
     .con {
       margin: 0 3em;
@@ -24,9 +35,11 @@
           text-transform: capitalize;
           margin: 0 3px;
           font-size: 2em;
+          color: #6671a4;
         }
         .co {
           font-size: 2.3em;
+          font-weight: bold;
           color: #0b5ed7;
         }
       }
@@ -34,6 +47,7 @@
   }
   input {
     width: 80%;
+    margin-top: 20px;
     cursor: pointer;
     font-size: 24px;
     text-transform: uppercase;

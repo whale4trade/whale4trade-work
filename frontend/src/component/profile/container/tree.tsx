@@ -28,9 +28,7 @@ const TreeProfile = (props) => {
           res.data.data.tree === "" ? bundleFree() : null
         );
       // .then(() => bundleFree());
-    } catch (error) {
-      console.log(error);
-    }
+    } catch (error) {}
   };
   const bundleFree = async () => {
     try {
@@ -41,16 +39,12 @@ const TreeProfile = (props) => {
           tree: "get",
         }
       );
-    } catch (error) {
-      console.log(error);
-    }
+    } catch (error) {}
     try {
       await axios
         .get(`${env.url}/bundle`)
         .then((res) => setDataBundleFree(res.data.data));
-    } catch (error) {
-      console.log(error);
-    }
+    } catch (error) {}
     dataBundleFree.map((b) =>
       b === "sai whale" ? setDataBundleFreeId(b) : null
     );
@@ -72,22 +66,14 @@ const TreeProfile = (props) => {
               price: `10`,
               timeJoin: new Date(),
             });
-          } catch (error) {
-            console.log(error);
-          }
+          } catch (error) {}
         });
-    } catch (error) {
-      console.log(error);
-    }
+    } catch (error) {}
   };
 
   useEffect(() => {
     if (dataTree.length === 10) {
-      console.log("yes");
-
       checkUserTree();
-    } else {
-      console.log("no");
     }
   }, []);
   const [currentPage, setCurrentPage] = useState(1);

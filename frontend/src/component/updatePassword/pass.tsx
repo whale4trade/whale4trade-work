@@ -32,9 +32,7 @@ const UpdatePass = () => {
         .then(() => {
           navigate("/login");
         });
-    } catch (error) {
-      console.log(error);
-    }
+    } catch (error) {}
   };
 
   useEffect(() => {

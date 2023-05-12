@@ -105,9 +105,7 @@ const UserProfile = () => {
       await axios
         .get(`${env.url}/tree/${JSON.parse(localStorage.user).id}`)
         .then((res) => setTree(res.data.data));
-    } catch (err: any) {
-      console.log(err);
-    }
+    } catch (err: any) {}
   };
   useEffect(() => {
     handleTree();

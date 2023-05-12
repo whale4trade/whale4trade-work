@@ -36,7 +36,6 @@ const BundleF = (props) => {
         try {
           axios
             .post(`${env.url}/bundle`, input)
-            .then((res) => console.log(res.data.data))
             .then(() => setIsActive((current) => !current))
             .then(() => {
               setTimeout(() => {
@@ -50,45 +49,12 @@ const BundleF = (props) => {
           }, 3000);
         }
       })
-      .catch((error) => {
-        console.log(error);
-      });
+      .catch((error) => {});
   };
 
   const handelChange = (e) => {
     setInput((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
-  // const createBundle = async () => {
-  //   try {
-  //     await axios
-  //       .post(`${env.ver}/upload`, formData, {
-  //         headers: { "Content-Type": "multipart/form-data" },
-  //       })
-  //       .then((res) => {
-  //         input.ImgBundle = res.data.data.filename;
-  //       })
-  //       .then(() => {
-  //         try {
-  //           axios
-  //             .post(`${env.url}/bundle`, input)
-  //             .then((res) => console.log(res))
-  //             .then(() => setIsActive((current) => !current))
-  //             .then(() => {
-  //               setTimeout(() => {
-  //                 window.location.reload();
-  //               }, 3000);
-  //             });
-  //         } catch (err: any) {
-  //           setErr(err.response.data);
-  //           setTimeout(() => {
-  //             setErr("");
-  //           }, 3000);
-  //         }
-  //       });
-  //   } catch (error) {
-  //     console.log(error);
-  //   }
-  // };
 
   return (
     <>

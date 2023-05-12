@@ -40,7 +40,7 @@ const Order = (props) => {
     userId: JSON.parse(localStorage.user).id,
     bundleId: window.location.search.slice(1),
     price: dataBundle.win,
-    timeBuy: Date.now(),
+    timeBuy: new Date(),
     win: dataBundle.price,
     name: dataBundle.name,
   };
@@ -107,6 +107,7 @@ const Order = (props) => {
 
   return (
     <div className="container-order">
+      <div className="back"></div>
       <div>
         <img
           src={`${env.ver}/image/${dataBundle.imgbundle}`}

@@ -28,7 +28,6 @@ const Login = () => {
           withCredentials: true,
         })
         .then((res) => setCurrentUser(res.data.data))
-        .then(() => console.log("don"))
         .then(() => setIsActive((current) => !current))
         .then(() =>
           setTimeout(() => {
