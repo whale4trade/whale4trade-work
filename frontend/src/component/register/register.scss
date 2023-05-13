@@ -20,7 +20,7 @@
     height: fit-content;
     box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
     h2 {
-      margin: 0 0 30px;
+      // margin: 0 0 30px;
       padding: 0;
       color: #fff;
       text-align: center;
@@ -33,18 +33,20 @@
       padding: 50px;
       display: flex;
       flex-direction: column;
-      gap: 50px;
+      gap: 20px;
       justify-content: center;
 
       form {
         display: flex;
         flex-direction: column;
-        gap: 30px;
+        // gap: 30px;
 
         input {
           border: none;
           border-bottom: 1px solid lightgray;
+          // background-color: transparent;
           padding: 20px 10px;
+          margin: 0.5em 0;
         }
 
         button {
@@ -69,7 +71,7 @@
     text-transform: uppercase;
     overflow: hidden;
     transition: 0.5s;
-    margin-top: 40px;
+    // margin-top: 40px;
     letter-spacing: 4px;
   }
 

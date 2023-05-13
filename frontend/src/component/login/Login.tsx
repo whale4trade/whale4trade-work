@@ -62,7 +62,7 @@ const Login = () => {
         >
           <div className="toast-header">
             <strong className="me-auto">Whale4trade</strong>
-            <small>11 mins ago</small>
+            <small>Just now</small>
             <button
               type="button"
               className="btn-close"
@@ -78,7 +78,7 @@ const Login = () => {
         <h2>Login</h2>
         <form method="POST">
           <div className="user-box">
-            <input type="email" name="email" required onChange={handelChange} />
+            <input type="text" name="email" required onChange={handelChange} />
             <label>Email</label>
           </div>
           <div className="user-box">
@@ -100,8 +100,10 @@ const Login = () => {
             <span></span>
             Submit
           </Link>
-          <div className="reg">Don't you have an account?</div>
           <Link to="/reset">reset password</Link>
+          <Link to="/register" className="reg">
+            Don't you have an account?
+          </Link>
 
           <Link to="/register">
             <span></span>

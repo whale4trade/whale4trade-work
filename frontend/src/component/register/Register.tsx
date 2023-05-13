@@ -60,6 +60,9 @@ const Register = () => {
       const confirm = () => setConfirm((current) => !current);
 
       confirm();
+      setTimeout(() => {
+        setConfirm("");
+      }, 4000);
     } else {
       setErrCo("wrong");
       setTimeout(() => {
@@ -217,7 +220,7 @@ const Register = () => {
 
           <form className="was-validated">
             {/* email */}
-            <div className="form-floating mb-3">
+            <div className="form-floating   ">
               <input
                 name="email"
                 onChange={handelChange}
@@ -265,7 +268,7 @@ const Register = () => {
               <label htmlFor="floatingInput">Email address</label>
             </div>
             {/* username */}
-            <div className="input-group mb-3">
+            <div className="input-group   ">
               <span className="input-group-text">@</span>
               <div className="form-floating">
                 <input
@@ -307,10 +310,10 @@ const Register = () => {
               <label htmlFor="floatingNumber">Your Number</label>
             </div>
             {/* files */}
-            {/* <div className="mb-3">
+            <div className="  ">
               <input
                 name="fileIdFront"
-                onChange={ha}
+                // onChange={ha}
                 type="file"
                 className="form-control"
                 aria-label="file example"
@@ -318,7 +321,7 @@ const Register = () => {
               />
               <div className="invalid-feedback">Example invalid ID front</div>
             </div>
-            <div className="mb-3">
+            <div className="  ">
               <input
                 name="fileIdBack"
                 onChange={handelChange}
@@ -328,10 +331,10 @@ const Register = () => {
                 required
               />
               <div className="invalid-feedback">Example invalid ID back</div>
-            </div> */}
+            </div>
 
             <div className="active">{err && err}</div>
-            <div className="mb-3">
+            <div className="  ">
               <Link to={`/verification?${input.email}`} onClick={handleClick}>
                 <span></span>
                 <span></span>
@@ -340,7 +343,7 @@ const Register = () => {
                 Register
               </Link>
             </div>
-            <div className="mb-3">
+            <div className="  ">
               <Link to={`/login`}>
                 <span></span>
                 <span></span>

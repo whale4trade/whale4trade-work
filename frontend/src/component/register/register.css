@@ -22,7 +22,6 @@
   box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
 }
 .register .card h2 {
-  margin: 0 0 30px;
   padding: 0;
   color: #fff;
   text-align: center;
@@ -36,18 +35,18 @@
   padding: 50px;
   display: flex;
   flex-direction: column;
-  gap: 50px;
+  gap: 20px;
   justify-content: center;
 }
 .register .card .right form {
   display: flex;
   flex-direction: column;
-  gap: 30px;
 }
 .register .card .right form input {
   border: none;
   border-bottom: 1px solid lightgray;
   padding: 20px 10px;
+  margin: 0.5em 0;
 }
 .register .card .right form button {
   width: 50%;
@@ -68,7 +67,6 @@
   text-transform: uppercase;
   overflow: hidden;
   transition: 0.5s;
-  margin-top: 40px;
   letter-spacing: 4px;
 }
 .register a:hover {

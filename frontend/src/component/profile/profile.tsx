@@ -65,8 +65,7 @@ const Profile = (props: any) => {
       <div className="back"></div>
       <div className=" container profile ">
         <UserProfile />
-        <TreeProfile />
-        <Transaction />
+
         <div className="bundle">
           <div className="title">Bundle</div>
           {records.map((bundle) => {
@@ -81,6 +80,8 @@ const Profile = (props: any) => {
             );
           })}
         </div>
+        <TreeProfile />
+        <Transaction />
         <URL />
       </div>
     </>

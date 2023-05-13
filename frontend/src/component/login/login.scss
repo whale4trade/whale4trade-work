@@ -171,5 +171,10 @@
   }
 }
 .reg {
-  color: white;
+  color: white !important;
+  cursor: pointer;
+  &:hover {
+    color: #03e9f4;
+    width: fit-content !important;
+  }
 }

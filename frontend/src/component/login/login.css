@@ -166,5 +166,11 @@
   }
 }
 .reg {
-  color: white;
+  color: white !important;
+  cursor: pointer;
+}
+.reg:hover {
+  color: #03e9f4;
+  width: -moz-fit-content !important;
+  width: fit-content !important;
 }/*# sourceMappingURL=login.css.map */

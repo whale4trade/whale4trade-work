@@ -26,41 +26,44 @@ const UsersF = (props) => {
         .then((res) => setTransaction(res.data.data));
     } catch (error) {}
   };
-
+  //edit user
   const [input, setInput] = useState({
-    statusAccess: "",
+    email: "",
+    username: "",
+    number: "",
+    balance: "",
+    password: "",
+    status: "",
   });
   const handelChange = (e) => {
     setInput((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
-  const editBundle = async (id, username, email, number) => {
-    try {
-      await axios
-        .patch(`${env.url}/users/${id}`, {
-          id: id,
-          username: username,
-          email: email,
-          number: number,
-          statusaccess: input.statusAccess,
-        })
-        .then(() => window.location.reload());
-    } catch (error) {}
+  const handleClick = (id) => {
+    console.log(id);
+    // console.log(input);
   };
-
+  const EditUser = async (id) => {
+    try {
+      // await axios.patch(`${env.url}`)
+      console.log(id);
+    } catch (error) {
+      console.log(error);
+    }
+  };
   return (
     <>
       {props.dataUser.map((u: any): any => (
         <>
-          <div
-            className="container-user"
-            data-bs-toggle="modal"
-            data-bs-target={`#staticBackdrop${u.id}`}
-            onClick={() => {
-              getOrders(u.id);
-              getTransaction(u.id);
-            }}
-          >
-            <div className="photo">
+          <div className="container-user">
+            <div
+              className="photo"
+              data-bs-toggle="modal"
+              data-bs-target={`#staticBackdrop${u.id}`}
+              onClick={() => {
+                getOrders(u.id);
+                getTransaction(u.id);
+              }}
+            >
               <img alt="" className="img" src={photo} />
             </div>
 
@@ -76,7 +79,94 @@ const UsersF = (props) => {
               <span className="title-u">balance: </span>
               <span className="get">{`${u.balance}$`}</span>
             </div>
+            <button
+              type="button"
+              className="btn btn-outline-primary"
+              data-bs-toggle="modal"
+              data-bs-target="#staticBackdropEdit"
+            >
+              Edit
+            </button>
+            <div
+              className="modal fade"
+              id="staticBackdropEdit"
+              data-bs-backdrop="static"
+              data-bs-keyboard="false"
+              aria-labelledby="staticBackdropLabel"
+              aria-hidden="true"
+            >
+              <div className="modal-dialog">
+                <div className="modal-content">
+                  <div className="modal-header">
+                    <h1 className="modal-title fs-5" id="staticBackdropLabel">
+                      update User
+                    </h1>
+                    <button
+                      type="button"
+                      className="btn-close"
+                      data-bs-dismiss="modal"
+                      aria-label="Close"
+                    ></button>
+                  </div>
+                  <div className="modal-body">
+                    <input
+                      type="text"
+                      onChange={handelChange}
+                      name="email"
+                      placeholder="email"
+                    />
+                    <input
+                      type="text"
+                      onChange={handelChange}
+                      name="username"
+                      placeholder="username"
+                    />
+                    <input
+                      type="text"
+                      onChange={handelChange}
+                      name="number"
+                      placeholder="number"
+                    />
+                    <input
+                      type="text"
+                      onChange={handelChange}
+                      name="balance"
+                      placeholder="balance"
+                    />
+                    <div>
+                      <select
+                        className="form-select"
+                        aria-label="Default select example"
+                        name="status"
+                        onChange={handelChange}
+                      >
+                        <option value="sel">select status</option>
+                        <option value="admin">admin</option>
+                        <option value="user">user</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div className="modal-footer">
+                    <button
+                      type="button"
+                      className="btn btn-secondary"
+                      data-bs-dismiss="modal"
+                    >
+                      Close
+                    </button>
+                    <button
+                      onClick={() => EditUser(u.id)}
+                      type="button"
+                      className="btn btn-primary"
+                    >
+                      Edit
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
+
           {/*edit*/}
 
           {/* pop up */}

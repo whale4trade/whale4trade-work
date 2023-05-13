@@ -46,6 +46,12 @@
       }
     }
   }
+  .CircularProgressbar {
+    width: 100%;
+    height: 20vh;
+    vertical-align: middle;
+    margin: 1.5em 0;
+  }
 }
 @media (max-width: 1200px) {
   .profile {

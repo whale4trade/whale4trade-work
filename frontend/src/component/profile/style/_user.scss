@@ -119,6 +119,10 @@
   display: flex;
   justify-content: space-between;
   margin-top: 15px;
+  flex-wrap: wrap;
+  .edit-icon {
+    margin: 2px;
+  }
 }
 @media (max-width: 900px) {
   .profile {
