@@ -347,6 +347,7 @@
 .profile > div.bundle .timer .time {
   font-size: 2em;
   margin: 0 3px;
+  color: #3e98c7;
 }
 .profile .nav {
   position: relative !important;
@@ -377,9 +378,12 @@
   }
   .profile > div.bundle .s {
     text-transform: capitalize;
+    font-size: 0.9em;
   }
   .profile > div.bundle .time {
-    font-size: 1.4em;
+    font-size: 1.1em;
+    margin: 0 3px;
+    color: #3e98c7;
   }
 }
 @media (max-width: 800) {
