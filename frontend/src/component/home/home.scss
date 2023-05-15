@@ -109,7 +109,7 @@ div.container.home-page {
   }
 }
 div.footer {
-  height: 18em;
+  height: 12em;
   display: flex;
   overflow: hidden;
   position: relative;
@@ -126,10 +126,8 @@ div.footer {
     width: 100%;
     .animate__animated {
       text-align: center;
-      padding-top: 15px;
       height: 0;
       font-size: 2.4em;
-      margin-bottom: 1em;
       width: 100%;
       font-weight: bold;
       color: white;
@@ -147,7 +145,6 @@ div.footer {
       text-align: center;
       width: 90%;
       background-color: white;
-
       background-size: auto auto;
       background-clip: border-box;
       background-size: 200% auto;
