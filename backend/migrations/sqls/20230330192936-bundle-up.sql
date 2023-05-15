@@ -9,6 +9,7 @@
  win VARCHAR(200),
  timeCreated DATE ,
  ImgBundle TEXT NOT NULL,
- category VARCHAR(200)
+ category VARCHAR(200),
+ description VARCHAR(500)
  )
 ;

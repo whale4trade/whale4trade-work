@@ -11,18 +11,16 @@ class BundleModel {
 			//open connect with DB
 			const connect = await db.connect()
 			const sql =
-				'INSERT INTO bundle ( name, price, win, timeCreated, ImgBundle, category) values ($1, $2, $3, $4, $5, $6) returning *'
+				'INSERT INTO bundle ( name, price, win, timeCreated, ImgBundle, category, description) values ($1, $2, $3, $4, $5, $6, $7) returning *'
 			//run query
 			const result = await connect.query(sql, [
 				b.name,
 				b.price,
 				b.win,
 				b.timeCreated,
-				b.ImgBundle === ''
-					? (b.ImgBundle =
-							'http://localhost:3000/static/media/photo_2023-03-13_11-36-42.74c4371cb195df821b4f.jpg')
-					: b.ImgBundle,
+				b.ImgBundle,
 				b.category,
+				b.description,
 			])
 			//release connect
 			connect.release()
@@ -37,8 +35,7 @@ class BundleModel {
 		try {
 			//open connect with DB
 			const connect = await db.connect()
-			const sql =
-				'SELECT id, name, price, win, timeCreated, ImgBundle, category from bundle'
+			const sql = 'SELECT * from bundle'
 			//run query
 			const result = await connect.query(sql)
 			//release connect
@@ -55,7 +52,7 @@ class BundleModel {
 			//open connect with DB
 			const connect = await db.connect()
 			const sql =
-				'SELECT name, price, win, timeCreated, ImgBundle, category  from bundle WHERE id=($1)'
+				'SELECT name, price, win, timeCreated, ImgBundle, category , description from bundle WHERE id=($1)'
 			//run query
 			const result = await connect.query(sql, [id])
 			//release connect
@@ -73,17 +70,14 @@ class BundleModel {
 		try {
 			//open connect with DB
 			const connect = await db.connect()
-			const sql = `UPDATE bundle SET name=$1, price=$2,  win=$3, ImgBundle=$4, category=$5  WHERE id=$6 RETURNING *`
+			const sql = `UPDATE bundle SET name=$1, price=$2,  win=$3, ImgBundle=$4, category=$5, description=$6  WHERE id=$7 RETURNING *`
 			//run query
 			const result = await connect.query(sql, [
 				u.name,
 				u.price,
 				u.win,
-				u.ImgBundle === ''
-					? (u.ImgBundle =
-							'http://localhost:3000/static/media/photo_2023-03-13_11-36-42.74c4371cb195df821b4f.jpg')
-					: u.ImgBundle,
-
+				u.ImgBundle,
+				u.description,
 				u.category,
 				u.id,
 			])

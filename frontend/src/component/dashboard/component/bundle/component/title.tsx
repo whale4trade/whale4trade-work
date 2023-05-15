@@ -14,6 +14,7 @@ const BundleF = (props) => {
     ImgBundle: "",
     category: "",
     timeCreated: new Date(),
+    description: "",
   });
   const [file, setFile] = useState<any>(null);
 
@@ -131,6 +132,7 @@ const BundleF = (props) => {
                   onChange={handleFileChange}
                   placeholder="ImgBundle"
                 />
+                <textarea name="description" placeholder="description" />
                 <select
                   className="form-select"
                   aria-label="Default select example"
