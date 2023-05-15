@@ -138,6 +138,10 @@ const Order = (props) => {
             <span className="title">category: </span>
             <span className="co">{dataBundle.category}</span>
           </div>
+          <div className="description">
+            <span className="title">description: </span>
+            <span className="co">{dataBundle.description}</span>
+          </div>
           <input
             type="button"
             className="btn btn-primary"

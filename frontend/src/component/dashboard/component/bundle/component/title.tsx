@@ -52,6 +52,7 @@ const BundleF = (props) => {
       })
       .catch((error) => {});
   };
+  console.log(input);
 
   const handelChange = (e) => {
     setInput((prev) => ({ ...prev, [e.target.name]: e.target.value }));
@@ -132,7 +133,11 @@ const BundleF = (props) => {
                   onChange={handleFileChange}
                   placeholder="ImgBundle"
                 />
-                <textarea name="description" placeholder="description" />
+                <textarea
+                  onChange={handelChange}
+                  name="description"
+                  placeholder="description"
+                />
                 <select
                   className="form-select"
                   aria-label="Default select example"

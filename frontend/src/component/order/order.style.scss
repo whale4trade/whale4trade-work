@@ -10,8 +10,8 @@
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    height: 100vh;
     z-index: -5678;
   }
   justify-content: center;
@@ -30,17 +30,24 @@
       .price,
       .win,
       .name,
-      .category {
+      .category,
+      .description {
         .title {
           text-transform: capitalize;
           margin: 0 3px;
           font-size: 2em;
-          color: #6671a4;
+          color: #30261d;
         }
         .co {
           font-size: 2.3em;
           font-weight: bold;
           color: #0b5ed7;
+        }
+      }
+      .description {
+        .co {
+          width: 10em;
+          font-size: 1.8em;
         }
       }
     }
@@ -65,13 +72,14 @@
         .price,
         .win,
         .name,
-        .category {
+        .category,
+        .description {
           width: 100%;
           .title {
-            font-size: 1.6em;
+            font-size: 1em;
           }
           .co {
-            font-size: 1.8em;
+            font-size: 1.2em;
           }
         }
       }
