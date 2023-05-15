@@ -3,12 +3,13 @@
 * {
   font-family: "DM Sans", sans-serif;
 }
-// body {
-//   background-color: #f3f3f3 !important;
-// }
+body {
+  background-color: #f3f3f3 !important;
+}
 div.img-background {
-  width: 98.5vw;
+  width: 99vw;
   border-radius: 15px;
+
   position: absolute;
   top: 0;
   left: 0;
@@ -37,7 +38,6 @@ div.container.home-page {
       padding: 10px 15px 5px;
       border-radius: 23px;
       align-items: center;
-      box-shadow: rgba(0, 0, 0, 0.4) 0px 30px 90px;
       text-align: center;
       display: flex;
       flex-wrap: wrap;
@@ -62,7 +62,7 @@ div.container.home-page {
   }
   .carousel {
     position: relative;
-    bottom: 5vh;
+    margin: 1em 0;
     h3 {
       text-transform: uppercase;
       font-size: 3em;
@@ -113,7 +113,7 @@ div.footer {
   display: flex;
   overflow: hidden;
   position: relative;
-  top: 70vh;
+  top: 75vh;
   justify-content: space-between;
   flex-wrap: wrap;
   background-color: #6c8ea4;
@@ -254,7 +254,6 @@ div.footer {
     > div {
       margin: 10px !important;
       justify-content: center !important;
-      box-shadow: rgba(0, 0, 0, 0.4) 0px 30px 90px;
       width: 40%;
       border-radius: 15px;
       background-color: white;
@@ -291,7 +290,6 @@ div.footer {
     width: 90vw;
     div.container-usd {
       transform: translateX(0%) !important;
-      box-shadow: none !important;
       display: flex;
       transition-duration: 1s;
       flex-wrap: wrap;
@@ -322,10 +320,11 @@ div.footer {
         }
       }
     }
-    div.footer {
-      x`.animate__animated {
-        margin-bottom: 1.5em;
-      }
+  }
+  div.footer {
+    .animate__animated {
+      font-size: 1.5em !important;
+      margin-bottom: 1.5em !important;
     }
   }
 }

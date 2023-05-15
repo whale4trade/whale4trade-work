@@ -6,7 +6,7 @@ const About = (props) => {
       {" "}
       <div className="about ">
         <h1 className=" animate__animated animate__pulse animate__infinite">
-          About Us
+          About us
         </h1>
 
         <Typed

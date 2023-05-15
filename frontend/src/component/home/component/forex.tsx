@@ -27,8 +27,7 @@ const Forex = () => {
   useEffect(() => {
     fetchForex();
   }, []);
-  const [btcToUsd, setBtcToUsd] = useState(null);
-
+  const [btcToUsd, setBtcToUsd] = useState<any>(null);
   useEffect(() => {
     axios
       .get("https://api.coindesk.com/v1/bpi/currentprice.json")
