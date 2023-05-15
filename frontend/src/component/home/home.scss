@@ -129,7 +129,7 @@ div.footer {
       padding-top: 15px;
       height: 0;
       font-size: 2.4em;
-      margin: 0.5em;
+      margin-bottom: 1em;
       width: 100%;
       font-weight: bold;
       color: white;
@@ -320,6 +320,11 @@ div.footer {
             width: 100% !important;
           }
         }
+      }
+    }
+    div.footer {
+      x`.animate__animated {
+        margin-bottom: 1.5em;
       }
     }
   }
