@@ -6,6 +6,7 @@ type Bundle = {
 	timeCreated: any
 	ImgBundle: string
 	category: string
+	description: string
 }
 
 export default Bundle
