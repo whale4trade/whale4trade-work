@@ -172,8 +172,12 @@ div.footer {
     bottom: 0;
     width: fit-content;
     z-index: 1354678697564346;
+    img {
+      width: 5em;
+      border-radius: 26px;
+    }
     .star {
-      font-size: 3em;
+      font-size: 1em;
       bottom: 0.5em;
       right: 0.5em;
       color: #0cc1fe;
@@ -191,7 +195,7 @@ div.footer {
         color: #ff1361;
         & ~ div {
           transition-duration: 0.3s;
-          transform: translateY(-1px);
+          transform: translateY(-20px);
         }
       }
     }
@@ -224,7 +228,9 @@ div.footer {
           right: 3em;
         }
         svg {
-          font-size: 2em;
+          transition-duration: 0.3s;
+
+          font-size: 3em;
           // position: none;
           color: #ff1361;
 
