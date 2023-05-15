@@ -3,19 +3,22 @@
 * {
   font-family: "DM Sans", sans-serif;
 }
-body {
-  background-color: #f3f3f3 !important;
-}
-img.img-background {
+// body {
+//   background-color: #f3f3f3 !important;
+// }
+div.img-background {
   width: 98.5vw;
   border-radius: 15px;
   position: absolute;
   top: 0;
   left: 0;
   height: 70vh;
+  background-image: url("../../image/wallpaperflare.com_wallpaper (6).jpg"); /* replace with your image path */
+  background-size: cover;
+  background-repeat: round;
 }
 div.container.home-page {
-  background-color: #f3f3f3;
+  // background-color: #f3f3f3;
   width: 100vw;
   position: relative;
   top: 70vh;
@@ -237,6 +240,9 @@ div.footer {
 }
 
 @media (max-width: 990px) {
+  div.img-background {
+    background-image: url("../../image/photo_2023-05-14_05-05-59.jpg"); /* replace with your image path */
+  }
   div.container-usd {
     transform: translateX(0%) !important;
     display: flex;

@@ -93,7 +93,7 @@ const Login = () => {
           <div className="active">{err && err}</div>
           {/* <input value="Login" type="submit" className="btn btn-primary" /> */}
 
-          <Link to="#" onClick={(e) => handleClick(e)}>
+          <Link to="#" onClick={(e) => handleClick(e)} type="submit">
             <span></span>
             <span></span>
             <span></span>
@@ -104,7 +104,6 @@ const Login = () => {
           <Link to="/register" className="reg">
             Don't you have an account?
           </Link>
-
           <Link to="/register">
             <span></span>
             <span></span>
