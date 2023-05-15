@@ -3,9 +3,11 @@
 * {
   font-family: "DM Sans", sans-serif;
 }
-
+body {
+  background-color: #f3f3f3 !important;
+}
 img.img-background {
-  width: 99vw;
+  width: 98.5vw;
   border-radius: 15px;
   position: absolute;
   top: 0;
@@ -13,6 +15,7 @@ img.img-background {
   height: 70vh;
 }
 div.container.home-page {
+  background-color: #f3f3f3;
   width: 100vw;
   position: relative;
   top: 70vh;
@@ -121,8 +124,8 @@ div.footer {
     width: 100%;
     .animate__animated {
       text-align: center;
-      margin: 0 0 20px;
-      padding: 15px 0;
+      padding-top: 15px;
+      height: 0;
       font-size: 3em;
       width: 100%;
       font-weight: bold;
@@ -139,7 +142,7 @@ div.footer {
       text-transform: uppercase;
       font-weight: bold;
       text-align: center;
-      width: 50%;
+      width: 90%;
       background-color: white;
 
       background-size: auto auto;
@@ -173,7 +176,7 @@ div.footer {
       font-size: 3em;
       bottom: 0.5em;
       right: 0.5em;
-      color: rgb(97, 97, 236);
+      color: #0cc1fe;
       position: absolute;
       transition-duration: 0.3s;
       cursor: pointer;
@@ -268,7 +271,7 @@ div.footer {
   }
 
   div.footer {
-    top: 25vh !important;
+    top: 30vh !important;
     .typing {
       font-size: 0.7em !important;
       line-height: 1.5em;
@@ -277,36 +280,42 @@ div.footer {
   }
 }
 @media (max-width: 800px) {
-  div.container-usd {
-    transform: translateX(0%) !important;
-    box-shadow: none !important;
-    display: flex;
-    transition-duration: 1s;
-    margin: 0 auto 70vh !important;
-    flex-wrap: wrap;
+  img.img-background {
+    width: 97vw;
+  }
+  div.container.home-page {
+    width: 90vw;
+    div.container-usd {
+      transform: translateX(0%) !important;
+      box-shadow: none !important;
+      display: flex;
+      transition-duration: 1s;
+      margin: 0 auto 70vh !important;
+      flex-wrap: wrap;
 
-    width: 100% !important;
+      width: 100% !important;
 
-    justify-content: space-between;
-    > div {
-      padding: 10px !important;
-      img {
-        width: 38% !important;
-      }
-      span.name-usd {
-        margin: 0 5px;
-        font-size: 1em !important;
-      }
-      span.number-used {
-        font-size: 1em !important;
+      justify-content: space-between;
+      > div {
+        padding: 10px !important;
+        img {
+          width: 38% !important;
+        }
+        span.name-usd {
+          margin: 0 5px;
+          font-size: 1em !important;
+        }
+        span.number-used {
+          font-size: 1em !important;
+        }
       }
     }
-  }
-  .carousel-inner {
-    .carousel-item {
-      &.active {
-        img {
-          width: 100% !important;
+    .carousel-inner {
+      .carousel-item {
+        &.active {
+          img {
+            width: 100% !important;
+          }
         }
       }
     }

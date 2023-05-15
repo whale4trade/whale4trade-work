@@ -1,17 +1,7 @@
 import { NavLink } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faTelegram,
-  faInstagram,
-  faDiscord,
-  faWhatsapp,
-  faTiktok,
-} from "@fortawesome/free-brands-svg-icons";
-import {
-  faStar,
-  faComment,
-  faCommentSms,
-} from "@fortawesome/free-solid-svg-icons";
+import { faTelegram } from "@fortawesome/free-brands-svg-icons";
+import { faComments } from "@fortawesome/free-solid-svg-icons";
 import React, { useState } from "react";
 
 const Contact = (props) => {
@@ -26,7 +16,7 @@ const Contact = (props) => {
         <FontAwesomeIcon
           className={`star ${isActive ? "active" : ""}`}
           onClick={handleClick}
-          icon={faCommentSms}
+          icon={faComments}
         />
         <div className="icon">
           {/* <NavLink to="">

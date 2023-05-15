@@ -36,7 +36,11 @@ const Bundle = (props) => {
         <div className="carousel-inner">
           {saveGetBundle.map((p: any): any => (
             <>
-              <div className="carousel-item active" data-bs-interval="10000">
+              <div
+                key={p.id}
+                className="carousel-item active"
+                data-bs-interval="10000"
+              >
                 <img
                   src={`${env.ver}/image/${p.imgbundle}`}
                   onClick={() => handelNavigate()}

@@ -305,10 +305,6 @@
   --message-btn: rgba(195, 207, 244, 0.1);
 }
 
-body {
-  background-color: var(--app-container) !important;
-}
-
 .dashboard {
   position: relative;
   top: 10em;
