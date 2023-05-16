@@ -2,9 +2,9 @@ import axios from "axios";
 import env from "../../../environments/enviroments";
 import { useState, useEffect } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
-import img from "../../../image/blank-profile-picture-gc8e2267bd_1280.png";
 // import img2 from "../../../../../api/images/1681819307935.png";
 import Win from "./win";
+import ImgUser from "./imgUser";
 
 const UserProfile = () => {
   const [isActive, setIsActive] = useState(false);
@@ -114,7 +114,7 @@ const UserProfile = () => {
   return (
     <div className="user">
       <div className="photo">
-        <img src={img} alt="" />
+        <ImgUser user={dataUser} />
       </div>
       <div className="info">
         <span className="name">
