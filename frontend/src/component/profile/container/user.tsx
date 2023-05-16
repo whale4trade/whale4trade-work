@@ -8,7 +8,7 @@ import ImgUser from "./imgUser";
 
 const UserProfile = () => {
   const [isActive, setIsActive] = useState(false);
-  const [dataUser, setDataUser] = useState({
+  const [dataUser, setDataUser] = useState<any>({
     username: "ll",
     email: "dd",
     number: "2",
@@ -23,14 +23,25 @@ const UserProfile = () => {
 
   const handelChange = (e) => {
     setDataUser((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+    console.log(dataUser);
   };
   const handleUpdate = async (e) => {
     e.preventDefault();
+
     try {
       await axios
         .patch(
           `${env.url}/users/${JSON.parse(localStorage.user).id}`,
-          dataUser,
+          {
+            email: dataUser.email,
+            username: dataUser.username,
+            number: dataUser.number,
+            imgprofile: dataUser.imgprofile,
+            bundleName: dataUser.bundlename,
+            bundleId: dataUser.bundleid,
+            statusAccess: dataUser.statusaccess,
+            id: dataUser.id,
+          },
           {
             withCredentials: true,
           }
@@ -228,12 +239,6 @@ const UserProfile = () => {
                       type="number"
                       onChange={handelChange}
                       name="number"
-                      placeholder="your new number"
-                    />
-                    <input
-                      type="file"
-                      onChange={handelChange}
-                      name="imgprofile"
                       placeholder="your new number"
                     />
                   </div>

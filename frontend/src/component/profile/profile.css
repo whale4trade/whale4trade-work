@@ -46,7 +46,9 @@
   align-items: center;
 }
 .profile > div.user div.photo img {
+  height: 100px;
   width: 100%;
+  cursor: pointer;
   border-radius: 23px;
 }
 .profile > div.user .name-ed {
