@@ -20,19 +20,17 @@ const ImgUser = (props) => {
       })
       .then((res) => {
         try {
-          axios.patch(
-            `${env.url}/users/img/${JSON.parse(localStorage.user).id}`,
-            {
+          axios
+            .patch(`${env.url}/users/img/${JSON.parse(localStorage.user).id}`, {
               id: JSON.parse(localStorage.user).id,
               imgprofile: res.data,
-            }
-          );
+            })
+            .then(() => {
+              window.location.reload();
+            });
         } catch (error) {
           console.log(error);
         }
-      })
-      .then(() => {
-        window.location.reload();
       })
 
       .catch((error) => {});
