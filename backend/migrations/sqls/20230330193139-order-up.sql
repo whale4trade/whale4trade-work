@@ -10,6 +10,6 @@
  userId uuid REFERENCES users(id),
  price VARCHAR(200),
  win VARCHAR(200),
- timeBuy Date
+ timeBuy VARCHAR(200)
  )
 ;
