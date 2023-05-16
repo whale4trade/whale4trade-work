@@ -42,7 +42,7 @@ class Navbar extends React.Component<NavbarProps, NavbarState> {
     };
 
     return (
-      <nav className={`navbar navbar-expand-md ${this.state.bgDark} h-70`}>
+      <nav className={`navbar navbar-expand-md bg-light h-70`}>
         <div className="container-fluid">
           <NavLink className="navbar-brand" to="/">
             Whale4Trade

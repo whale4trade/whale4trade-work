@@ -7,13 +7,12 @@ body {
   background-color: #f3f3f3 !important;
 }
 div.img-background {
-  width: 99vw;
+  width: 98.6vw;
   border-radius: 15px;
-
   position: absolute;
   top: 0;
   left: 0;
-  height: 70vh;
+  height: 75vh;
   background-image: url("../../image/wallpaperflare.com_wallpaper (6).jpg"); /* replace with your image path */
   background-size: cover;
   background-repeat: round;
@@ -245,6 +244,7 @@ div.footer {
 @media (max-width: 990px) {
   div.img-background {
     background-image: url("../../image/photo_2023-05-14_05-05-59.jpg"); /* replace with your image path */
+    width: 98vw;
   }
   div.container-usd {
     transform: translateX(0%) !important;
@@ -287,7 +287,7 @@ div.footer {
 }
 @media (max-width: 800px) {
   img.img-background {
-    width: 97vw;
+    width: 96vw !important;
   }
   div.container.home-page {
     width: 90vw;
@@ -325,6 +325,7 @@ div.footer {
     }
   }
   div.footer {
+    height: 16em;
     .animate__animated {
       font-size: 1.5em !important;
       margin-bottom: 1.5em !important;

@@ -1,13 +1,39 @@
 .profile {
   > div {
     &.url {
+      width: 100% !important;
       min-height: fit-content !important;
       position: relative;
       padding-top: 2em;
       height: fit-content;
-      a {
-        width: fit-content;
-        display: block;
+      .btn {
+        background: white;
+        color: #0d6efd;
+        border: none;
+        margin: 0;
+        opacity: 1;
+        font-size: 1.2em;
+        text-transform: uppercase;
+        font-weight: bold;
+
+        background-image: linear-gradient(
+          -225deg,
+          #231557 0%,
+          #44107a 29%,
+          #ff1361 67%,
+          #fff800 100%
+        );
+        background-size: auto auto;
+        background-clip: border-box;
+        background-size: 200% auto;
+        color: #fff;
+        background-clip: text;
+        text-fill-color: transparent;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        animation: textclip 2s linear infinite;
+        display: inline-block;
+        display: inline;
       }
       .icon {
         position: absolute;
@@ -40,6 +66,18 @@
           -webkit-text-fill-color: transparent;
           animation: textclip 2s linear infinite;
           display: inline-block;
+        }
+      }
+    }
+  }
+}
+@media (max-width: 800px) {
+  .profile {
+    > div {
+      &.url {
+        .btn {
+          margin: 0;
+          font-size: 0.7em;
         }
       }
     }
