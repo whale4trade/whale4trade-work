@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import BundleF from "./component/title";
 import env from "../../../../environments/enviroments";
-import Dollar from "./component/dollar";
 
 const Bundle = (props) => {
   const [bundleDash, setBundleDash] = useState<any>([]);
@@ -53,7 +52,6 @@ const Bundle = (props) => {
     <>
       <div className="container c-bundle">
         <BundleF bundleDash={bundleDash} />
-        <Dollar />
         <div className="bundle">
           {bundleDash.map((b: any) => (
             <>

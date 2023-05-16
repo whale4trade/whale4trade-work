@@ -17,15 +17,11 @@
       svg {
         transition-duration: 0.3s;
         cursor: pointer;
-        &:hover {
-          transition-duration: 0.3s;
-          font-size: 1em;
-        }
       }
     }
     .con-users {
       display: flex;
-      justify-content: center;
+      justify-content: start;
       align-items: center;
       flex-wrap: wrap;
       img {
@@ -41,16 +37,12 @@
         cursor: pointer;
         text-align: center;
         transition-duration: 0.3s;
-        &:hover {
-          transition-duration: 0.3s;
-          margin: 1.2em;
-          padding: 2.3em;
-        }
+
         .title-u {
           text-transform: capitalize;
         }
         .get {
-          color: rgba(255, 0, 0, 0.582);
+          color: #0b5ed7;
           font-size: 1.3em;
         }
       }
@@ -60,7 +52,7 @@
     text-transform: capitalize;
   }
   .get {
-    color: rgba(255, 0, 0, 0.582);
+    color: #0b5ed7;
     font-size: 1.3em;
   }
   .info,
@@ -84,5 +76,14 @@
     padding: 1em;
     border-radius: 20px;
     margin: 0.5em;
+  }
+}
+@media (max-width: 900px) {
+  .dashboard {
+    .users {
+    }
+    div.container-user {
+      width: 100% !important;
+    }
   }
 }

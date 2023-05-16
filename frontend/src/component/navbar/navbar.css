@@ -28,15 +28,19 @@ nav.bg-light .container-fluid .navbar-toggler {
 }
 nav.bg-light .container-fluid .navbar-brand {
   color: #333 !important;
+  font-size: 1em !important;
 }
 nav.bg-light .container-fluid .navbar-collapse ul li a {
   color: #333;
   opacity: 0.5;
+  font-size: 1em;
 }
 nav.bg-light .container-fluid .navbar-collapse ul li a:hover {
   opacity: 1;
+  font-size: 1.3em;
 }
 nav.bg-light .container-fluid .navbar-collapse ul li a.active {
+  font-size: 1.3em;
   background-color: #333 !important;
   color: white !important;
 }

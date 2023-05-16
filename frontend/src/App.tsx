@@ -24,6 +24,7 @@ import Bundle from "./component/dashboard/component/bundle/bundle";
 import Reset from "./component/reset/reset";
 import UpdatePass from "./component/updatePassword/pass";
 import ImageList from "./get";
+import Do from "./component/dashboard/component/dollar/do";
 function App() {
   return (
     <>
@@ -44,6 +45,7 @@ function App() {
           <Route index element={<Dashboard />} />
           <Route path="" element={<Users />} />
           <Route path="bundle" element={<Bundle />} />
+          <Route path="dollar" element={<Do />} />
         </Route>
         <Route path="*" element={<NotFound />} />
       </Routes>

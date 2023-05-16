@@ -27,6 +27,7 @@ nav {
       }
       .navbar-brand {
         color: #333 !important;
+        font-size: 1em !important;
       }
       .navbar-collapse {
         ul {
@@ -34,10 +35,13 @@ nav {
             a {
               color: #333;
               opacity: 0.5;
+              font-size: 1em;
               &:hover {
                 opacity: 1;
+                font-size: 1.3em;
               }
               &.active {
+                font-size: 1.3em;
                 background-color: #333 !important;
                 color: white !important;
               }

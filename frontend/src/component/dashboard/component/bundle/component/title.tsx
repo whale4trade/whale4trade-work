@@ -52,7 +52,6 @@ const BundleF = (props) => {
       })
       .catch((error) => {});
   };
-  console.log(input);
 
   const handelChange = (e) => {
     setInput((prev) => ({ ...prev, [e.target.name]: e.target.value }));

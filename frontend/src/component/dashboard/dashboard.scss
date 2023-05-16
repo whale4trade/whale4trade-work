@@ -4,6 +4,7 @@
 // @import "../component/select/style/select";
 // @import "../component/server/style/server";
 @import "./component/bundle/style/bundle";
+@import "./component/dollar/do";
 // @import "../component/chat/style/chat";
 * {
   box-sizing: border-box;
@@ -56,4 +57,12 @@
 .dashboard {
   position: relative;
   top: 10em;
+}
+
+.dollar-co {
+  position: absolute;
+  left: 50%;
+}
+.modal {
+  z-index: 2345678765432345678765434567654 !important;
 }

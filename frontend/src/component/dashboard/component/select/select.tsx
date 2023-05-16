@@ -1,5 +1,5 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faUsers, faB, faServer } from "@fortawesome/free-solid-svg-icons";
+import { faUsers, faB, faDollarSign } from "@fortawesome/free-solid-svg-icons";
 import { NavLink } from "react-router-dom";
 
 const Select = () => {
@@ -13,10 +13,10 @@ const Select = () => {
         <FontAwesomeIcon className="select-bundle" icon={faB} />
         <span className="title-s">Bundle</span>
       </NavLink>
-      {/* <NavLink className="select-server" to="server">
-        <FontAwesomeIcon className="select-server" icon={faServer} />
+      <NavLink className="select-server" to="dollar">
+        <FontAwesomeIcon className="select-server" icon={faDollarSign} />
         <span className="title-s">server</span>
-      </NavLink> */}
+      </NavLink>
     </>
   );
 };

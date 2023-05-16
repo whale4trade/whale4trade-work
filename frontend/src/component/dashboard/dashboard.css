@@ -20,14 +20,6 @@
   cursor: pointer;
   transition-duration: 0.3s;
 }
-.idk a:hover {
-  font-size: 1.6em;
-  transition-duration: 0.3s;
-  opacity: 1;
-}
-.idk a:hover > .title-s {
-  display: block;
-}
 .idk a.active {
   transition-duration: 0.3s;
   width: 100%;
@@ -56,13 +48,27 @@
 }
 
 @media (max-width: 900px) {
+  .idk {
+    width: 100%;
+    height: -moz-fit-content;
+    height: fit-content;
+    display: flex;
+    z-index: 45678;
+    justify-content: space-around;
+    align-items: center;
+    top: -90px;
+    flex-direction: row;
+    position: absolute;
+  }
+  .idk a {
+    width: -moz-fit-content !important;
+    width: fit-content !important;
+    border-radius: 32% !important;
+  }
   .idk a svg {
     margin: 1em 0.5em;
     font-size: 1.2em;
     padding: 10px 0 10px 10px;
-  }
-  .idk a:hover {
-    font-size: 1.5em;
   }
 }
 .dashboard .users {
@@ -87,13 +93,9 @@
   transition-duration: 0.3s;
   cursor: pointer;
 }
-.dashboard .users .title svg:hover {
-  transition-duration: 0.3s;
-  font-size: 1em;
-}
 .dashboard .users .con-users {
   display: flex;
-  justify-content: center;
+  justify-content: start;
   align-items: center;
   flex-wrap: wrap;
 }
@@ -112,23 +114,18 @@
   text-align: center;
   transition-duration: 0.3s;
 }
-.dashboard .users .con-users div.container-user:hover {
-  transition-duration: 0.3s;
-  margin: 1.2em;
-  padding: 2.3em;
-}
 .dashboard .users .con-users div.container-user .title-u {
   text-transform: capitalize;
 }
 .dashboard .users .con-users div.container-user .get {
-  color: rgba(255, 0, 0, 0.582);
+  color: #0b5ed7;
   font-size: 1.3em;
 }
 .dashboard .title-u {
   text-transform: capitalize;
 }
 .dashboard .get {
-  color: rgba(255, 0, 0, 0.582);
+  color: #0b5ed7;
   font-size: 1.3em;
 }
 .dashboard .info,
@@ -156,6 +153,11 @@
   margin: 0.5em;
 }
 
+@media (max-width: 900px) {
+  .dashboard div.container-user {
+    width: 100% !important;
+  }
+}
 .dashboard .c-bundle {
   width: -moz-fit-content;
   width: fit-content;
@@ -171,7 +173,7 @@
   font-size: 2em;
   border-bottom: 2px solid #ddd;
   display: flex;
-  justify-content: space-between;
+  justify-content: start;
   padding: 20px 15px;
 }
 .dashboard .c-bundle .title svg {
@@ -245,6 +247,8 @@
     background-color: var(--app-container);
     padding: 1em;
     border-radius: 32px;
+    width: -moz-fit-content !important;
+    width: fit-content !important;
     transition-duration: 0.3s;
     height: -moz-fit-content;
     height: fit-content;
@@ -308,4 +312,13 @@
 .dashboard {
   position: relative;
   top: 10em;
+}
+
+.dollar-co {
+  position: absolute;
+  left: 50%;
+}
+
+.modal {
+  z-index: 2345678765432345600000000000000 !important;
 }/*# sourceMappingURL=dashboard.css.map */

@@ -15,7 +15,7 @@
       font-size: 2em;
       border-bottom: 2px solid #ddd;
       display: flex;
-      justify-content: space-between;
+      justify-content: start;
       padding: 20px 15px;
       svg {
         transition-duration: 0.3s;
@@ -99,6 +99,7 @@
         background-color: var(--app-container);
         padding: 1em;
         border-radius: 32px;
+        width: fit-content !important;
         transition-duration: 0.3s;
         height: fit-content;
         cursor: pointer;

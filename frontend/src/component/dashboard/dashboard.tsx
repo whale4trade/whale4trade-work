@@ -8,6 +8,7 @@ import { useNavigate } from "react-router-dom";
 import env from "../../environments/enviroments";
 import axios from "axios";
 import { useEffect } from "react";
+import Do from "./component/dollar/do";
 const Dashboard = () => {
   const navigate = useNavigate();
 
@@ -35,6 +36,7 @@ const Dashboard = () => {
           <Routes>
             <Route path="/" element={<Users />} />
             <Route path="/bundle" element={<Bundle />} />
+            <Route path="/dollar" element={<Do />} />
           </Routes>
         </div>
       </div>

@@ -91,7 +91,6 @@ const Login = () => {
             <label>Password</label>
           </div>
           <div className="active">{err && err}</div>
-          {/* <input value="Login" type="submit" className="btn btn-primary" /> */}
 
           <Link to="#" onClick={(e) => handleClick(e)} type="submit">
             <span></span>
@@ -100,16 +99,19 @@ const Login = () => {
             <span></span>
             Submit
           </Link>
-          <Link to="/reset">reset password</Link>
-          <Link to="/register" className="reg">
-            Don't you have an account?
+          <Link to="/reset">
+            {" "}
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>reset password
           </Link>
           <Link to="/register">
             <span></span>
             <span></span>
             <span></span>
             <span></span>
-            register
+            Don't you have an account?
           </Link>
         </form>
       </div>

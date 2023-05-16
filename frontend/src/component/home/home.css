@@ -158,10 +158,10 @@ div.footer div.contact {
   width: 100%;
   position: fixed;
   right: 0;
+  z-index: -456789654356789;
   bottom: 0;
   width: -moz-fit-content;
   width: fit-content;
-  z-index: 1354678697564346;
 }
 div.footer div.contact img {
   width: 5em;

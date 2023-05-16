@@ -77,13 +77,13 @@ const Title = (props) => {
           }, 3000);
         }
       } else {
-        setErr("please check username");
+        setErr("please check email");
         setTimeout(() => {
           setErr("");
         }, 3000);
       }
     } else {
-      setErr("please check email");
+      setErr("please check username");
       setTimeout(() => {
         setErr("");
       }, 3000);
@@ -156,16 +156,17 @@ const Title = (props) => {
                 />
                 <input
                   onChange={handelChange}
-                  type="number"
-                  name="number"
-                  placeholder="number"
-                />
-                <input
-                  onChange={handelChange}
                   type="password"
                   name="password"
                   placeholder="password"
                 />
+                <input
+                  onChange={handelChange}
+                  type="number"
+                  name="number"
+                  placeholder="number"
+                />
+
                 <input
                   onChange={handelChange}
                   type="file"

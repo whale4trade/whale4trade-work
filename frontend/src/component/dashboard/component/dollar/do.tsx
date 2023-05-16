@@ -1,8 +1,7 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
-import env from "../../../../../environments/enviroments";
-
-const Dollar = () => {
+import env from "../../../../environments/enviroments";
+const Do = () => {
   const [dollar, setDollar] = useState<any>("");
   const [input, setInput] = useState({
     dollar: "",
@@ -33,7 +32,7 @@ const Dollar = () => {
     <>
       <input
         type="button"
-        className="btn btn-primary"
+        className="btn btn-primary dollar-co"
         data-bs-toggle="modal"
         data-bs-target="#exampleModalDollar"
         value={`
@@ -87,4 +86,4 @@ const Dollar = () => {
   );
 };
 
-export default Dollar;
+export default Do;
