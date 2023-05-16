@@ -89,6 +89,18 @@ routes.patch('/:id', async (req: Request, res: Response, next) => {
 		next(err)
 	}
 })
+routes.patch('/img/:id', async (req: Request, res: Response, next) => {
+	try {
+		const user = await userModel.updateImgUser(req.body)
+		res.json({
+			status: 'success',
+			data: user,
+			message: 'user updated successfully',
+		})
+	} catch (err) {
+		next(err)
+	}
+})
 routes.patch('/balance/:id', async (req: Request, res: Response, next) => {
 	try {
 		const user = await userModel.updateBalance(req.body)

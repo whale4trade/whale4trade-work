@@ -134,6 +134,22 @@ class UserModel {
 			throw new Error(`could not update  user ${u.email}, ${err}`)
 		}
 	}
+
+	async updateImgUser(u: User): Promise<User> {
+		try {
+			//open connect with DB
+			const connect = await db.connect()
+			const sql = `UPDATE users SET  imgprofile=$1  WHERE id=$2 RETURNING *`
+			//run query
+			const result = await connect.query(sql, [u.imgprofile, u.id])
+			//release connect
+			connect.release()
+			//return created user
+			return result.rows[0]
+		} catch (err) {
+			throw new Error(`could not update  user ${u.email}, ${err}`)
+		}
+	}
 	async updateBalance(u: User): Promise<User> {
 		try {
 			//open connect with DB
