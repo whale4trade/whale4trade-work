@@ -1,11 +1,18 @@
 import img from "../../../image/blank-profile-picture-gc8e2267bd_1280.png";
-
+import env from "../../../environments/enviroments";
 const ImgUser = (props) => {
-  console.log(props.user);
+  console.log();
 
   return (
     <>
-      <img src={`${img}`} alt="" />
+      <img
+        src={`${
+          props.user.imgprofile === ""
+            ? img
+            : `${env.ver}/image/${props.user.imgprofile}`
+        }`}
+        alt=""
+      />
     </>
   );
 };

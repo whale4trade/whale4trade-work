@@ -40,14 +40,18 @@ const UpdatePass = () => {
   }, []);
   return (
     <>
-      <input type="email" value={email} disabled />
-      <input type="password" name="password" onChange={handelChange} />
-      <input
-        type="button"
-        value="reset"
-        className="btn btn-primary"
-        onClick={update}
-      />
+      <div className="back"></div>
+
+      <div className="container update-pass">
+        <input type="email" value={email} disabled />
+        <input type="password" name="password" onChange={handelChange} />
+        <input
+          type="button"
+          value="reset"
+          className="btn btn-primary"
+          onClick={update}
+        />
+      </div>
     </>
   );
 };

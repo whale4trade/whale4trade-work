@@ -2,6 +2,7 @@ import { useState } from "react";
 import axios from "axios";
 import env from "../../environments/enviroments";
 import { useNavigate, Link } from "react-router-dom";
+import "./reset.css";
 
 const Reset = () => {
   const [input, setInput] = useState({
@@ -19,21 +20,38 @@ const Reset = () => {
         .get(`${env.url}/users/email/${input.email}`)
         .then((res) =>
           res.data.data === undefined
-            ? setErr("not found")
+            ? setErr("not found please confirm your email")
             : navigate(`/reset/auth/${input.email}/`)
         );
     } catch (error) {}
   };
+  console.log();
+
   return (
     <>
-      <input type="email" name="email" onChange={handelChange} />
-      <input
-        type="button"
-        className="btn btn-primary"
-        value="Search"
-        onClick={search}
-      />
-      <div>{err}</div>
+      <div className="back"></div>
+      <div className="reset container">
+        {/* <input type="email" /> */}
+        <div className="input-group input-group-sm mb-3">
+          <input
+            type="button"
+            className="btn btn-primary"
+            placeholder="Search your email"
+            value="Search"
+            onClick={search}
+          />
+
+          <input
+            name="email"
+            onChange={handelChange}
+            type="text"
+            className="form-control"
+            aria-label="Sizing example input"
+            aria-describedby="inputGroup-sizing-sm"
+          />
+        </div>
+        <div>{err}</div>
+      </div>
     </>
   );
 };
