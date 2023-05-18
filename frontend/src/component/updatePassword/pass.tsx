@@ -6,7 +6,7 @@ import { useNavigate, Link } from "react-router-dom";
 const UpdatePass = () => {
   const navigate = useNavigate();
 
-  const email = window.location.href.slice(33, -1);
+  const email = window.location.pathname.slice(12, -1);
 
   const [input, setInput] = useState({
     password: "",

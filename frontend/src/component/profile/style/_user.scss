@@ -16,10 +16,12 @@
         justify-content: center;
         align-items: center;
         img {
-          height: 100px;
+          height: 9em;
           width: 100%;
           cursor: pointer;
           border-radius: 23px;
+          aspect-ratio: 4/3;
+          object-fit: contain;
         }
       }
       .name-ed {

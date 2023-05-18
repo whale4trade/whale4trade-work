@@ -46,10 +46,13 @@
   align-items: center;
 }
 .profile > div.user div.photo img {
-  height: 100px;
+  height: 9em;
   width: 100%;
   cursor: pointer;
   border-radius: 23px;
+  aspect-ratio: 4/3;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 .profile > div.user .name-ed {
   position: relative;
