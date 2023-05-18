@@ -11,10 +11,10 @@
     .user-box {
       input {
         width: 100%;
-        padding: 1em 0;
-        font-size: 0.9em;
+        padding: 0.6em 0;
+        font-size: 0.8em;
         color: #fff;
-        margin-bottom: 1em;
+        margin-bottom: 0.6em;
         border: none;
         border-bottom: 1px solid #fff;
         outline: none;
@@ -25,19 +25,20 @@
       border-radius: 5px;
       border: none;
       width: 100%;
+      font-size: 0.6em;
     }
     form {
       a {
         position: relative;
         display: inline-block;
-        padding: 1em 2em;
+        padding: 0.5em 1em;
         color: #03e9f4;
-        font-size: 1em;
+        font-size: 0.7em;
         text-decoration: none;
         text-transform: uppercase;
         overflow: hidden;
         transition: 0.5s;
-        margin-top: 1em;
+        margin-top: 0.3em;
         letter-spacing: 4px;
       }
     }
