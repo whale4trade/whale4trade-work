@@ -113,6 +113,7 @@ div.footer {
   overflow: hidden;
   position: relative;
   top: 75vh;
+  z-index: 345678765432345678765434;
   justify-content: space-between;
   flex-wrap: wrap;
   background-color: #6c8ea4;
@@ -168,7 +169,7 @@ div.footer {
     width: 100%;
     position: fixed;
     right: 0;
-    z-index: -456789654356789;
+    z-index: -4;
     bottom: 0;
     width: fit-content;
     img {

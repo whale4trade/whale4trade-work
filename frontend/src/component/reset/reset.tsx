@@ -23,34 +23,33 @@ const Reset = () => {
             ? setErr("not found please confirm your email")
             : navigate(`/reset/auth/${input.email}/`)
         );
-    } catch (error) {}
+    } catch (error) {
+      console.log(error);
+    }
   };
-  console.log();
 
   return (
     <>
       <div className="back"></div>
-      <div className="reset container">
-        {/* <input type="email" /> */}
-        <div className="input-group input-group-sm mb-3">
-          <input
-            type="button"
-            className="btn btn-primary"
-            placeholder="Search your email"
-            value="Search"
-            onClick={search}
-          />
 
-          <input
-            name="email"
-            onChange={handelChange}
-            type="text"
-            className="form-control"
-            aria-label="Sizing example input"
-            aria-describedby="inputGroup-sizing-sm"
-          />
-        </div>
-        <div>{err}</div>
+      <div className="login-box">
+        <h2>Reset Password</h2>
+        <form method="POST">
+          <div className="user-box">
+            <input type="text" name="email" onChange={handelChange} />
+            <label>Email</label>
+          </div>
+
+          <div className="active">{err && err}</div>
+
+          <Link to="" type="submit" onClick={search}>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            Search your email
+          </Link>
+        </form>
       </div>
     </>
   );

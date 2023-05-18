@@ -6,25 +6,144 @@ import axios from "axios";
 import env from "../../environments/enviroments";
 
 const Register = () => {
+  const navigate = useNavigate();
   const [input, setInput] = useState({
-    balance: "",
     email: "",
-    fileIdBack: "",
-    fileIdFront: "",
-    imgProfile: "",
-    number: "",
-    statusAccess: "",
+    sent: "",
     username: "",
+    number: "",
     password: "",
+    fileIdFront: "",
+    fileIdBack: "",
+    balance: "",
+    imgProfile: "",
+    statusAccess: "",
+    conditions: "",
   });
-  const handelChange = (e) => {
-    setInput((prev) => ({ ...prev, [e.target.name]: e.target.value }));
-  };
+  const [err, setErr] = useState<any>(false);
+  const [file, setFile] = useState<any>(null);
+
   const [code, setCode] = useState<any>("");
   const [send, setSend] = useState<any>("");
+  const [isActive, setIsActive] = useState(false);
   useEffect(() => {
     setCode(Math.floor(Math.random() * 999999));
   }, []);
+  const [confirm, setConfirm] = useState<any>("");
+  const errorFunction = (req) => {
+    setErr(`check your ${req} `);
+    setTimeout(() => {
+      setErr("");
+    }, 6000);
+  };
+  const handelChange = (e) => {
+    setInput((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+  };
+
+  const ifEmpty = () => {
+    if (input.email !== "") {
+      if (input.sent) {
+        if (input.username !== "") {
+          if (input.number !== "") {
+            if (input.password !== "") {
+              // if (input.fileIdFront !== "") {
+              if (input.conditions) {
+                shareEmail();
+              } else {
+                errorFunction("agreement");
+              }
+              // } else {
+              //   errorFunction("your Id front");
+              // }
+            } else {
+              errorFunction("password");
+            }
+          } else {
+            errorFunction("number");
+          }
+        } else {
+          errorFunction("username");
+        }
+      } else {
+        errorFunction("verification code in your email");
+      }
+    } else {
+      errorFunction("email");
+    }
+  };
+
+  const shareEmail = async () => {
+    try {
+      await axios
+        .post(`${env.url}/users/share`, { email: input.email })
+        .then((res) => {
+          setErr(`${res.data.message}`);
+          setTimeout(() => {
+            setErr("");
+          }, 6000);
+        });
+    } catch (error) {
+      uploadImgFront();
+      uploadImgBack();
+    }
+  };
+
+  const handleFileChange = (event) => {
+    setFile(event.target.files[0]);
+  };
+
+  const uploadImgFront = () => {
+    const formData = new FormData();
+    formData.append("image", file);
+    axios
+      .post(`${env.ver}/upload`, formData, {
+        headers: { "Content-Type": "multipart/form-data" },
+      })
+      .then((res) => {
+        input.fileIdFront = res.data;
+      });
+  };
+  const uploadImgBack = () => {
+    const formData = new FormData();
+    formData.append("image", file);
+    axios
+      .post(`${env.ver}/upload`, formData, {
+        headers: { "Content-Type": "multipart/form-data" },
+      })
+      .then((res) => {
+        input.fileIdBack = res.data;
+      })
+      .then(() => {
+        uploadImgFront();
+      })
+      .then(() => addUser());
+  };
+  const addUser = () => {
+    try {
+      axios
+        .post(`${env.url}/users`, {
+          username: `${input.username}`,
+          email: `${input.email}`,
+          number: `${input.number}`,
+          password: `${input.password}`,
+          imgprofile: ``,
+          balance: ``,
+          idNF: `${input.fileIdFront}`,
+          idNB: `${input.fileIdBack}`,
+          statusAccess: ``,
+        })
+
+        .then(() => {
+          setIsActive((current) => !current);
+          setTimeout(() => {
+            navigate("/login");
+          }, 3000);
+        });
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   const ver = async (email) => {
     try {
       await axios
@@ -33,7 +152,7 @@ const Register = () => {
           number: code,
         })
         .then((res) => {
-          console.log(res);
+          console.log(code);
           const send = () => setSend((current) => !current);
           send();
           setTimeout(() => {
@@ -44,19 +163,8 @@ const Register = () => {
       console.log(error);
     }
   };
-  const [confirm, setConfirm] = useState<any>("");
-  const [errCo, setErrCo] = useState<any>("");
-
-  const [codeInput, setCodeInput] = useState({
-    inputCode: "",
-  });
-  const handleCon = (e) => {
-    setCodeInput((prev) => ({ ...prev, [e.target.name]: e.target.value }));
-  };
   const con = () => {
-    if (Number(code) === Number(codeInput.inputCode)) {
-      console.log(codeInput.inputCode);
-
+    if (Number(code) === Number(input.sent)) {
       const confirm = () => setConfirm((current) => !current);
 
       confirm();
@@ -64,295 +172,204 @@ const Register = () => {
         setConfirm("");
       }, 4000);
     } else {
-      setErrCo("wrong");
-      setTimeout(() => {
-        setErrCo("");
-      }, 3000);
-    }
-  };
-  // const [userInfo, setUserInfo] = useState({
-  //   file: "",
-  // });
-  // const ha = (e) => {
-  //   setUserInfo({
-  //     ...userInfo,
-  //     file: e.target.files[0],
-  //   });
-  //   console.log(e.target.files[0]);
-  // };
-  const [isActive, setIsActive] = useState(false);
-  const navigate = useNavigate();
-  const [err, setErr] = useState("");
-  const handleClick = async (e) => {
-    e.preventDefault();
-    if (input.email !== "") {
-      if (Number(code) === Number(codeInput.inputCode)) {
-        if (input.username !== "") {
-          if (input.password !== "") {
-            if (input.number !== "") {
-              // if (input.fileIdFront !== "") {
-              //   if (input.fileIdBack !== "") {
-              // const formData = new FormData();
-              // formData.append("img", userInfo.file);
-              // try {
-              //   await axios
-              //     .post(`${env.ver}/upload`, formData, {
-              //       headers: { "Content-Type": "multipart/form-data" },
-              //     })
-              //     .then((res) => {
-              //       console.log(res);
-              //     });
-              // } catch (error) {
-              //   console.log(error);
-              // }
-              try {
-                await axios
-                  .post(`${env.url}/users/share`, input)
-                  .then((res) => setErr(res.data.message))
-                  .then(async () => {});
-              } catch (err: any) {
-                if (err.response.status === 401) {
-                  const active = () => setIsActive((current) => !current);
-                  active();
-                  try {
-                    await axios
-                      .post(`${env.url}/users`, input)
-                      .then(() => navigate("/login"));
-                  } catch (err: any) {
-                    console.log(err);
-                  }
-                }
-              }
-            } else {
-              setErr(`please check number`);
-              setTimeout(() => {
-                setErr("");
-              }, 3000);
-            }
-          } else {
-            setErr("please check password");
-            setTimeout(() => {
-              setErr("");
-            }, 3000);
-          }
-        } else {
-          setErr("please check username");
-          setTimeout(() => {
-            setErr("");
-          }, 3000);
-        }
-      } else {
-        setErr("please check code verification");
-
-        setTimeout(() => {
-          setErr("");
-        }, 3000);
-      }
-    } else {
-      setErr("please check email");
+      setErr("wrong");
       setTimeout(() => {
         setErr("");
       }, 3000);
     }
-    //   } else {
-    //     setErr("please check username");
-    //     setTimeout(() => {
-    //       setErr("");
-    //     }, 3000);
-    //   }
-    // } else {
-    //   setErr("please check email");
-    //   setTimeout(() => {
-    //     setErr("");
-    //   }, 3000);
-    // }
   };
-
   return (
-    <div className="register">
-      <div className="back"></div>
-
-      <div className="card">
-        <div className="right">
-          <h2>register</h2>
-          <div className="toast-container position-fixed bottom-0 end-0 p-3">
-            <div
-              id="liveToast"
-              className={`toast fade ${send ? "show" : "hide"} `}
-              role="alert"
-              aria-live="assertive"
-              aria-atomic="true"
-            >
-              <div className="toast-header">
-                <strong className="me-auto">Whale4trade</strong>
-                <small>just now </small>
-                <button
-                  type="button"
-                  className="btn-close"
-                  data-bs-dismiss="toast"
-                  aria-label="Close"
-                ></button>
-              </div>
-              <div className="toast-body">Sent to email please check</div>
-            </div>
+    <div className="Register ">
+      <div className="toast-container position-fixed bottom-0 end-0 p-3">
+        <div
+          id="liveToast"
+          className={`toast fade ${send ? "show" : "hide"} `}
+          role="alert"
+          aria-live="assertive"
+          aria-atomic="true"
+        >
+          <div className="toast-header">
+            <strong className="me-auto">Whale4trade</strong>
+            <small>just now </small>
+            <button
+              type="button"
+              className="btn-close"
+              data-bs-dismiss="toast"
+              aria-label="Close"
+            ></button>
           </div>
-          <div className="toast-container position-fixed bottom-0 end-0 p-3">
-            <div
-              id="liveToast"
-              className={`toast fade ${isActive ? "show" : "hide"} `}
-              role="alert"
-              aria-live="assertive"
-              aria-atomic="true"
-            >
-              <div className="toast-header">
-                <strong className="me-auto">Whale4trade</strong>
-                <small>just now </small>
-                <button
-                  type="button"
-                  className="btn-close"
-                  data-bs-dismiss="toast"
-                  aria-label="Close"
-                ></button>
-              </div>
-              <div className="toast-body">please login</div>
+          <div className="toast-body">Sent to email please check</div>
+        </div>
+      </div>
+      <>
+        <div className="toast-container position-fixed bottom-0 end-0 p-3">
+          <div
+            id="liveToast"
+            className={`toast fade ${confirm ? "show" : "hide"} `}
+            role="alert"
+            aria-live="assertive"
+            aria-atomic="true"
+          >
+            <div className="toast-header">
+              <strong className="me-auto">Whale4trade</strong>
+              <small>just now </small>
+              <button
+                type="button"
+                className="btn-close"
+                data-bs-dismiss="toast"
+                aria-label="Close"
+              ></button>
             </div>
+            <div className="toast-body">done</div>
           </div>
-
-          <form className="was-validated">
-            {/* email */}
-            <div className="form-floating   ">
+        </div>
+        <div className="toast-container position-fixed bottom-0 end-0 p-3">
+          <div
+            id="liveToast"
+            className={`toast fade  `}
+            role="alert"
+            aria-live="assertive"
+            aria-atomic="true"
+          >
+            {/* ${isActive ? "show" : "hide"} */}
+            <div className="toast-header">
+              <strong className="me-auto">Whale4trade</strong>
+              <small>Just now</small>
+              <button
+                type="button"
+                className="btn-close"
+                data-bs-dismiss="toast"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div className="toast-body">Now , you whale ....</div>
+          </div>
+        </div>
+        <div className="back"></div>
+        <div className="login-box">
+          <h2>Register</h2>
+          <form method="POST">
+            <div className="user-box">
               <input
+                type="text"
+                onChange={handelChange}
                 name="email"
-                onChange={handelChange}
-                type="email"
-                className={`form-control `}
-                id="floatingInput"
-                placeholder="name@example.com"
+                required
               />
-              <div className="toast-container position-fixed bottom-0 end-0 p-3">
-                <div
-                  id="liveToast"
-                  className={`toast fade ${confirm ? "show" : "hide"} `}
-                  role="alert"
-                  aria-live="assertive"
-                  aria-atomic="true"
-                >
-                  <div className="toast-header">
-                    <strong className="me-auto">Whale4trade</strong>
-                    <small>just now </small>
-                    <button
-                      type="button"
-                      className="btn-close"
-                      data-bs-dismiss="toast"
-                      aria-label="Close"
-                    ></button>
-                  </div>
-                  <div className="toast-body">done</div>
-                </div>
-              </div>
+              <label>email</label>
+            </div>
+            <div className="conf">
               <input
                 type="button"
-                className="btn btn-dark"
-                value="send your email"
+                value="send"
                 onClick={() => ver(input.email)}
+                className="btn btn-primary"
               />
-              <input type="number" name="inputCode" onChange={handleCon} />
+              <input
+                type="number"
+                placeholder="your code"
+                name="sent"
+                onChange={handelChange}
+                className="input-number"
+              />
               <input
                 type="button"
-                className="btn btn-dark"
-                onClick={con}
                 value="confirm"
+                onClick={con}
+                className="btn btn-primary"
               />
-              <div className="errCo">{errCo}</div>
-              <div className="invalid-feedback">Please enter a Email.</div>
-              <label htmlFor="floatingInput">Email address</label>
             </div>
-            {/* username */}
-            <div className="input-group   ">
-              <span className="input-group-text">@</span>
-              <div className="form-floating">
-                <input
-                  name="username"
-                  onChange={handelChange}
-                  type="text"
-                  className="form-control"
-                  id="floatingInputGroup1"
-                  placeholder="Username"
-                />
-                <div className="invalid-feedback">Please enter a Username.</div>
-                <label htmlFor="floatingInputGroup1">Your Username</label>
-              </div>
-            </div>
-            {/* password */}
-            <div className="form-floating">
+            <div className="user-box">
               <input
-                name="password"
+                type="text"
                 onChange={handelChange}
-                type="password"
-                className="form-control"
-                id="floatingPassword"
-                placeholder="Password"
+                name="username"
+                required
               />
-              <div className="invalid-feedback">Please enter a Password.</div>
-              <label htmlFor="floatingPassword">Password</label>
+              <label>username</label>
             </div>
-            {/* number */}
-            <div className="form-floating">
+            <div className="user-box">
               <input
+                type="phone"
+                onChange={handelChange}
                 name="number"
-                onChange={handelChange}
-                type="number"
-                className="form-control"
-                id="floatingNumber"
-                placeholder="Your Number"
-              />
-              <div className="invalid-feedback">Please enter a Number.</div>
-              <label htmlFor="floatingNumber">Your Number</label>
-            </div>
-            {/* files */}
-            <div className="  ">
-              <input
-                name="fileIdFront"
-                // onChange={ha}
-                type="file"
-                className="form-control"
-                aria-label="file example"
                 required
               />
-              <div className="invalid-feedback">Example invalid ID front</div>
+              <label>number</label>
             </div>
-            <div className="  ">
+            <div className="user-box">
               <input
+                type="password"
+                onChange={handelChange}
+                name="password"
+                required
+              />
+              <label>password</label>
+            </div>
+            <div className="user-box">
+              <input
+                type="file"
                 name="fileIdBack"
-                onChange={handelChange}
-                type="file"
-                className="form-control"
-                aria-label="file example"
+                onChange={handleFileChange}
                 required
               />
-              <div className="invalid-feedback">Example invalid ID back</div>
             </div>
+            <div className="user-box">
+              <input
+                type="file"
+                name="fileIdFront"
+                onChange={handleFileChange}
+                required
+              />
+            </div>
+            <div>
+              <input
+                type="checkbox"
+                name="conditions"
+                onChange={handelChange}
+                id="con"
+              />
+              <label htmlFor="con" className="label-check">
+                shrooot
+              </label>
+            </div>
+            <Link to="#" type="submit" onClick={ifEmpty}>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              Submit
+            </Link>
 
-            <div className="active">{err && err}</div>
-            <div className="  ">
-              <Link to={`/verification?${input.email}`} onClick={handleClick}>
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
-                Register
-              </Link>
-            </div>
-            <div className="  ">
-              <Link to={`/login`}>
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
-                Login
-              </Link>
-            </div>
+            <div>{err}</div>
+            <Link to="/login">
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>You have account Already
+            </Link>
           </form>
+        </div>
+      </>
+      <div className="toast-container position-fixed bottom-0 end-0 p-3">
+        <div
+          id="liveToast"
+          className={`toast fade ${isActive ? "show" : "hide"} `}
+          role="alert"
+          aria-live="assertive"
+          aria-atomic="true"
+        >
+          <div className="toast-header">
+            <strong className="me-auto">Whale4trade</strong>
+            <small>just now </small>
+            <button
+              type="button"
+              className="btn-close"
+              data-bs-dismiss="toast"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div className="toast-body">please login</div>
         </div>
       </div>
     </div>

@@ -5,7 +5,7 @@ import env from "../../../environments/enviroments";
 import { useState, useEffect } from "react";
 
 const URL = (props) => {
-  const text = `${env.aff}/register/aff${JSON.parse(localStorage.user).id}`;
+  const text = `${env.aff}/register/aff/${JSON.parse(localStorage.user).id}`;
   const [isActive, setIsActive] = useState<any>(false);
   const copy = () => {
     navigator.clipboard.writeText(text);

@@ -37,10 +37,10 @@
 
 .login-box .user-box input {
   width: 100%;
-  padding: 10px 0;
-  font-size: 16px;
+  padding: 1em 0;
+  font-size: 0.9em;
   color: #fff;
-  margin-bottom: 30px;
+  margin-bottom: 1em;
   border: none;
   border-bottom: 1px solid #fff;
   outline: none;
@@ -68,14 +68,14 @@
 .login-box form a {
   position: relative;
   display: inline-block;
-  padding: 10px 20px;
+  padding: 1em 2em;
   color: #03e9f4;
-  font-size: 16px;
+  font-size: 1em;
   text-decoration: none;
   text-transform: uppercase;
   overflow: hidden;
   transition: 0.5s;
-  margin-top: 40px;
+  margin-top: 1em;
   letter-spacing: 4px;
 }
 
@@ -177,4 +177,7 @@
     color: #03e9f4;
     width: fit-content !important;
   }
+}
+.err {
+  color: white;
 }

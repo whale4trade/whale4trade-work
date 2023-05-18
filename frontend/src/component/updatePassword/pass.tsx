@@ -12,6 +12,7 @@ const UpdatePass = () => {
     password: "",
   });
   const [id, setId] = useState<any>("");
+  const [err, setErr] = useState<any>("");
   const handelChange = (e) => {
     setInput((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
@@ -22,17 +23,25 @@ const UpdatePass = () => {
         .then((res) => setId(res.data.data));
     } catch (error) {}
   };
+
   const update = async () => {
-    try {
-      await axios
-        .patch(`${env.url}/users/pass/${id.id}`, {
-          id: id.id,
-          password: input.password,
-        })
-        .then(() => {
-          navigate("/login");
-        });
-    } catch (error) {}
+    if (input.password !== "") {
+      try {
+        await axios
+          .patch(`${env.url}/users/pass/${id.id}`, {
+            id: id.id,
+            password: input.password,
+          })
+          .then(() => {
+            navigate("/login");
+          });
+      } catch (error) {}
+    } else {
+      setErr("please check your password");
+      setTimeout(() => {
+        setErr("");
+      }, 4000);
+    }
   };
 
   useEffect(() => {
@@ -41,16 +50,36 @@ const UpdatePass = () => {
   return (
     <>
       <div className="back"></div>
-
-      <div className="container update-pass">
-        <input type="email" value={email} disabled />
-        <input type="password" name="password" onChange={handelChange} />
-        <input
-          type="button"
-          value="reset"
-          className="btn btn-primary"
-          onClick={update}
-        />
+      <div className="login-box">
+        <h2>Reset Password</h2>
+        <form method="POST">
+          <div className="user-box">
+            <input
+              type="text"
+              name="email"
+              value={email}
+              onChange={handelChange}
+            />
+            <label>Email</label>
+          </div>
+          <div className="user-box">
+            <input
+              type="password"
+              name="password"
+              required
+              onChange={handelChange}
+            />
+            <label>Password</label>
+          </div>
+          <div className="err">{err}</div>
+          <Link to="#" type="submit" onClick={update}>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            reset
+          </Link>
+        </form>
       </div>
     </>
   );

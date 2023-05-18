@@ -54,6 +54,9 @@ nav .container-fluid .navbar-toggler {
   font-size: 29px;
   box-shadow: none;
 }
+nav .container-fluid .navbar-collapse {
+  transition: none;
+}
 nav .container-fluid .navbar-collapse.show ul {
   border-radius: 20px;
 }
