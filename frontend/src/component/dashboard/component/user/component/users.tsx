@@ -38,10 +38,7 @@ const UsersF = (props) => {
   const handelChange = (e) => {
     setInput((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
-  const handleClick = (id) => {
-    console.log(id);
-    // console.log(input);
-  };
+
   const EditUser = async (id) => {
     try {
       // await axios.patch(`${env.url}`)
@@ -206,7 +203,7 @@ const UsersF = (props) => {
                       <span className="title-u">balance: </span>
                       <span className="get">{u.balance}$</span>
                     </div>
-                    {/* 
+
                     <div className="idnf">
                       <span className="title-u">idnf: </span>
                       <span className="get">{u.idnf}</span>
@@ -214,7 +211,7 @@ const UsersF = (props) => {
                     <div className="idnb">
                       <span className="title-u">idnb: </span>
                       <span className="get">{u.idnb}</span>
-                    </div> */}
+                    </div>
                     <div className="statusaccess">
                       <span className="title-u">statusaccess: </span>
                       <span className="get">{u.statusaccess}</span>

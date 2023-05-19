@@ -49,7 +49,6 @@ app.use('/uploads', express.static('uploads'))
 
 app.get('/image/:filename', (req, res) => {
 	const {filename} = req.params
-	// res.sendFile(`${__dirname}/uploads/${filename}`)
 	res.sendFile(req.params.filename, {root: path.join(__dirname, '/uploads')})
 })
 app.post('/ver', (req: Request, res: Response) => {

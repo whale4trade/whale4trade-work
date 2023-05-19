@@ -31,38 +31,24 @@ const Title = (props) => {
       if (input.email !== "") {
         if (input.password !== "") {
           if (input.number !== "") {
-            if (input.idNF !== "") {
-              if (input.idNB !== "") {
+            try {
+              await axios
+                .post(`${env.url}/users/share`, input)
+                .then((res) => setErr(res.data.message));
+            } catch (err: any) {
+              if (err.response.status === 401) {
                 try {
                   await axios
-                    .post(`${env.url}/users/share`, input)
-                    .then((res) => setErr(res.data.message));
+                    .post(`${env.url}/users`, input)
+                    .then(() => setIsActive((current) => !current))
+                    .then(() => window.location.reload());
                 } catch (err: any) {
-                  if (err.response.status === 401) {
-                    try {
-                      await axios
-                        .post(`${env.url}/users`, input)
-                        .then(() => setIsActive((current) => !current))
-                        .then(() => window.location.reload());
-                    } catch (err: any) {
-                      setErr(err.response.data);
-                      setTimeout(() => {
-                        setErr("");
-                      }, 3000);
-                    }
-                  }
+                  setErr(err.response.data);
+                  setTimeout(() => {
+                    setErr("");
+                  }, 3000);
                 }
-              } else {
-                setErr(`please check id back`);
-                setTimeout(() => {
-                  setErr("");
-                }, 3000);
               }
-            } else {
-              setErr("please check Id front");
-              setTimeout(() => {
-                setErr("");
-              }, 3000);
             }
           } else {
             setErr("please check number");

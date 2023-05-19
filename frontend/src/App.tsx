@@ -23,7 +23,6 @@ import Users from "./component/dashboard/component/user/users";
 import Bundle from "./component/dashboard/component/bundle/bundle";
 import Reset from "./component/reset/reset";
 import UpdatePass from "./component/updatePassword/pass";
-import ImageList from "./get";
 import Do from "./component/dashboard/component/dollar/do";
 function App() {
   return (
@@ -31,7 +30,6 @@ function App() {
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/ddd" element={<ImageList />} />
         <Route path="/products" element={<Products />} />
         <Route path="/register/aff/:id" element={<RegisterAff />} />
         <Route path="/profile" element={<Profile />} />
