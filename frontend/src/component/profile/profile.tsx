@@ -12,30 +12,9 @@ import TreeProfile from "./container/tree";
 import Transaction from "./container/transaction";
 import URL from "./container/url";
 import Bundle from "./container/bundle";
+import ConfirmUser from "../confirmUser";
 const Profile = (props: any) => {
-  const navigate = useNavigate();
-  const checkUser = async () => {
-    try {
-      await axios
-        .get(`${env.url}/users/${JSON.parse(localStorage.user).id}`)
-        .then((res) =>
-          res.data.data === undefined
-            ? (navigate("/login"),
-              localStorage.clear(),
-              setTimeout(() => {
-                window.location.reload();
-              }, 1000))
-            : null
-        );
-    } catch (err: any) {
-      setTimeout(() => {
-        window.location.reload();
-      }, 100);
-    }
-  };
-
-  //  const [err, setErr] = useState("");
-  checkUser();
+  ConfirmUser();
   const [dataBundle, setDataBundle] = useState<any[]>([]);
   useEffect(() => {
     try {
@@ -45,9 +24,6 @@ const Profile = (props: any) => {
     } catch (error) {}
   }, [setDataBundle]);
 
-  if (localStorage.length === 0) {
-    window.location.pathname = "/login";
-  }
   const [currentPage, setCurrentPage] = useState(1);
   const recordsPerPage: any = 1;
   const lastIndex: any = currentPage * recordsPerPage;

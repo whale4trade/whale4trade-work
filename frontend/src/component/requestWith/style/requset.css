@@ -1,0 +1,21 @@
+.request.container {
+  position: absolute;
+  top: 20%;
+  background-color: #fff;
+  margin: 0 auto;
+  left: 15%;
+  padding: 2em 1em;
+  border-radius: 23px;
+}
+.request.container .title {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid black;
+  padding: 1em;
+}
+.request.container .title .req-title {
+  font-size: 1.6em;
+  font-weight: bold;
+}/*# sourceMappingURL=requset.css.map */

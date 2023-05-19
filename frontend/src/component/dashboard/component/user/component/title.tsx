@@ -88,7 +88,7 @@ const Title = (props) => {
         >
           <div className="toast-header">
             <strong className="me-auto">Whale4trade</strong>
-            <small>11 mins ago</small>
+            <small>Just now</small>
             <button
               type="button"
               className="btn-close"

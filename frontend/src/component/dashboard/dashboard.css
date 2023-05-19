@@ -171,6 +171,10 @@
   border-radius: 32px;
   margin: 0 auto;
 }
+.dashboard .c-bundle .err {
+  text-align: center;
+  color: red;
+}
 .dashboard .c-bundle .title {
   font-style: italic;
   width: 100%;
@@ -178,7 +182,7 @@
   font-size: 2em;
   border-bottom: 2px solid #ddd;
   display: flex;
-  justify-content: start;
+  justify-content: space-between;
   padding: 20px 15px;
 }
 .dashboard .c-bundle .title svg {
@@ -191,11 +195,11 @@
 }
 .dashboard .c-bundle .bundle {
   display: flex;
-  justify-content: space-between;
+  justify-content: start;
   flex-wrap: wrap;
 }
 .dashboard .c-bundle .bundle .con-bundle {
-  margin: 15px 5px;
+  margin: 1em 0.5em;
   background-color: var(--app-container);
   padding: 1em;
   border-radius: 32px;
@@ -212,27 +216,31 @@
   transition-duration: 0.3s;
   background-color: #d4d1fa;
 }
+.dashboard .c-bundle .bundle .con-bundle .info {
+  width: -moz-fit-content;
+  width: fit-content;
+}
 .dashboard .c-bundle .bundle .con-bundle img {
   width: 10em;
 }
-.dashboard .c-bundle .bundle .con-bundle .info {
+.dashboard .c-bundle .bundle .con-bundle .modal-body div {
   width: 100%;
 }
-.dashboard .c-bundle .bundle .con-bundle .info .name .s,
-.dashboard .c-bundle .bundle .con-bundle .info .date .s,
-.dashboard .c-bundle .bundle .con-bundle .info .price .s,
-.dashboard .c-bundle .bundle .con-bundle .info .det .s {
+.dashboard .c-bundle .bundle .con-bundle .name .s,
+.dashboard .c-bundle .bundle .con-bundle .date .s,
+.dashboard .c-bundle .bundle .con-bundle .price .s,
+.dashboard .c-bundle .bundle .con-bundle .det .s {
   text-transform: capitalize;
   margin: 0 5px;
 }
-.dashboard .c-bundle .bundle .con-bundle .info .name .ti,
-.dashboard .c-bundle .bundle .con-bundle .info .date .ti,
-.dashboard .c-bundle .bundle .con-bundle .info .price .ti,
-.dashboard .c-bundle .bundle .con-bundle .info .det .ti {
+.dashboard .c-bundle .bundle .con-bundle .name .ti,
+.dashboard .c-bundle .bundle .con-bundle .date .ti,
+.dashboard .c-bundle .bundle .con-bundle .price .ti,
+.dashboard .c-bundle .bundle .con-bundle .det .ti {
   color: #7891eb;
   font-size: 1em;
 }
-.dashboard .c-bundle .bundle .con-bundle .info .det {
+.dashboard .c-bundle .bundle .con-bundle .det {
   max-width: 150px;
 }
 .dashboard .c-bundle .bundle .con-bundle .user-count {

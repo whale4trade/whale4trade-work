@@ -1,5 +1,9 @@
 .dashboard {
   .c-bundle {
+    .err {
+      text-align: center;
+      color: red;
+    }
     width: fit-content;
     // width: 80vw;
 
@@ -15,7 +19,7 @@
       font-size: 2em;
       border-bottom: 2px solid #ddd;
       display: flex;
-      justify-content: start;
+      justify-content: space-between;
       padding: 20px 15px;
       svg {
         transition-duration: 0.3s;
@@ -28,10 +32,10 @@
     }
     .bundle {
       display: flex;
-      justify-content: space-between;
+      justify-content: start;
       flex-wrap: wrap;
       .con-bundle {
-        margin: 15px 5px;
+        margin: 1em 0.5em;
         background-color: var(--app-container);
         padding: 1em;
         border-radius: 32px;
@@ -46,34 +50,39 @@
           transition-duration: 0.3s;
           background-color: #d4d1fa;
         }
-
+        .info {
+          width: fit-content;
+        }
         img {
           width: 10em;
         }
-        .info {
-          width: 100%;
-          .name,
-          .date,
-          .price,
-          .det {
-            .s {
-              text-transform: capitalize;
-              margin: 0 5px;
-            }
-            .ti {
-              color: #7891eb;
-              font-size: 1em;
-            }
+
+        .modal-body {
+          div {
+            width: 100%;
           }
-          .name {
+        }
+        .name,
+        .date,
+        .price,
+        .det {
+          .s {
+            text-transform: capitalize;
+            margin: 0 5px;
           }
-          .date {
+          .ti {
+            color: #7891eb;
+            font-size: 1em;
           }
-          .price {
-          }
-          .det {
-            max-width: 150px;
-          }
+        }
+        .name {
+        }
+        .date {
+        }
+        .price {
+        }
+        .det {
+          max-width: 150px;
         }
         .user-count {
           width: 100%;

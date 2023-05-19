@@ -24,6 +24,7 @@ import Bundle from "./component/dashboard/component/bundle/bundle";
 import Reset from "./component/reset/reset";
 import UpdatePass from "./component/updatePassword/pass";
 import Do from "./component/dashboard/component/dollar/do";
+import ReqWith from "./component/requestWith/requet";
 function App() {
   return (
     <>
@@ -38,7 +39,8 @@ function App() {
         <Route path="/products/order" element={<Order />} />
         <Route path="/addBalance" element={<AddBalance />} />
         <Route path="/reset" element={<Reset />} />
-        <Route path="//reset/auth/:email" element={<UpdatePass />} />
+        <Route path="/reset/auth/:email" element={<UpdatePass />} />
+        <Route path="/request" element={<ReqWith />} />
         <Route path="/dashboard" element={<Dashboard />}>
           <Route index element={<Dashboard />} />
           <Route path="" element={<Users />} />
