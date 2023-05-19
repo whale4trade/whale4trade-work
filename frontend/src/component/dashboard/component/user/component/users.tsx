@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import photo from "../../../../../image/blank-profile-picture-gc8e2267bd_1280.png";
 import axios from "axios";
 import env from "../../../../../environments/enviroments";
+import IdUser from "./idUser";
+import EditUser from "./editUser";
 const UsersF = (props) => {
   const [order, setOrder] = useState([]);
   const [transaction, setTransaction] = useState([]);
@@ -27,26 +29,7 @@ const UsersF = (props) => {
     } catch (error) {}
   };
   //edit user
-  const [input, setInput] = useState({
-    email: "",
-    username: "",
-    number: "",
-    balance: "",
-    password: "",
-    status: "",
-  });
-  const handelChange = (e) => {
-    setInput((prev) => ({ ...prev, [e.target.name]: e.target.value }));
-  };
 
-  const EditUser = async (id) => {
-    try {
-      // await axios.patch(`${env.url}`)
-      console.log(id);
-    } catch (error) {
-      console.log(error);
-    }
-  };
   return (
     <>
       {props.dataUser.map((u: any): any => (
@@ -61,7 +44,17 @@ const UsersF = (props) => {
                 getTransaction(u.id);
               }}
             >
-              <img alt="" className="img" src={photo} />
+              <img
+                alt=""
+                className="img"
+                src={`${
+                  u.imgprofile === ""
+                    ? photo
+                    : u.imgprofile === null
+                    ? photo
+                    : `${env.ver}/image/${u.imgprofile}`
+                }`}
+              />
             </div>
 
             <div className="email">
@@ -76,92 +69,7 @@ const UsersF = (props) => {
               <span className="title-u">balance: </span>
               <span className="get">{`${u.balance}$`}</span>
             </div>
-            <button
-              type="button"
-              className="btn btn-outline-primary"
-              data-bs-toggle="modal"
-              data-bs-target="#staticBackdropEdit"
-            >
-              Edit
-            </button>
-            <div
-              className="modal fade"
-              id="staticBackdropEdit"
-              data-bs-backdrop="static"
-              data-bs-keyboard="false"
-              aria-labelledby="staticBackdropLabel"
-              aria-hidden="true"
-            >
-              <div className="modal-dialog">
-                <div className="modal-content">
-                  <div className="modal-header">
-                    <h1 className="modal-title fs-5" id="staticBackdropLabel">
-                      update User
-                    </h1>
-                    <button
-                      type="button"
-                      className="btn-close"
-                      data-bs-dismiss="modal"
-                      aria-label="Close"
-                    ></button>
-                  </div>
-                  <div className="modal-body">
-                    <input
-                      type="text"
-                      onChange={handelChange}
-                      name="email"
-                      placeholder="email"
-                    />
-                    <input
-                      type="text"
-                      onChange={handelChange}
-                      name="username"
-                      placeholder="username"
-                    />
-                    <input
-                      type="text"
-                      onChange={handelChange}
-                      name="number"
-                      placeholder="number"
-                    />
-                    <input
-                      type="text"
-                      onChange={handelChange}
-                      name="balance"
-                      placeholder="balance"
-                    />
-                    <div>
-                      <select
-                        className="form-select"
-                        aria-label="Default select example"
-                        name="status"
-                        onChange={handelChange}
-                      >
-                        <option value="sel">select status</option>
-                        <option value="admin">admin</option>
-                        <option value="user">user</option>
-                      </select>
-                    </div>
-                  </div>
-                  <div className="modal-footer">
-                    <button
-                      type="button"
-                      className="btn btn-secondary"
-                      data-bs-dismiss="modal"
-                    >
-                      Close
-                    </button>
-                    <button
-                      onClick={() => EditUser(u.id)}
-                      type="button"
-                      className="btn btn-primary"
-                    >
-                      Edit
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
+            <EditUser u={u} key={u.id} />
           </div>
 
           {/*edit*/}
@@ -179,7 +87,7 @@ const UsersF = (props) => {
               <div className="modal-content">
                 <div className="modal-header">
                   <h1 className="modal-title fs-5" id="staticBackdropLabel">
-                    Modal title
+                    whale4trade
                   </h1>
                   <button
                     type="button"
@@ -203,15 +111,7 @@ const UsersF = (props) => {
                       <span className="title-u">balance: </span>
                       <span className="get">{u.balance}$</span>
                     </div>
-
-                    <div className="idnf">
-                      <span className="title-u">idnf: </span>
-                      <span className="get">{u.idnf}</span>
-                    </div>
-                    <div className="idnb">
-                      <span className="title-u">idnb: </span>
-                      <span className="get">{u.idnb}</span>
-                    </div>
+                    <IdUser u={u} />
                     <div className="statusaccess">
                       <span className="title-u">statusaccess: </span>
                       <span className="get">{u.statusaccess}</span>
