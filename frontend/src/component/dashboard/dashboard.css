@@ -1,76 +1,38 @@
 @import url("https://fonts.googleapis.com/css?family=DM+Sans:400,500,700&display=swap");
-.idk {
-  width: -moz-fit-content;
-  width: fit-content;
-  height: -moz-fit-content;
-  height: fit-content;
-  display: flex;
-  flex-direction: column;
-  top: 50px;
-  position: absolute;
-}
-.idk a {
+.request.container {
   position: relative;
-}
-.idk a svg {
-  margin: 1.5em 1em;
-  font-size: 1.5em;
-  opacity: 0.5;
-  padding: 10px 0 10px 10px;
-  cursor: pointer;
-  transition-duration: 0.3s;
-}
-.idk a.active {
-  transition-duration: 0.3s;
-  width: 100%;
-  position: relative;
-  border-top-right-radius: 23px;
-  border-bottom-right-radius: 23px;
+  top: 100px;
   background-color: #fff;
+  margin: 0 auto;
+  padding: 2em 1em;
+  border-radius: 23px;
 }
-.idk a.active.select-user {
-  color: var(--button);
+.request.container .title {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid black;
+  padding: 1em;
 }
-.idk a.active.select-bundle {
-  color: var(--button);
+.request.container .title .req-title {
+  font-size: 1.6em;
+  font-weight: bold;
 }
-.idk a.active.select-server {
-  color: green;
+.request.container table {
+  text-align: center;
+  margin: 1em auto 0;
 }
-.idk a .title-s {
-  display: none;
-  font-size: 1em !important;
-  border-bottom: none;
-  text-decoration: none !important;
-  position: absolute;
-  bottom: 10%;
-  left: 50%;
+.request.container table tbody tr.pending {
+  background-color: #eae129;
+}
+.request.container table tbody tr.cancel {
+  background-color: #fe2f5b;
+}
+.request.container table tbody tr.done {
+  background-color: #3ff467;
 }
 
-@media (max-width: 900px) {
-  .idk {
-    width: 100%;
-    height: -moz-fit-content;
-    height: fit-content;
-    display: flex;
-    z-index: 45678;
-    justify-content: space-around;
-    align-items: center;
-    top: -90px;
-    flex-direction: row;
-    position: absolute;
-  }
-  .idk a {
-    width: -moz-fit-content !important;
-    width: fit-content !important;
-    border-radius: 32% !important;
-  }
-  .idk a svg {
-    margin: 1em 0.5em;
-    font-size: 1.2em;
-    padding: 10px 0 10px 10px;
-  }
-}
 .dashboard .users {
   background-color: #fff;
   width: -moz-fit-content;
@@ -276,6 +238,78 @@
   top: 100px;
 }
 
+.idk {
+  width: -moz-fit-content;
+  width: fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  top: 50px;
+  position: absolute;
+}
+.idk a {
+  position: relative;
+}
+.idk a svg {
+  margin: 1.5em 1em;
+  font-size: 1.5em;
+  opacity: 0.5;
+  padding: 10px 0 10px 10px;
+  cursor: pointer;
+  transition-duration: 0.3s;
+}
+.idk a.active {
+  transition-duration: 0.3s;
+  width: 100%;
+  position: relative;
+  border-top-right-radius: 23px;
+  border-bottom-right-radius: 23px;
+  background-color: #fff;
+}
+.idk a.active.select-user {
+  color: var(--button);
+}
+.idk a.active.select-bundle {
+  color: var(--button);
+}
+.idk a.active.select-server {
+  color: green;
+}
+.idk a .title-s {
+  display: none;
+  font-size: 1em !important;
+  border-bottom: none;
+  text-decoration: none !important;
+  position: absolute;
+  bottom: 10%;
+  left: 50%;
+}
+
+@media (max-width: 900px) {
+  .idk {
+    width: 100%;
+    height: -moz-fit-content;
+    height: fit-content;
+    display: flex;
+    z-index: 45678;
+    justify-content: space-around;
+    align-items: center;
+    top: -90px;
+    flex-direction: row;
+    position: absolute;
+  }
+  .idk a {
+    width: -moz-fit-content !important;
+    width: fit-content !important;
+    border-radius: 32% !important;
+  }
+  .idk a svg {
+    margin: 1em 0.5em;
+    font-size: 1.2em;
+    padding: 10px 0 10px 10px;
+  }
+}
 * {
   box-sizing: border-box;
   font-family: "DM Sans", sans-serif;

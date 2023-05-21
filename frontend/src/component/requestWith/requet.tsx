@@ -5,6 +5,7 @@ import { useEffect } from "react";
 
 import "./style/requset.css";
 import TitleReq from "./container/title";
+import AllReq from "./container/allReq";
 const ReqWith = () => {
   ConfirmUser();
   const getReq = async () => {
@@ -26,6 +27,7 @@ const ReqWith = () => {
       <div className="back"></div>
       <div className="request container">
         <TitleReq />
+        <AllReq />
       </div>
     </>
   );

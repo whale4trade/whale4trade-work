@@ -15,12 +15,13 @@ const TitleReq = (props) => {
       axios
         .post(`${env.url}/req`, {
           userId: JSON.parse(localStorage.user).id,
+          userEmail: JSON.parse(localStorage.user).email,
           price: input.price,
           timeReq: Date.now(),
           status: "pending",
         })
         .then((res) => {
-          console.log(res);
+          window.location.reload();
         });
     } catch (error) {
       console.log(error);

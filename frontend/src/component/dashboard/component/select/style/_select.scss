@@ -1,71 +1,36 @@
-.idk {
-  width: fit-content;
-  height: fit-content;
-  display: flex;
-  flex-direction: column;
-  top: 50px;
-  position: absolute;
-  a {
-    position: relative;
-    svg {
-      margin: 1.5em 1em;
-      font-size: 1.5em;
-      opacity: 0.5;
-      padding: 10px 0 10px 10px;
-      cursor: pointer;
-      transition-duration: 0.3s;
-    }
-
-    &.active {
-      transition-duration: 0.3s;
-      width: 100%;
-      position: relative;
-      border-top-right-radius: 23px;
-      border-bottom-right-radius: 23px;
-      background-color: #fff;
-      &.select-user {
-        color: var(--button);
-      }
-      &.select-bundle {
-        color: var(--button);
-      }
-      &.select-server {
-        color: green;
-      }
-    }
-
-    .title-s {
-      display: none;
-      font-size: 1em !important;
-      border-bottom: none;
-      text-decoration: none !important;
-      position: absolute;
-      bottom: 10%;
-      left: 50%;
+.request.container {
+  position: relative;
+  top: 100px;
+  background-color: #fff;
+  margin: 0 auto;
+  padding: 2em 1em;
+  border-radius: 23px;
+  .title {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid black;
+    padding: 1em;
+    .req-title {
+      font-size: 1.6em;
+      font-weight: bold;
     }
   }
-}
-@media (max-width: 900px) {
-  .idk {
-    width: 100%;
-    height: fit-content;
-    display: flex;
-    z-index: 45678;
-    justify-content: space-around;
-    align-items: center;
-    top: -90px;
-    flex-direction: row;
-
-    position: absolute;
-
-    a {
-      width: fit-content !important;
-      border-radius: 32% !important;
-
-      svg {
-        margin: 1em 0.5em;
-        font-size: 1.2em;
-        padding: 10px 0 10px 10px;
+  table {
+    text-align: center;
+    margin: 1em auto 0;
+    tbody {
+      tr {
+        &.pending {
+          background-color: #eae129;
+        }
+        &.cancel {
+          background-color: #fe2f5b;
+        }
+        &.done {
+          background-color: #3ff467;
+        }
       }
     }
   }

@@ -1,9 +1,8 @@
 .request.container {
-  position: absolute;
-  top: 20%;
+  position: relative;
+  top: 100px;
   background-color: #fff;
   margin: 0 auto;
-  left: 15%;
   padding: 2em 1em;
   border-radius: 23px;
   .title {
@@ -16,6 +15,23 @@
     .req-title {
       font-size: 1.6em;
       font-weight: bold;
+    }
+  }
+  table {
+    text-align: center;
+    margin: 1em auto 0;
+    tbody {
+      tr {
+        &.pending {
+          background-color: #eae129;
+        }
+        &.cancel {
+          background-color: #fe2f5b;
+        }
+        &.done {
+          background-color: #3ff467;
+        }
+      }
     }
   }
 }

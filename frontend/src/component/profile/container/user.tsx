@@ -174,6 +174,14 @@ const UserProfile = () => {
           ) : (
             ""
           )}
+          <input
+            type="button"
+            value="withdraw"
+            className="btn btn-primary"
+            onClick={() => {
+              navigate("/request");
+            }}
+          />
           <span className="edit-icon">
             <input
               type="button"

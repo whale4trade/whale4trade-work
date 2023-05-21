@@ -8,7 +8,7 @@ const ConfirmUser = async () => {
         .then((res) => {
           res.data.data === undefined
             ? (window.location.pathname = "/login")
-            : console.log("no");
+            : console.log();
         });
     } catch (error) {
       window.location.pathname = "/login";

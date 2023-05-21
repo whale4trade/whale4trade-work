@@ -25,6 +25,7 @@ import Reset from "./component/reset/reset";
 import UpdatePass from "./component/updatePassword/pass";
 import Do from "./component/dashboard/component/dollar/do";
 import ReqWith from "./component/requestWith/requet";
+import RequestsDash from "./component/dashboard/component/requsets/requestsDash";
 function App() {
   return (
     <>
@@ -46,6 +47,7 @@ function App() {
           <Route path="" element={<Users />} />
           <Route path="bundle" element={<Bundle />} />
           <Route path="dollar" element={<Do />} />
+          <Route path="req" element={<RequestsDash />} />
         </Route>
         <Route path="*" element={<NotFound />} />
       </Routes>
