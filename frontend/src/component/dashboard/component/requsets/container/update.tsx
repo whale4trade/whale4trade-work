@@ -65,7 +65,7 @@ const UpdateReq = (props) => {
                             timeJoin: new Date(),
                           })
                           .then(() => {
-                            window.location.reload();
+                            // window.location.reload();
                           });
                       } catch (error) {
                         console.log(error);
