@@ -19,23 +19,22 @@ const UpdateReq = (props) => {
         .then(() => {
           if (input.status === "done") {
             try {
-              axios
-                .get(`${env.url}/users/${props.r.userid}`)
-                .then((res) => {
-                  try {
-                    axios.post(`${env.url}/transaction/`, {
+              axios.get(`${env.url}/users/${props.r.userid}`).then((res) => {
+                try {
+                  axios
+                    .post(`${env.url}/transaction/`, {
                       userId: props.r.userid,
                       category: ` done your request withdraw ${props.r.price}$`,
                       price: `${props.r.price}`,
                       timeJoin: new Date(),
+                    })
+                    .then(() => {
+                      window.location.reload();
                     });
-                  } catch (error) {
-                    console.log(error);
-                  }
-                })
-                .then(() => {
-                  window.location.reload();
-                });
+                } catch (error) {
+                  console.log(error);
+                }
+              });
             } catch (error) {
               console.log(error);
             }
