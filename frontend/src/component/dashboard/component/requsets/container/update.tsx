@@ -57,18 +57,19 @@ const UpdateReq = (props) => {
                     })
                     .then(() => {
                       try {
-                        axios.post(`${env.url}/transaction/`, {
-                          userId: props.r.userid,
-                          category: `cancel your  request withdraw ${props.r.price}$`,
-                          price: `${props.r.price}`,
-                          timeJoin: new Date(),
-                        });
+                        axios
+                          .post(`${env.url}/transaction/`, {
+                            userId: props.r.userid,
+                            category: `cancel your  request withdraw ${props.r.price}$`,
+                            price: `${props.r.price}`,
+                            timeJoin: new Date(),
+                          })
+                          .then(() => {
+                            window.location.reload();
+                          });
                       } catch (error) {
                         console.log(error);
                       }
-                    })
-                    .then(() => {
-                      window.location.reload();
                     });
                 } catch (error) {
                   console.log(error);
