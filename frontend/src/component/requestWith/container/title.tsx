@@ -23,7 +23,11 @@ const TitleReq = (props) => {
         .get(`${env.url}/users/${JSON.parse(localStorage.user).id}`)
         .then((res) => {
           if (Number(input.price) <= Number(res.data.data.balance)) {
-            addReq();
+            if (Number(input.price) > 0) {
+              addReq();
+            } else {
+              errorHandel(`should add number up to 0 `);
+            }
           } else {
             errorHandel(`your balance = ${Number(res.data.data.balance)}$ `);
           }
