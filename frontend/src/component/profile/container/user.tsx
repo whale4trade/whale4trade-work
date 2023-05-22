@@ -128,24 +128,24 @@ const UserProfile = () => {
         <ImgUser user={dataUser} />
       </div>
       <div className="info">
-        <span className="name">
-          <span>
-            <span className="title">username:</span>
-            <span className="test">{`${dataUser!.username}`}</span>
-          </span>
-        </span>
-        <span className="win">
-          <span>
-            <span className="title">win:</span>
-            <span className="test">
-              <Win />
-            </span>
-          </span>
-        </span>
         <span className="email">
           <span>
             <span className="title">email:</span>
             <span className="test">{`${dataUser!.email}`}</span>
+          </span>
+        </span>
+
+        <span className="win">
+          <span>
+            <span className="title">win:</span>
+            <Win />
+            {/* <span className="test"></span> */}
+          </span>
+        </span>
+        <span className="name">
+          <span>
+            <span className="title">username:</span>
+            <span className="test">{`${dataUser!.username}`}</span>
           </span>
         </span>
         <span className="number">
@@ -165,7 +165,7 @@ const UserProfile = () => {
             <span className="access">
               <NavLink to="/dashboard">
                 <input
-                  className="btn btn-primary"
+                  className="btn btn-primary edit-icon"
                   type="button"
                   value="dash board"
                 />
@@ -177,7 +177,7 @@ const UserProfile = () => {
           <input
             type="button"
             value="withdraw"
-            className="btn btn-primary"
+            className="btn btn-primary edit-icon"
             onClick={() => {
               navigate("/request");
             }}
@@ -270,7 +270,7 @@ const UserProfile = () => {
               </div>
             </div>
           </span>
-          <NavLink to="/addBalance">
+          <NavLink to="/addBalance" className="edit-icon">
             <span className="btn btn-primary">Add Balance</span>
           </NavLink>
         </div>

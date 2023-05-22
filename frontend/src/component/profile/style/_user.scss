@@ -16,10 +16,8 @@
         justify-content: center;
         align-items: center;
         img {
-          height: 9em;
           width: 100%;
           cursor: pointer;
-          border-radius: 23px;
           aspect-ratio: 4/3;
           object-fit: contain;
         }
@@ -78,13 +76,14 @@
           opacity: 0.5;
           cursor: pointer;
         }
-        .name {
+        .email {
           width: 100%;
         }
         .name,
         .email,
         .number,
-        .balance {
+        .balance,
+        .win {
           position: relative;
           display: flex;
           justify-content: center;
@@ -93,9 +92,11 @@
             text-transform: capitalize;
             margin: 2px;
             padding: 0 2px;
+            font-size: 0.8em;
           }
           .test {
             color: cornflowerblue;
+            font-size: 1.3em;
           }
         }
       }
@@ -123,9 +124,12 @@
   display: flex;
   justify-content: space-between;
   margin-top: 15px;
+  align-items: center;
   flex-wrap: wrap;
   .edit-icon {
     margin: 2px;
+    width: fit-content;
+    height: fit-content;
   }
 }
 @media (max-width: 900px) {
@@ -134,6 +138,32 @@
       &.user {
         width: fit-content;
       }
+      div.count {
+        margin: 1em 0 0 !important;
+        padding: 0.5em !important;
+      }
+      .button {
+        justify-content: center;
+        margin-top: 0.5em;
+      }
+    }
+    .name,
+    .email,
+    .number,
+    .balance,
+    .win {
+      .title {
+        font-size: 0.6em !important;
+      }
+      .test {
+        color: cornflowerblue;
+        font-size: 0.8em !important;
+      }
+    }
+    div.count {
+      margin: 1em 0 0 !important;
+      padding: 0.5em !important;
+      font-size: 0.8em !important;
     }
   }
 }

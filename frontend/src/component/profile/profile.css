@@ -46,10 +46,8 @@
   align-items: center;
 }
 .profile > div.user div.photo img {
-  height: 9em;
   width: 100%;
   cursor: pointer;
-  border-radius: 23px;
   aspect-ratio: 4/3;
   -o-object-fit: contain;
      object-fit: contain;
@@ -107,13 +105,14 @@
   opacity: 0.5;
   cursor: pointer;
 }
-.profile > div.user div.info .name {
+.profile > div.user div.info .email {
   width: 100%;
 }
 .profile > div.user div.info .name,
 .profile > div.user div.info .email,
 .profile > div.user div.info .number,
-.profile > div.user div.info .balance {
+.profile > div.user div.info .balance,
+.profile > div.user div.info .win {
   position: relative;
   display: flex;
   justify-content: center;
@@ -122,16 +121,20 @@
 .profile > div.user div.info .name .title,
 .profile > div.user div.info .email .title,
 .profile > div.user div.info .number .title,
-.profile > div.user div.info .balance .title {
+.profile > div.user div.info .balance .title,
+.profile > div.user div.info .win .title {
   text-transform: capitalize;
   margin: 2px;
   padding: 0 2px;
+  font-size: 0.8em;
 }
 .profile > div.user div.info .name .test,
 .profile > div.user div.info .email .test,
 .profile > div.user div.info .number .test,
-.profile > div.user div.info .balance .test {
+.profile > div.user div.info .balance .test,
+.profile > div.user div.info .win .test {
   color: cornflowerblue;
+  font-size: 1.3em;
 }
 .profile > div.user div.count {
   border-top: 2px solid #ddd;
@@ -155,16 +158,49 @@
   display: flex;
   justify-content: space-between;
   margin-top: 15px;
+  align-items: center;
   flex-wrap: wrap;
 }
 .button .edit-icon {
   margin: 2px;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
 }
 
 @media (max-width: 900px) {
   .profile > div.user {
     width: -moz-fit-content;
     width: fit-content;
+  }
+  .profile > div div.count {
+    margin: 1em 0 0 !important;
+    padding: 0.5em !important;
+  }
+  .profile > div .button {
+    justify-content: center;
+    margin-top: 0.5em;
+  }
+  .profile .name .title,
+  .profile .email .title,
+  .profile .number .title,
+  .profile .balance .title,
+  .profile .win .title {
+    font-size: 0.6em !important;
+  }
+  .profile .name .test,
+  .profile .email .test,
+  .profile .number .test,
+  .profile .balance .test,
+  .profile .win .test {
+    color: cornflowerblue;
+    font-size: 0.8em !important;
+  }
+  .profile div.count {
+    margin: 1em 0 0 !important;
+    padding: 0.5em !important;
+    font-size: 0.8em !important;
   }
 }
 .modal-body {
@@ -296,7 +332,7 @@
   font-weight: bold;
 }
 .profile > div.transaction .list > div.with {
-  background-color: var(--color5);
+  background-color: #0b5ed7;
   color: white;
   margin: 5px 0;
   border-radius: 15px;
@@ -384,19 +420,19 @@
 
 @media (max-width: 1200px) {
   .profile > div.bundle .title {
-    font-size: 1.4em;
+    font-size: 1.1em;
     border-bottom: 2px solid #ddd;
   }
   .profile > div.bundle .bundle .bundle {
     color: #3e98c7;
-    font-size: 1em;
+    font-size: 0.9em;
   }
   .profile > div.bundle .s {
     text-transform: capitalize;
-    font-size: 0.9em;
+    font-size: 0.7em;
   }
   .profile > div.bundle .time {
-    font-size: 1.1em;
+    font-size: 0.9em;
     margin: 0 3px;
     color: #3e98c7;
   }

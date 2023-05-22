@@ -15,7 +15,6 @@ const AllReq = (props) => {
   useEffect(() => {
     allReq();
   }, []);
-  console.log(dataReq);
 
   return (
     <>
@@ -24,8 +23,8 @@ const AllReq = (props) => {
           <tr>
             <th>#</th>
             <th>Price</th>
-            <th>status</th>
             <th>date</th>
+            <th>status</th>
           </tr>
         </thead>
         <tbody>

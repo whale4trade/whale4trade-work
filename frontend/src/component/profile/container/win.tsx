@@ -21,8 +21,8 @@ const Win = (props) => {
   let sum = data.reduce(function (a, b) {
     return Number(a) + Number(b);
   }, 0);
- 
-  return <>{`${Math.floor((sum / 30) * 7)}$`}</>;
+
+  return <span className="test">{`${Math.floor((sum / 30) * 7)}$`}</span>;
 };
 
 export default Win;

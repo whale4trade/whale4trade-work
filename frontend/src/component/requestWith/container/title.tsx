@@ -7,12 +7,32 @@ const TitleReq = (props) => {
   const [input, setInput] = useState({
     price: "",
   });
+  const [err, setErr] = useState("");
+  const errorHandel = (text) => {
+    setErr(text);
+    setTimeout(() => {
+      setErr("");
+    }, 5000);
+  };
   const handelChange = (e) => {
     setInput((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
+  const getBalance = async () => {
+    try {
+      await axios
+        .get(`${env.url}/users/${JSON.parse(localStorage.user).id}`)
+        .then((res) => {
+          if (Number(input.price) <= Number(res.data.data.balance)) {
+            addReq();
+          } else {
+            errorHandel(`your balance = ${Number(res.data.data.balance)}$ `);
+          }
+        });
+    } catch (error) {}
+  };
   const addReq = async () => {
     try {
-      axios
+      await axios
         .post(`${env.url}/req`, {
           userId: JSON.parse(localStorage.user).id,
           userEmail: JSON.parse(localStorage.user).email,
@@ -20,8 +40,33 @@ const TitleReq = (props) => {
           timeReq: Date.now(),
           status: "pending",
         })
-        .then((res) => {
-          window.location.reload();
+        .then(() => {
+          try {
+            axios
+              .get(`${env.url}/users/${JSON.parse(localStorage.user).id}`)
+              .then((res) => {
+                try {
+                  axios
+                    .patch(
+                      `${env.url}/users/balance/${
+                        JSON.parse(localStorage.user).id
+                      }`,
+                      {
+                        balance:
+                          Number(res.data.data.balance) - Number(input.price),
+                        id: JSON.parse(localStorage.user).id,
+                      }
+                    )
+                    .then((res) => {
+                      window.location.reload();
+                    });
+                } catch (error) {
+                  console.log(error);
+                }
+              });
+          } catch (error) {
+            console.log(error);
+          }
         });
     } catch (error) {
       console.log(error);
@@ -71,6 +116,7 @@ const TitleReq = (props) => {
                 <span className="input-group-text">$</span>
               </div>
             </div>
+            <div className="err">{err}</div>
             <div className="modal-footer">
               <button
                 type="button"
@@ -82,7 +128,7 @@ const TitleReq = (props) => {
               <button
                 type="button"
                 className="btn btn-primary"
-                onClick={addReq}
+                onClick={getBalance}
               >
                 add request
               </button>
