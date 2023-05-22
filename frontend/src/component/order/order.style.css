@@ -7,6 +7,11 @@
   align-items: center;
   justify-content: center;
 }
+.container-order .err {
+  width: 100%;
+  text-align: center;
+  color: red;
+}
 .container-order .back {
   position: absolute;
   top: 0;
@@ -47,6 +52,24 @@
   font-size: 2.3em;
   font-weight: bold;
   color: #0b5ed7;
+}
+.container-order > div .con .price .price-vip,
+.container-order > div .con .win .price-vip,
+.container-order > div .con .name .price-vip,
+.container-order > div .con .category .price-vip,
+.container-order > div .con .description .price-vip {
+  width: 30%;
+  border: none;
+  border-radius: 5px;
+  background-color: white;
+}
+.container-order > div .con .price input,
+.container-order > div .con .win input,
+.container-order > div .con .name input,
+.container-order > div .con .category input,
+.container-order > div .con .description input {
+  background-color: transparent;
+  border: none;
 }
 .container-order > div .con .description .co {
   width: 10em;
