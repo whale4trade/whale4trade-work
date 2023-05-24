@@ -143,7 +143,10 @@ const AddBalance = (props) => {
                 payment_token: res.data.token, // token obtained in step 3
               })
 
-              .then((res) => (window.location.href = res.data.redirect_url));
+              .then(
+                (res) => console.log(res.data)
+                // (window.location.href = res.data.redirect_url)
+              );
           })
           .then(() => console.log("step 3 voda"));
       } catch (error) {

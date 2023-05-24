@@ -10,7 +10,7 @@
   password VARCHAR(255) NOT NULL,
   number NUMERIC(11) NOT NULL,
   imgProfile VARCHAR(400),
-  balance INTEGER,
+  balance VARCHAR(400),
   idNF VARCHAR(300),
   idNB VARCHAR(300),
   statusAccess VARCHAR(200),
