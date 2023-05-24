@@ -14,6 +14,8 @@ const TitleReq = (props) => {
       setErr("");
     }, 5000);
   };
+  const [isActive, setIsActive] = useState(false);
+
   const handelChange = (e) => {
     setInput((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
@@ -24,6 +26,8 @@ const TitleReq = (props) => {
         .then((res) => {
           if (Number(input.price) <= Number(res.data.data.balance)) {
             if (Number(input.price) > 0) {
+              setIsActive((current) => !current);
+
               addReq();
             } else {
               errorHandel(`should add number up to 0 `);
@@ -131,7 +135,7 @@ const TitleReq = (props) => {
               </button>
               <button
                 type="button"
-                className="btn btn-primary"
+                className={`btn btn-primary ${isActive ? "hide" : ""}`}
                 onClick={getBalance}
               >
                 add request

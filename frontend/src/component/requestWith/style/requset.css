@@ -6,6 +6,9 @@
   padding: 2em 1em;
   border-radius: 23px;
 }
+.request.container .hide {
+  display: none;
+}
 .request.container .title {
   width: 100%;
   display: flex;

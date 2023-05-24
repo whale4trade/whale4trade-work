@@ -5,6 +5,9 @@
   margin: 0 auto;
   padding: 2em 1em;
   border-radius: 23px;
+  .hide {
+    display: none;
+  }
   .title {
     width: 100%;
     display: flex;

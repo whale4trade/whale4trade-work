@@ -21,7 +21,6 @@ const AddBalance = (props) => {
   const handelChange = (e) => {
     setInput((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
-
   const API =
     "ZXlKaGJHY2lPaUpJVXpVeE1pSXNJblI1Y0NJNklrcFhWQ0o5LmV5SmpiR0Z6Y3lJNklrMWxjbU5vWVc1MElpd2ljSEp2Wm1sc1pWOXdheUk2TnpNM05UTXhMQ0p1WVcxbElqb2lhVzVwZEdsaGJDSjkuQzRTSjlxVTVrUUVvcklKYkVkcDd0bS1YSWZ2QW9EclJoU09BYXpCTk1zWGRhNlI5MHFieWdPZW02ZmN5SlFEcWhTRDRHZ3V1Tl9ISkJZSEJTUFV1Z0E=";
 
@@ -101,7 +100,7 @@ const AddBalance = (props) => {
 
           .then(
             (res) =>
-              (window.location.href = `https://accept.paymob.com/api/acceptance/iframes/750171  ?payment_token=${res.data.token}`)
+              (window.location.href = `https://accept.paymob.com/api/acceptance/iframes/750171?payment_token=${res.data.token}`)
           )
           .then(() => console.log("step 3 card"));
       } catch (error) {
@@ -143,10 +142,7 @@ const AddBalance = (props) => {
                 payment_token: res.data.token, // token obtained in step 3
               })
 
-              .then(
-                (res) => console.log(res.data)
-                // (window.location.href = res.data.redirect_url)
-              );
+              .then((window.location.href = res.data.redirect_url));
           })
           .then(() => console.log("step 3 voda"));
       } catch (error) {
