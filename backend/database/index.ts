@@ -7,7 +7,6 @@ const pool = new Pool({
 	database: config.database,
 	user: config.user,
 	password: config.pass,
-	max: 10,
 })
 // const pool = new Pool({
 // 	connectionString: config.ConnLink,
