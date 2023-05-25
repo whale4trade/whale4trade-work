@@ -4,6 +4,7 @@ import { CircularProgressbar } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
 import axios from "axios";
 import env from "../../../environments/enviroments";
+import Clim from "./clim";
 
 // };
 const Bundle = (props) => {
@@ -12,33 +13,6 @@ const Bundle = (props) => {
   const [hours, setHours] = useState(0);
   const [minutes, setMinutes] = useState(0);
   const [seconds, setSeconds] = useState(0);
-
-  const updateEveryDayBalance = async () => {
-    try {
-      await axios
-        .get(`${env.url}/users/${props.bundleInfo.userid}`)
-        .then((res) => {
-          console.log(
-            Number(res.data.data.balance) + Number(props.bundleInfo.win) / 30
-          );
-
-          try {
-            axios
-              .patch(`${env.url}/users/balance/${res.data.data.id}`, {
-                id: res.data.data.id,
-                balance:
-                  Number(res.data.data.balance) +
-                  Number(props.bundleInfo.win) / 30,
-              })
-              .then((res) => {
-                // console.log(res.data.data.balance);
-              });
-          } catch (error) {
-            console.log(error);
-          }
-        });
-    } catch (error) {}
-  };
 
   useEffect(() => {
     const target = new Date(Number(props.bundleInfo.timebuy));
@@ -116,6 +90,7 @@ const Bundle = (props) => {
                   >
                     {n}
                   </a>
+                  <Clim props={bundleInfo} />
                 </li>
               ))}
             </ul>

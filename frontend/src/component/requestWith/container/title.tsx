@@ -14,20 +14,20 @@ const TitleReq = (props) => {
       setErr("");
     }, 5000);
   };
-  const [isActive, setIsActive] = useState(false);
+  const [isActive, setIsActive] = useState("");
 
   const handelChange = (e) => {
     setInput((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+    setIsActive("");
   };
   const getBalance = async () => {
+    setIsActive("dis");
     try {
       await axios
         .get(`${env.url}/users/${JSON.parse(localStorage.user).id}`)
         .then((res) => {
           if (Number(input.price) <= Number(res.data.data.balance)) {
             if (Number(input.price) > 0) {
-              setIsActive((current) => !current);
-
               addReq();
             } else {
               errorHandel(`should add number up to 0 `);
@@ -135,8 +135,7 @@ const TitleReq = (props) => {
               </button>
               <button
                 type="button"
-                className={`btn btn-primary `}
-                data-bs-dismiss="modal"
+                className={`btn btn-primary ${isActive}`}
                 onClick={getBalance}
               >
                 add request
