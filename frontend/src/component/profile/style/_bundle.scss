@@ -110,3 +110,8 @@
     max-width: 300px;
   }
 }
+.dis,
+.click {
+  pointer-events: none;
+  cursor: not-allowed;
+}

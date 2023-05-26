@@ -157,7 +157,9 @@ const UserProfile = () => {
         <span className="balance">
           <span>
             <span className="title">balance: </span>
-            <span className="test">{`${dataUser!.balance}$`}</span>
+            <span className="test">{`${Number(dataUser!.balance).toFixed(
+              2
+            )}$`}</span>
           </span>
         </span>
         <div className="button">

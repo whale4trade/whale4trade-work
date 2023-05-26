@@ -1,45 +1,83 @@
+import React, { useState, useEffect } from "react";
+import axios from "axios";
+import env from "../../../environments/enviroments";
 const Clim = (props) => {
-  const [partyTime, setPartyTime] = useState(false);
-  const [days, setDays] = useState(0);
-  const [hours, setHours] = useState(0);
-  const [minutes, setMinutes] = useState(0);
-  const [seconds, setSeconds] = useState(0);
-
+  const [dis, setDis] = useState<any>("");
+  const [currentUser, setCurrentUser] = useState(
+    JSON.parse(localStorage.getItem("click")!)
+  );
+  let currentTime = new Date().getHours();
+  let displayTime =
+    currentTime > 12 ? `${currentTime - 12} PM` : `${currentTime + 12} AM`;
   useEffect(() => {
-    const target = new Date(Number(props.bundleInfo.timebuy));
-    target.setDate(target.getDate() + 30);
-    target.toDateString();
-
-    const interval = setInterval(() => {
-      const now = new Date();
-      const difference = target.getTime() - now.getTime();
-
-      const d = Math.floor(difference / (1000 * 60 * 60 * 24));
-      setDays(d);
-
+    if (localStorage.click !== "null") {
+      const target = new Date(Number(JSON.parse(localStorage.click).time));
+      target.setDate(target.getDate() + 1);
+      const difference = target.getTime() - new Date().getTime();
       const h = Math.floor(
         (difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
       );
-      setHours(h);
+      console.log(currentTime);
 
-      const m = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
-      setMinutes(m);
-
-      const s = Math.floor((difference % (1000 * 60)) / 1000);
-      setSeconds(s);
-
-      if (d <= 0 && h <= 0 && m <= 0 && s <= 0) {
-        setPartyTime(true);
+      if (currentTime === 0) {
+        if (localStorage.click === "null") {
+          console.log("yes");
+          setDis("");
+        } else if (h === 0) {
+          setDis("");
+        } else {
+          setDis("dis");
+        }
+      } else {
+        setDis("dis");
+        console.log("no");
       }
-      // updateEveryDayBalance();
-    }, 1000);
+      if (dis === "click") {
+        setTimeout(() => {
+          setDis("");
+        }, 1000 * 60 * 70);
+      }
+    }
+  }, []);
 
-    return () => clearInterval(interval);
-  }, [props.bundleInfo]);
+  // const target = new Date(Number(5));
 
+  const updateEveryDayBalance = async () => {
+    setDis("click");
+    try {
+      await axios
+        .get(`${env.url}/users/${props.bundleInfo.userid}`)
+        .then((res) => {
+          setDis("click");
+
+          try {
+            axios
+              .patch(`${env.url}/users/balance/${res.data.data.id}`, {
+                id: res.data.data.id,
+                balance:
+                  Number(res.data.data.balance) +
+                  Number(props.bundleInfo.win) / 30,
+              })
+
+              .then(() => {
+                setCurrentUser({ time: Date.now() });
+              });
+          } catch (error) {
+            console.log(error);
+          }
+        });
+    } catch (error) {}
+  };
+  useEffect(() => {
+    localStorage.setItem("click", JSON.stringify(currentUser));
+  }, [currentUser]);
   return (
     <>
-      <button className="btn btn-primary"></button>;
+      <input
+        className={`btn btn-primary ${dis}`}
+        value={`${displayTime === "10 PM" ? "clime" : displayTime}`}
+        onClick={updateEveryDayBalance}
+      />
     </>
   );
 };

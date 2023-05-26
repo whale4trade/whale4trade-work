@@ -13,7 +13,11 @@ const Bundle = (props) => {
   const [hours, setHours] = useState(0);
   const [minutes, setMinutes] = useState(0);
   const [seconds, setSeconds] = useState(0);
+  const [time, setTime] = useState(new Date());
 
+  const handleClick = () => {
+    setTime(new Date());
+  };
   useEffect(() => {
     const target = new Date(Number(props.bundleInfo.timebuy));
     target.setDate(target.getDate() + 30);
@@ -74,6 +78,8 @@ const Bundle = (props) => {
             <span className="s">seconds:</span>
             <span className="time">{seconds}</span>
           </div>
+          <Clim bundleInfo={props.bundleInfo} />
+
           <nav aria-label="Page navigation example" className="nav">
             <ul className="pagination">
               {props.numbers.map((n, i) => (
@@ -90,7 +96,6 @@ const Bundle = (props) => {
                   >
                     {n}
                   </a>
-                  <Clim props={bundleInfo} />
                 </li>
               ))}
             </ul>

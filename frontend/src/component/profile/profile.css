@@ -464,6 +464,12 @@
     max-width: 300px;
   }
 }
+.dis,
+.click {
+  pointer-events: none;
+  cursor: not-allowed;
+}
+
 .profile > div.url {
   width: 100% !important;
   min-height: -moz-fit-content !important;
