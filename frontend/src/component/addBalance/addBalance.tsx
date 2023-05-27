@@ -176,7 +176,9 @@ const AddBalance = (props) => {
               readOnly
               className="form-control-plaintext"
               id="staticEmail"
-              value={`${Number(input.price) / Number(price)}$`}
+              value={`${Number(Number(input.price) / Number(price)).toFixed(
+                2
+              )}$`}
             />
           </div>
         </div>
@@ -189,6 +191,7 @@ const AddBalance = (props) => {
                 onChange={handelChange}
                 name="number"
                 placeholder="enter your number"
+                className="phone"
               />
             ) : null}
           </>

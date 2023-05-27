@@ -26,6 +26,7 @@ import UpdatePass from "./component/updatePassword/pass";
 import Do from "./component/dashboard/component/dollar/do";
 import ReqWith from "./component/requestWith/requet";
 import RequestsDash from "./component/dashboard/component/requsets/requestsDash";
+import Success from "./component/addBalance/component/sccuses";
 function App() {
   return (
     <>
@@ -42,6 +43,7 @@ function App() {
         <Route path="/reset" element={<Reset />} />
         <Route path="/reset/auth/:email" element={<UpdatePass />} />
         <Route path="/request" element={<ReqWith />} />
+        <Route path="/success" element={<Success />} />
         <Route path="/dashboard" element={<Dashboard />}>
           <Route index element={<Dashboard />} />
           <Route path="" element={<Users />} />

@@ -15,6 +15,13 @@
 .balance.container .input-group {
   width: 100%;
 }
+.balance.container input.phone {
+  margin-top: 0.5em;
+  border-radius: 7px;
+  border: 1px solid #ddd;
+  padding: 0.5em 0.5em 0.5em;
+  text-transform: capitalize;
+}
 .balance.container div.fal {
   width: 100%;
   display: flex;
@@ -98,4 +105,13 @@
   align-items: center;
   margin: 5px auto;
   flex-wrap: wrap;
+}
+
+.icon-suc {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  color: green;
+  font-size: 10em;
+  transform: translate(-50%, -50%);
 }/*# sourceMappingURL=addBalance.css.map */
