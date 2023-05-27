@@ -124,6 +124,8 @@ div.footer {
     justify-content: center;
     flex-wrap: wrap;
     width: 100%;
+    z-index: 456789098765;
+
     .animate__animated {
       text-align: center;
       height: 0;
@@ -169,7 +171,8 @@ div.footer {
     width: 100%;
     position: fixed;
     right: 0;
-    z-index: -4;
+
+    z-index: 567828388;
     bottom: 0;
     width: fit-content;
     img {
