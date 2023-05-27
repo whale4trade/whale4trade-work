@@ -26,10 +26,14 @@ const Success = () => {
         .get(`${env.url}/users/${JSON.parse(localStorage.user).id}`)
         .then((res) => {
           try {
-            axios.patch(`${env.url}/users/balance/${res.data.data.id}`, {
-              id: res.data.data.id,
-              balance: Number(res.data.data.balance) + Number(bla),
-            });
+            axios
+              .patch(`${env.url}/users/balance/${res.data.data.id}`, {
+                id: res.data.data.id,
+                balance: Number(res.data.data.balance) + Number(bla),
+              })
+              .then((res) => {
+                console.log(res);
+              });
           } catch (error) {
             console.log(error);
           }
