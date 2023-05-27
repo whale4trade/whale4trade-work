@@ -32,11 +32,9 @@ const Success = () => {
   useEffect(() => {
     const getDol = async () => {
       try {
-        await axios
-          .get(`${env.url}/dol`)
-          .then((res) =>
-            updateBal(Number(res.data.data.dollar) / Number(priceURl))
-          );
+        await axios.get(`${env.url}/dol`).then((res) => {
+          updateBal(Number(priceURl) / Number(res.data.data.dollar));
+        });
       } catch (error) {
         console.log(error);
       }
