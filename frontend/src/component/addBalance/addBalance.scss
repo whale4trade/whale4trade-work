@@ -108,10 +108,16 @@
   }
 }
 .icon-suc {
+  color: green;
+}
+.icon-suc,
+.icon-fail {
   position: absolute;
   top: 50%;
   left: 50%;
-  color: green;
   font-size: 10em;
   transform: translate(-50%, -50%);
+}
+.icon-fail {
+  color: red;
 }

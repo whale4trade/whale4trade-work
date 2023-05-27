@@ -1,11 +1,13 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faThumbsUp } from "@fortawesome/free-solid-svg-icons";
+import { faThumbsUp, faXmark } from "@fortawesome/free-solid-svg-icons";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import env from "../../../environments/enviroments";
-
+import queryString from "query-string";
 const Success = () => {
   const priceURl = Number(window.location.search.slice(41, -804)) / 100;
+  const parsed = queryString.parse(window.location.search);
+  console.log(parsed.success);
 
   const updateBal = async (price) => {
     try {
@@ -29,21 +31,29 @@ const Success = () => {
       console.log(error);
     }
   };
+  const getDol = async () => {
+    try {
+      await axios.get(`${env.url}/dol`).then((res) => {
+        updateBal(Number(priceURl) / Number(res.data.data.dollar));
+      });
+    } catch (error) {
+      console.log(error);
+    }
+  };
   useEffect(() => {
-    const getDol = async () => {
-      try {
-        await axios.get(`${env.url}/dol`).then((res) => {
-          updateBal(Number(priceURl) / Number(res.data.data.dollar));
-        });
-      } catch (error) {
-        console.log(error);
-      }
-    };
-    getDol();
-  }, [priceURl]);
+    if (parsed.success === "true") {
+      getDol();
+    } else {
+      window.location.href = `${env.aff}/profile`;
+    }
+  }, []);
   return (
     <>
-      <FontAwesomeIcon className="icon-suc" icon={faThumbsUp} />
+      {parsed.success === "true" ? (
+        <FontAwesomeIcon className="icon-suc" icon={faThumbsUp} />
+      ) : (
+        <FontAwesomeIcon className="icon-fail" icon={faXmark} />
+      )}
     </>
   );
 };
