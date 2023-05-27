@@ -113,6 +113,18 @@ routes.patch('/balance/:id', async (req: Request, res: Response, next) => {
 		next(err)
 	}
 })
+routes.patch('/win/:id', async (req: Request, res: Response, next) => {
+	try {
+		const user = await userModel.updateWin(req.body)
+		res.json({
+			status: 'success',
+			data: user,
+			message: 'user updated successfully',
+		})
+	} catch (err) {
+		next(err)
+	}
+})
 routes.patch('/pass/:id', async (req: Request, res: Response, next) => {
 	try {
 		const user = await userModel.updatePass(req.body)

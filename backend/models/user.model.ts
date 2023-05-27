@@ -36,7 +36,7 @@ class UserModel {
 			//open connect with DB1
 			const connect = await db.connect()
 			const sql =
-				'INSERT INTO users ( username, email, number, password, imgprofile, balance, idNF, idNB, statusAccess ) values ($1, $2, $3, $4, $5, $6, $7, $8, $9) returning *'
+				'INSERT INTO users ( username, email, number, password, imgprofile, balance, idNF, idNB, statusAccess, win ) values ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) returning *'
 			//run query
 			const result = await connect.query(sql, [
 				u.username,
@@ -48,6 +48,7 @@ class UserModel {
 				u.idNF,
 				u.idNB,
 				u.statusAccess === '' ? 'user' : u.statusAccess,
+				u.win === '' ? '0' : u.win,
 			])
 			//release connect
 			connect.release()
@@ -64,7 +65,7 @@ class UserModel {
 			//open connect with DB
 			const connect = await db.connect()
 			const sql =
-				'SELECT id, username, email, number	, imgprofile, balance, idNF, idNB, statusAccess, tree from users'
+				'SELECT id, username, email, number	, imgprofile, balance, idNF, idNB, statusAccess, tree, win from users'
 			//run query
 			const result = await connect.query(sql)
 			//release connect
@@ -81,7 +82,7 @@ class UserModel {
 			//open connect with DB
 			const connect = await db.connect()
 			const sql =
-				'SELECT id, username, email, number, imgprofile, balance, idNF, idNB, statusAccess, bundleName, bundleId, tree from users WHERE id=($1)'
+				'SELECT id, username, email, number, imgprofile, balance, idNF, idNB, statusAccess, bundleName, bundleId, tree, win from users WHERE id=($1)'
 			//run query
 			const result = await connect.query(sql, [id])
 			//release connect
@@ -97,7 +98,7 @@ class UserModel {
 			//open connect with DB
 			const connect = await db.connect()
 			const sql =
-				'SELECT id, username, email, number, imgprofile, balance, idNF, idNB, statusAccess, bundleName, bundleId from users WHERE email=($1)'
+				'SELECT id, username, email, number, imgprofile, balance, idNF, idNB, statusAccess, bundleName, bundleId, win from users WHERE email=($1)'
 			//run query
 			const result = await connect.query(sql, [email])
 			//release connect
@@ -157,6 +158,21 @@ class UserModel {
 			const sql = `UPDATE users SET  balance=$1  WHERE id=$2 RETURNING *`
 			//run query
 			const result = await connect.query(sql, [u.balance, u.id])
+			//release connect
+			connect.release()
+			//return created user
+			return result.rows[0]
+		} catch (err) {
+			throw new Error(`could not update  user ${u.email}, ${err}`)
+		}
+	}
+	async updateWin(u: User): Promise<User> {
+		try {
+			//open connect with DB
+			const connect = await db.connect()
+			const sql = `UPDATE users SET  win=$1  WHERE id=$2 RETURNING *`
+			//run query
+			const result = await connect.query(sql, [u.win, u.id])
 			//release connect
 			connect.release()
 			//return created user

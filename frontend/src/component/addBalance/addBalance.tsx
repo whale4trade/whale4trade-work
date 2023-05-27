@@ -38,10 +38,7 @@ const AddBalance = (props) => {
       try {
         await axios
           .post("https://accept.paymob.com/api/auth/tokens", data)
-          .then((res) => secStep(res.data.token))
-          .then(() => {
-            console.log("step 1");
-          });
+          .then((res) => secStep(res.data.token));
       } catch (error) {}
     }
   };
@@ -61,9 +58,7 @@ const AddBalance = (props) => {
         .then((res) => {
           thirdStep(res.data.id, token);
         })
-        .then(() => {
-          console.log("step 2");
-        })
+
         .then(() => handleClick());
     } catch (error) {
       console.log(error);
@@ -80,19 +75,19 @@ const AddBalance = (props) => {
             expiration: 3600,
             order_id: `${id}`,
             billing_datatokenFi: {
-              apartment: "803",
-              email: "claudette09@exa.com",
-              floor: "42",
-              first_name: "Clifford",
-              street: "Ethan Land",
-              building: "8028",
-              phone_number: "+86(8)9135210487",
-              shipping_method: "PKG",
-              postal_code: "01898",
-              city: "Jaskolskiburgh",
-              country: "CR",
-              last_name: "Nicolas",
-              state: "Utah",
+              apartment: "NA",
+              email: `${JSON.parse(localStorage.user).email}`,
+              floor: "NA",
+              first_name: `${JSON.parse(localStorage.user).name}`,
+              street: "NA",
+              building: "NA",
+              phone_number: `${JSON.parse(localStorage.user).number}`,
+              shipping_method: "NA",
+              postal_code: "NA",
+              city: "NA",
+              country: "NA",
+              last_name: "NA",
+              state: "NA",
             },
             currency: "EGP",
             integration_id: 3716690,
@@ -101,8 +96,7 @@ const AddBalance = (props) => {
           .then(
             (res) =>
               (window.location.href = `https://accept.paymob.com/api/acceptance/iframes/750171?payment_token=${res.data.token}`)
-          )
-          .then(() => console.log("step 3 card"));
+          );
       } catch (error) {
         console.log(error);
       }
@@ -115,19 +109,19 @@ const AddBalance = (props) => {
             expiration: 3600,
             order_id: `${id}`,
             billing_data: {
-              apartment: "803",
-              email: "claudette09@exa.com",
-              floor: "42",
-              first_name: "Clifford",
-              street: "Ethan Land",
-              building: "8028",
-              phone_number: "+86(8)9135210487",
-              shipping_method: "PKG",
-              postal_code: "01898",
-              city: "Jaskolskiburgh",
-              country: "CR",
-              last_name: "Nicolas",
-              state: "Utah",
+              apartment: "NA",
+              email: `${JSON.parse(localStorage.user).email}`,
+              floor: "NA",
+              first_name: `${JSON.parse(localStorage.user).name}`,
+              street: "NA",
+              building: "NA",
+              phone_number: `${JSON.parse(localStorage.user).number}`,
+              shipping_method: "NA",
+              postal_code: "NA",
+              city: "NA",
+              country: "NA",
+              last_name: "NA",
+              state: "NA",
             },
             currency: "EGP",
             integration_id: 3716756,
@@ -142,9 +136,8 @@ const AddBalance = (props) => {
                 payment_token: res.data.token, // token obtained in step 3
               })
 
-              .then((window.location.href = res.data.redirect_url));
-          })
-          .then(() => console.log("step 3 voda"));
+              .then((res) => (window.location.href = res.data.redirect_url));
+          });
       } catch (error) {
         console.log(error);
       }

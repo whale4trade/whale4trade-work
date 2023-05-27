@@ -16,5 +16,7 @@
   statusAccess VARCHAR(200),
    bundleId uuid REFERENCES bundle(id) ,
   bundleName VARCHAR(255) REFERENCES bundle(name),
-  tree VARCHAR(200)
+  tree VARCHAR(200),
+  win VARCHAR(200)
+  
  );

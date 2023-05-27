@@ -132,6 +132,7 @@ const Register = () => {
           idNF: `${input.fileIdFront}`,
           idNB: `${input.fileIdBack}`,
           statusAccess: ``,
+          win: "",
         })
         .then(async () => {
           try {

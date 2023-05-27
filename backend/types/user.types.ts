@@ -13,6 +13,7 @@ type User = {
 	bundleId: string
 	bundleName: string
 	tree: string
+	win: string
 }
 
 export default User

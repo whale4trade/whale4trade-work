@@ -58,4 +58,16 @@ routes.get('/:id', async (req: Request, res: Response, next) => {
 	}
 })
 
+routes.patch('/timeWin/:id', async (req: Request, res: Response, next) => {
+	try {
+		const user = await ordersModel.updateWinTime(req.body)
+		res.json({
+			status: 'success',
+			data: user,
+			message: 'user updated successfully',
+		})
+	} catch (err) {
+		next(err)
+	}
+})
 export default routes

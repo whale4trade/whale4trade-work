@@ -15,6 +15,7 @@ const Title = (props) => {
     idNB: "",
     statusAccess: "",
     balance: "",
+    win: "",
   });
   const [isActive, setIsActive] = useState(false);
 

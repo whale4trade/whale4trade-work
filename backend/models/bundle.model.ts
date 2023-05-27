@@ -89,7 +89,6 @@ class BundleModel {
 			throw new Error(`could not update  bundle ${u.name}, ${err}`)
 		}
 	}
-	//delete user
 	async delete(id: string): Promise<Bundle> {
 		try {
 			//open connect with DB

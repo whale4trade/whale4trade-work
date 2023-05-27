@@ -11,7 +11,7 @@ class OrdersModel {
 			//open connect with DB
 			const connect = await db.connect()
 			const sql =
-				'INSERT INTO orders ( bundleId, userId, name, price, win, timeBuy) values ($1, $2, $3, $4, $5, $6) returning *'
+				'INSERT INTO orders ( bundleId, userId, name, price, win, timeBuy, timeWin) values ($1, $2, $3, $4, $5, $6, $7) returning *'
 			//run query
 			const result = await connect.query(sql, [
 				o.bundleId,
@@ -20,6 +20,7 @@ class OrdersModel {
 				o.win,
 				o.price,
 				o.timeBuy,
+				o.timeWin,
 			])
 			//release connect
 			connect.release()
@@ -77,5 +78,21 @@ class OrdersModel {
 			throw new Error(`.could not find order ${id}, ${err}`)
 		}
 	}
+	async updateWinTime(u: Orders): Promise<Orders> {
+		try {
+			//open connect with DB
+			const connect = await db.connect()
+			const sql = `UPDATE orders SET  timewin=$1  WHERE id=$2 RETURNING *`
+			//run query
+			const result = await connect.query(sql, [u.timeWin, u.id])
+			//release connect
+			connect.release()
+			//return created user
+			return result.rows[0]
+		} catch (err) {
+			throw new Error(`could not update  Orders ${u.name}, ${err}`)
+		}
+	}
+	//delet
 }
 export default OrdersModel

@@ -4,7 +4,7 @@ import { CircularProgressbar } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
 import axios from "axios";
 import env from "../../../environments/enviroments";
-import Clim from "./clim";
+import Clime from "./clime";
 
 // };
 const Bundle = (props) => {
@@ -78,7 +78,7 @@ const Bundle = (props) => {
             <span className="s">seconds:</span>
             <span className="time">{seconds}</span>
           </div>
-          <Clim bundleInfo={props.bundleInfo} />
+          <Clime bundleInfo={props.bundleInfo} />
 
           <nav aria-label="Page navigation example" className="nav">
             <ul className="pagination">

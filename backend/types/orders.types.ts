@@ -5,6 +5,7 @@ type Orders = {
 	price: number
 	timeBuy: any
 	name: string
+	timeWin: string
 	win: string
 }
 

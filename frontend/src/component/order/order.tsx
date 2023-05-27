@@ -50,6 +50,7 @@ const Order = (props) => {
           bundleId: window.location.search.slice(1),
           price: dataBundle.win,
           timeBuy: Date.now(),
+          timeWin: Date.now(),
           win: dataBundle.price,
           name: dataBundle.name,
         }
@@ -58,6 +59,7 @@ const Order = (props) => {
           bundleId: window.location.search.slice(1),
           price: input.price,
           timeBuy: Date.now(),
+          timeWin: Date.now(),
           win: input.win,
           name: dataBundle.name,
         };

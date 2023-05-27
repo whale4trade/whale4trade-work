@@ -4,25 +4,19 @@ import React, { useState, useEffect } from "react";
 
 const Win = (props) => {
   const [dataWin, setDataWin] = useState<any>([]);
-  const [num, setNum] = useState<any>([]);
   const win = async () => {
     try {
       await axios
-        .get(`${env.url}/order/user/${JSON.parse(localStorage.user).id}`)
+        .get(`${env.url}/users/${JSON.parse(localStorage.user).id}`)
         .then((res) => setDataWin(res.data.data));
     } catch (error) {}
   };
   useEffect(() => {
     win();
   }, []);
-  const data: any = [];
-  dataWin.map((w: any): any => data.push(w.win));
+  // console.log(dataWin);
 
-  let sum = data.reduce(function (a, b) {
-    return Number(a) + Number(b);
-  }, 0);
-
-  return <span className="test">{`${Math.floor((sum / 30) * 7)}$`}</span>;
+  return <span className="test">{`${dataWin.win}$`}</span>;
 };
 
 export default Win;

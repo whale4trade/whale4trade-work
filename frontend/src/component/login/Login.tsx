@@ -9,9 +9,7 @@ const Login = () => {
   const [currentUser, setCurrentUser] = useState(
     JSON.parse(localStorage.getItem("user")!)
   );
-  const [currentClick, setCurrentClick] = useState(
-    JSON.parse(localStorage.getItem("click")!)
-  );
+
   const [input, setInput] = useState({
     email: "",
     password: "",
@@ -52,7 +50,6 @@ const Login = () => {
   };
   useEffect(() => {
     localStorage.setItem("user", JSON.stringify(currentUser));
-    localStorage.setItem("click", JSON.stringify(null));
   }, [currentUser]);
 
   return (
