@@ -124,6 +124,19 @@ const UserProfile = () => {
 
   return (
     <div className="user">
+      {dataUser.statusaccess === "admin" ? (
+        <span className="access">
+          <NavLink to="/dashboard">
+            <input
+              className="btn btn-primary edit-icon"
+              type="button"
+              value="dash board"
+            />
+          </NavLink>
+        </span>
+      ) : (
+        ""
+      )}
       <div className="photo">
         <ImgUser user={dataUser} />
       </div>
@@ -163,19 +176,6 @@ const UserProfile = () => {
           </span>
         </span>
         <div className="button">
-          {dataUser.statusaccess === "admin" ? (
-            <span className="access">
-              <NavLink to="/dashboard">
-                <input
-                  className="btn btn-primary edit-icon"
-                  type="button"
-                  value="dash board"
-                />
-              </NavLink>
-            </span>
-          ) : (
-            ""
-          )}
           <input
             type="button"
             value="withdraw"

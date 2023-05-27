@@ -5,7 +5,7 @@ import axios from "axios";
 import env from "../../../environments/enviroments";
 
 const Success = () => {
-  const priceURl = Number(window.location.search.slice(41, -804)) / 1000;
+  const priceURl = Number(window.location.search.slice(41, -804)) / 100;
 
   const updateBal = async (price) => {
     try {
@@ -19,7 +19,7 @@ const Success = () => {
                 balance: Number(res.data.data.balance) + Number(price),
               })
               .then((res) => {
-                window.location.pathname = "/profile";
+                window.location.href = `${env.aff}/profile`;
               });
           } catch (error) {
             console.log(error);

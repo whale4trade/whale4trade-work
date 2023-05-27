@@ -32,6 +32,7 @@ const RequestsDash = (props) => {
               <th>#</th>
               <th>email</th>
               <th>Price</th>
+              <th>phone</th>
               <th>date</th>
               <th>status</th>
             </tr>
@@ -50,6 +51,7 @@ const RequestsDash = (props) => {
                     <td>{++u}</td>
                     <td>{r.useremail}</td>
                     <td>{r.price}$</td>
+                    <td>{r.phone}$</td>
                     <td>{new Date(Number(r.timereq)).toLocaleString()}</td>
                     <td>{r.status}</td>
                   </tr>

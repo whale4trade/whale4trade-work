@@ -23,6 +23,7 @@ const AllReq = (props) => {
           <tr>
             <th>#</th>
             <th>Price</th>
+            <th>phone</th>
             <th>date</th>
             <th>status</th>
           </tr>
@@ -34,6 +35,7 @@ const AllReq = (props) => {
               <tr className={`${r.status}`} key={u}>
                 <td>{++u}</td>
                 <td>{r.price}$</td>
+                <td>{r.phone}$</td>
                 <td>{new Date(Number(r.timereq)).toLocaleString()}</td>
                 <td>{r.status}</td>
               </tr>

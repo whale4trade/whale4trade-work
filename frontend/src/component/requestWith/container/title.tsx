@@ -6,6 +6,7 @@ import env from "../../../environments/enviroments";
 const TitleReq = (props) => {
   const [input, setInput] = useState({
     price: "",
+    phone: "",
   });
   const [err, setErr] = useState("");
   const errorHandel = (text) => {
@@ -47,6 +48,7 @@ const TitleReq = (props) => {
           price: input.price,
           timeReq: Date.now(),
           status: "pending",
+          phone: input.phone,
         })
         .then(() => {
           try {
@@ -122,6 +124,16 @@ const TitleReq = (props) => {
                   className="form-control"
                 />
                 <span className="input-group-text">$</span>
+              </div>
+              <div className="input-group">
+                <span className="input-group-text">your number </span>
+                <input
+                  type="number"
+                  onChange={handelChange}
+                  name="phone"
+                  aria-label="First name"
+                  className="form-control"
+                />
               </div>
             </div>
             <div className="err">{err}</div>

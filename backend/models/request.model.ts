@@ -10,7 +10,7 @@ class ReqModel {
 			//open connect with DB
 			const connect = await db.connect()
 			const sql =
-				'INSERT INTO request (userId, userEmail, price, timeReq, status) values ($1, $2, $3, $4, $5) returning *'
+				'INSERT INTO request (userId, userEmail, price, timeReq, status, phone) values ($1, $2, $3, $4, $5, $6) returning *'
 			//run query
 			const result = await connect.query(sql, [
 				r.userId,
@@ -18,6 +18,7 @@ class ReqModel {
 				r.price,
 				r.timeReq,
 				r.status,
+				r.phone,
 			])
 			//release connect
 			connect.release()

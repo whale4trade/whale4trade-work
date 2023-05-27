@@ -50,7 +50,7 @@
     width: 60vw;
   }
 }
-@media (max-width: 800px) {
+@media (max-width: 500px) {
   .Register .login-box {
     padding: 0.5em 1em;
     width: 100vw;
