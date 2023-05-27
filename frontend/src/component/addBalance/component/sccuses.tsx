@@ -5,7 +5,7 @@ import axios from "axios";
 import env from "../../../environments/enviroments";
 
 const Success = () => {
-  const priceURl = window.location.search.slice(41, -804);
+  const priceURl = Number(window.location.search.slice(41, -804)) / 1000;
 
   const updateBal = async (price) => {
     try {
