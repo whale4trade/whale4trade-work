@@ -5,22 +5,9 @@ import axios from "axios";
 import env from "../../../environments/enviroments";
 
 const Success = () => {
-  const [price, setPrice] = useState("");
   const priceURl = window.location.search.slice(41, -804);
-  const bla = Number(price) / Number(priceURl);
-  const getDol = async () => {
-    try {
-      await axios
-        .get(`${env.url}/dol`)
-        .then((res) => setPrice(res.data.data.dollar))
-        .then(() => {
-          updateBal();
-        });
-    } catch (error) {
-      console.log(error);
-    }
-  };
-  const updateBal = async () => {
+
+  const updateBal = async (price) => {
     try {
       await axios
         .get(`${env.url}/users/${JSON.parse(localStorage.user).id}`)
@@ -29,10 +16,10 @@ const Success = () => {
             axios
               .patch(`${env.url}/users/balance/${res.data.data.id}`, {
                 id: res.data.data.id,
-                balance: Number(res.data.data.balance) + Number(bla),
+                balance: Number(res.data.data.balance) + Number(price),
               })
               .then((res) => {
-                console.log(res);
+                window.location.pathname = "/profile";
               });
           } catch (error) {
             console.log(error);
@@ -43,8 +30,19 @@ const Success = () => {
     }
   };
   useEffect(() => {
+    const getDol = async () => {
+      try {
+        await axios
+          .get(`${env.url}/dol`)
+          .then((res) =>
+            updateBal(Number(res.data.data.dollar) / Number(priceURl))
+          );
+      } catch (error) {
+        console.log(error);
+      }
+    };
     getDol();
-  }, []);
+  }, [priceURl]);
   return (
     <>
       <FontAwesomeIcon className="icon-suc" icon={faThumbsUp} />
