@@ -10,24 +10,31 @@ const Success = () => {
     const priceURl = window.location.search.slice(41, -804);
     const bla = Number(price) / Number(priceURl);
     try {
-      axios.get(`${env.url}/dol`).then((res) => setPrice(res.data.data.dollar));
-    } catch (error) {}
-    try {
-      axios
-        .get(`${env.url}/users/${JSON.parse(localStorage.user).id}`)
-        .then((res) => {
+      axios.get(`${env.url}/dol`).then((res) =>
+        setPrice(res.data.data.dollar).then(() => {
           try {
             axios
-              .patch(`${env.url}/users/balance/${res.data.data.id}`, {
-                id: res.data.data.id,
-                balance: Number(res.data.data.balance) + Number(bla),
-              })
-              .then((res) => {});
-          } catch (error) {
-            console.log(error);
-          }
-        });
-    } catch (error) {}
+              .get(`${env.url}/users/${JSON.parse(localStorage.user).id}`)
+              .then((res) => {
+                try {
+                  axios
+                    .patch(`${env.url}/users/balance/${res.data.data.id}`, {
+                      id: res.data.data.id,
+                      balance: Number(res.data.data.balance) + Number(bla),
+                    })
+                    .then((res) => {
+                      console.log(res);
+                    });
+                } catch (error) {
+                  console.log(error);
+                }
+              });
+          } catch (error) {}
+        })
+      );
+    } catch (error) {
+      console.log(error);
+    }
   }, []);
 
   return (
