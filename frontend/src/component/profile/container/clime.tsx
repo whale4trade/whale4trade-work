@@ -7,10 +7,8 @@ const Clime = (props) => {
   const [minutes, setMinutes] = useState(0);
 
   const checkWin = () => {
-    if (hour <= 0) {
+    if (minutes <= 0) {
       updateEveryDayBalance();
-    } else {
-      console.log("no");
     }
   };
 
@@ -53,17 +51,11 @@ const Clime = (props) => {
                             timeWin: Date.now(),
                           }
                         );
-                      } catch (error) {
-                        console.log(error);
-                      }
+                      } catch (error) {}
                     });
-                } catch (error) {
-                  console.log(error);
-                }
+                } catch (error) {}
               });
-          } catch (error) {
-            console.log(error);
-          }
+          } catch (error) {}
         });
     } catch (error) {}
   };
@@ -85,9 +77,10 @@ const Clime = (props) => {
       <input
         className={`btn btn-primary clime ${dis}`}
         value={`${
-          hour <= 0 ? `clime` : `clime after ${hour} h : ${minutes} m`
+          minutes <= 0 ? `clime` : `clime after ${hour} h : ${minutes} m`
         }   `}
         onClick={checkWin}
+        readOnly={true}
       />
     </>
   );

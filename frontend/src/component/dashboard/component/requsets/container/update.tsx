@@ -5,11 +5,14 @@ const UpdateReq = (props) => {
   const [input, setInput] = useState({
     status: "",
   });
+  const [dis, setDis] = useState<any>("");
+
   const handelChange = (e) => {
     setInput((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
 
   const update = async (id) => {
+    setDis("dis");
     try {
       await axios
         .patch(`${env.url}/req/${props.r.id}`, {
@@ -124,7 +127,7 @@ const UpdateReq = (props) => {
               <button
                 type="button"
                 onClick={() => update(props.r.id)}
-                className="btn btn-primary"
+                className={`btn btn-primary ${dis} `}
               >
                 Save changes
               </button>

@@ -415,7 +415,8 @@
   color: #3e98c7;
 }
 .profile > div.bundle .clime {
-  width: 100%;
+  width: -moz-fit-content;
+  width: fit-content;
 }
 .profile .nav {
   position: relative !important;
@@ -492,6 +493,13 @@
     max-width: 300px;
   }
 }
+.clime-container {
+  width: 100%;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+}
+
 .dis,
 .click {
   pointer-events: none;

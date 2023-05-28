@@ -281,18 +281,12 @@ const UserProfile = () => {
       </div>
       <div className="count">
         <div className="tree">
-          <span className="title">
-            {Tree.length === 0 ? `not found affiliate:  ` : `your affiliate: `}
-          </span>
+          <span className="title">`your affiliate: `</span>
           <span>{Tree.length}</span>
         </div>
         <div className="line"></div>
         <div className="bundle">
-          <span className="title">
-            {dataBundle.length === 0
-              ? `you aren't subscription to any bundle`
-              : `your bundle:  `}
-          </span>
+          <span className="title">`your bundle: `</span>
           <span>{dataBundle.length === 0 ? "" : dataBundle.length}</span>
         </div>
       </div>

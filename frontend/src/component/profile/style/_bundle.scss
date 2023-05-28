@@ -31,7 +31,7 @@
         }
       }
       .clime {
-        width: 100%;
+        width: fit-content;
       }
     }
   }
@@ -119,6 +119,12 @@
     display: block;
     max-width: 300px;
   }
+}
+.clime-container {
+  width: 100%;
+  justify-content: center;
+  display: flex;
+  align-items: center;
 }
 .dis,
 .click {

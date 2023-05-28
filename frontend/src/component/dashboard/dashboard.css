@@ -280,6 +280,10 @@
   width: 100%;
 }
 
+.dis {
+  pointer-events: none;
+}
+
 * {
   box-sizing: border-box;
   font-family: "DM Sans", sans-serif;

@@ -78,7 +78,9 @@ const Bundle = (props) => {
             <span className="s">seconds:</span>
             <span className="time">{seconds}</span>
           </div>
-          <Clime bundleInfo={props.bundleInfo} />
+          <div className="clime-container">
+            <Clime bundleInfo={props.bundleInfo} />
+          </div>
 
           <nav aria-label="Page navigation example" className="nav">
             <ul className="pagination">

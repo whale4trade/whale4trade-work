@@ -13,7 +13,7 @@
   padding: 0.6em 0;
   font-size: 0.8em;
   color: #fff;
-  margin-bottom: 0.6em;
+  margin-bottom: 0.9em;
   border: none;
   border-bottom: 1px solid #fff;
   outline: none;
@@ -30,12 +30,12 @@
   display: inline-block;
   padding: 0.5em 1em;
   color: #03e9f4;
-  font-size: 0.7em;
+  font-size: 0.9em;
   text-decoration: none;
   text-transform: uppercase;
   overflow: hidden;
   transition: 0.5s;
-  margin-top: 0.3em;
+  margin-top: 0.9em;
   letter-spacing: 4px;
 }
 .Register .login-box .label-check {
@@ -53,6 +53,6 @@
 @media (max-width: 500px) {
   .Register .login-box {
     padding: 0.5em 1em;
-    width: 100vw;
+    width: 90vw;
   }
 }/*# sourceMappingURL=register.css.map */
