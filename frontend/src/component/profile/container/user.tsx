@@ -124,19 +124,6 @@ const UserProfile = () => {
 
   return (
     <div className="user">
-      {dataUser.statusaccess === "admin" ? (
-        <span className="access">
-          <NavLink to="/dashboard">
-            <input
-              className="btn btn-primary edit-icon"
-              type="button"
-              value="dash board"
-            />
-          </NavLink>
-        </span>
-      ) : (
-        ""
-      )}
       <div className="photo">
         <ImgUser user={dataUser} />
       </div>
@@ -175,7 +162,21 @@ const UserProfile = () => {
             )}$`}</span>
           </span>
         </span>
+
         <div className="button">
+          {dataUser.statusaccess === "admin" ? (
+            <span className="access">
+              <NavLink to="/dashboard">
+                <input
+                  className="btn btn-primary edit-icon"
+                  type="button"
+                  value="dash board"
+                />
+              </NavLink>
+            </span>
+          ) : (
+            ""
+          )}
           <input
             type="button"
             value="withdraw"
@@ -281,7 +282,7 @@ const UserProfile = () => {
       <div className="count">
         <div className="tree">
           <span className="title">
-            {Tree.length === 0 ? `not found affiliate` : `your affiliate: `}
+            {Tree.length === 0 ? `not found affiliate:  ` : `your affiliate: `}
           </span>
           <span>{Tree.length}</span>
         </div>
@@ -290,7 +291,7 @@ const UserProfile = () => {
           <span className="title">
             {dataBundle.length === 0
               ? `you aren't subscription to any bundle`
-              : `your bundle: `}
+              : `your bundle:  `}
           </span>
           <span>{dataBundle.length === 0 ? "" : dataBundle.length}</span>
         </div>

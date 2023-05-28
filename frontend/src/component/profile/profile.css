@@ -8,6 +8,7 @@
   font-style: italic;
   width: 100%;
   text-transform: capitalize;
+  text-align: center;
   font-size: 2em;
   border-bottom: 2px solid #ddd;
 }
@@ -36,6 +37,20 @@
   font-family: "Source Sans Pro", sans-serif;
   height: -moz-fit-content;
   height: fit-content;
+}
+.profile > div.user #exampleModalToggle2 .modal-header {
+  display: none;
+}
+.profile > div.user #exampleModalToggle2 .modal-body {
+  width: 100%;
+  background-color: transparent;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -100%);
+}
+.profile > div.user #exampleModalToggle2 .modal-footer {
+  display: none;
 }
 .profile > div.user div.photo {
   width: 30%;
@@ -235,6 +250,7 @@
   width: 100%;
   text-transform: capitalize;
   font-size: 2em;
+  text-align: center;
   border-bottom: 2px solid #ddd;
 }
 .profile > div.tree .list table {
@@ -318,6 +334,7 @@
   width: 100%;
   text-transform: capitalize;
   font-size: 2em;
+  text-align: center;
   border-bottom: 2px solid #ddd;
 }
 .profile > div.transaction .list > div {
@@ -346,6 +363,7 @@
   font-style: italic;
   width: 100%;
   text-transform: capitalize;
+  text-align: center;
   font-size: 2em;
   border-bottom: 2px solid #ddd;
 }
@@ -376,6 +394,7 @@
   text-transform: capitalize;
   font-size: 2em;
   border-bottom: 2px solid #ddd;
+  text-align: center;
 }
 .profile > div.bundle .bundle .bundle {
   color: #3e98c7;
@@ -385,6 +404,7 @@
   display: flex;
   flex-wrap: wrap;
   align-items: center;
+  justify-content: center;
 }
 .profile > div.bundle .timer .s {
   text-transform: capitalize;
@@ -393,6 +413,9 @@
   font-size: 2em;
   margin: 0 3px;
   color: #3e98c7;
+}
+.profile > div.bundle .clime {
+  width: 100%;
 }
 .profile .nav {
   position: relative !important;
@@ -417,10 +440,15 @@
   vertical-align: middle;
   margin: 1.5em 0;
 }
+.profile .modal-body {
+  justify-content: center;
+}
+.profile .modal-footer {
+  justify-content: center !important;
+}
 
 @media (max-width: 1200px) {
   .profile > div.bundle .title {
-    font-size: 1.1em;
     border-bottom: 2px solid #ddd;
   }
   .profile > div.bundle .bundle .bundle {
@@ -566,4 +594,7 @@
   .profile.container > div {
     width: 100%;
   }
+}
+.modal-dialog {
+  z-index: 234567898765434560;
 }/*# sourceMappingURL=profile.css.map */

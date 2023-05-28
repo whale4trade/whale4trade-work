@@ -1,8 +1,9 @@
 .balance.container {
   width: 60vw;
   position: absolute;
-  left: 20%;
-  top: 35%;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
   margin: 30px auto;
   /* box-shadow: 17px 21px 10px #ddd; */
   border-radius: 20px;
@@ -103,8 +104,11 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 5px auto;
+    // margin: 2em auto;
     flex-wrap: wrap;
+    .form-check {
+      margin: 2em auto;
+    }
   }
 }
 .icon-suc {
@@ -120,4 +124,12 @@
 }
 .icon-fail {
   color: red;
+}
+@media (max-width: 650px) {
+  .balance.container {
+    width: 100vw;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
 }

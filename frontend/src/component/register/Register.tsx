@@ -303,6 +303,8 @@ const Register = () => {
               <label>password</label>
             </div>
             <div className="user-box">
+              <div>your ID front</div>
+
               <input
                 type="file"
                 name="fileIdBack"
@@ -311,6 +313,8 @@ const Register = () => {
               />
             </div>
             <div className="user-box">
+              <div>your ID back</div>
+
               <input
                 type="file"
                 name="fileIdFront"

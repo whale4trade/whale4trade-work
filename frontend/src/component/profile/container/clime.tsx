@@ -4,6 +4,7 @@ import env from "../../../environments/enviroments";
 const Clime = (props) => {
   const [dis, setDis] = useState<any>("");
   const [hour, sethours] = useState<any>("");
+  const [minutes, setMinutes] = useState(0);
 
   const checkWin = () => {
     if (hour <= 0) {
@@ -74,14 +75,18 @@ const Clime = (props) => {
     const h = Math.floor(
       (difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
     );
+    const m = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+    setMinutes(m);
     sethours(h);
   }, [checkWin]);
 
   return (
     <>
       <input
-        className={`btn btn-primary ${dis}`}
-        value={`${hour <= 0 ? `clime` : `clime after ${hour} hours`}   `}
+        className={`btn btn-primary clime ${dis}`}
+        value={`${
+          hour <= 0 ? `clime` : `clime after ${hour} h : ${minutes} m`
+        }   `}
         onClick={checkWin}
       />
     </>

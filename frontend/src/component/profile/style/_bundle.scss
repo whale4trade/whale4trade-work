@@ -8,6 +8,7 @@
         text-transform: capitalize;
         font-size: 2em;
         border-bottom: 2px solid #ddd;
+        text-align: center;
       }
       .bundle {
         .bundle {
@@ -19,6 +20,7 @@
         display: flex;
         flex-wrap: wrap;
         align-items: center;
+        justify-content: center;
         .s {
           text-transform: capitalize;
         }
@@ -27,6 +29,9 @@
           margin: 0 3px;
           color: #3e98c7;
         }
+      }
+      .clime {
+        width: 100%;
       }
     }
   }
@@ -52,13 +57,18 @@
     vertical-align: middle;
     margin: 1.5em 0;
   }
+  .modal-body {
+    justify-content: center;
+  }
+  .modal-footer {
+    justify-content: center !important;
+  }
 }
 @media (max-width: 1200px) {
   .profile {
     > div {
       &.bundle {
         .title {
-          font-size: 1.1em;
           border-bottom: 2px solid #ddd;
         }
         .bundle {

@@ -176,18 +176,8 @@ const AddBalance = (props) => {
           </div>
         </div>
         <div className="choice">
-          <Choice handelChange={handelChange} />
-          <>
-            {input.flexRadioDefault === "vodafone" ? (
-              <input
-                type="phone"
-                onChange={handelChange}
-                name="number"
-                placeholder="enter your number"
-                className="phone"
-              />
-            ) : null}
-          </>
+          <Choice input={input} handelChange={handelChange} />
+          <></>
         </div>
         <div
           className={`btn btn-primary balance ${isActive ? "active" : ""}`}

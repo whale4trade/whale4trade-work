@@ -59,7 +59,7 @@ const Bundle = (props) => {
       ) : (
         <>
           <div className="bundle">
-            <span className="title-bundle">Bundle:</span>
+            <span className="title-bundle">Bundle: </span>
             <span className="bundle">{props.bundleInfo.name}</span>
           </div>
           <CircularProgressbar

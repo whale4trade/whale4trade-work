@@ -7,7 +7,22 @@
       width: 50%;
       font-family: "Source Sans Pro", sans-serif;
       height: fit-content;
-
+      #exampleModalToggle2 {
+        .modal-header {
+          display: none;
+        }
+        .modal-body {
+          width: 100%;
+          background-color: transparent;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -100%);
+        }
+        .modal-footer {
+          display: none;
+        }
+      }
       div.photo {
         width: 30%;
         margin: 5px auto;

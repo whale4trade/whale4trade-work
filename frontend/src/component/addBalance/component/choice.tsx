@@ -16,6 +16,15 @@ const Choice = (props) => {
         <label className="form-check-label" htmlFor="flexRadioDefault1">
           <img src={vodafoneCash} alt="" />
         </label>
+        {props.input.flexRadioDefault === "vodafone" ? (
+          <input
+            type="phone"
+            onChange={props.handelChange}
+            name="number"
+            placeholder="enter your number"
+            className="phone"
+          />
+        ) : null}
       </div>
       <div className="form-check">
         <input
