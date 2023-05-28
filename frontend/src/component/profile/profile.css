@@ -588,8 +588,9 @@
   flex-wrap: wrap;
 }
 .profile.container > div {
-  min-height: 40vh;
-  height: 50vh;
+  min-height: 50vh;
+  max-height: -moz-fit-content;
+  max-height: fit-content;
   background-color: #fff;
   border-radius: 15px;
   padding: 1em 1em 2em;

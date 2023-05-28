@@ -7,6 +7,8 @@ import { useNavigate } from "react-router-dom";
 const Order = (props) => {
   const navigate = useNavigate();
   const [isActive, setIsActive] = useState(false);
+  const [dis, setDis] = useState("");
+
   const [input, setInput] = useState<any>({
     price: "",
     win: "",
@@ -65,6 +67,7 @@ const Order = (props) => {
         };
 
   const handleOrder = async () => {
+    setDis("dis");
     try {
       if (Number(users.balance) >= Number(dataBundle.price)) {
         try {
@@ -130,6 +133,7 @@ const Order = (props) => {
   };
   const [err, setErr] = useState<any>(false);
   const handleOrderVip = async () => {
+    setDis("dis");
     try {
       if (Number(input.price) >= Number(dataBundle.price)) {
         if (Number(input.price) <= Number(dataBundle.win)) {
@@ -277,7 +281,7 @@ const Order = (props) => {
           {dataBundle.category !== "vip" ? (
             <input
               type="button"
-              className="btn btn-primary"
+              className={`btn btn-primary ${dis}`}
               value="order"
               onClick={handleOrder}
               id="liveToastBtn"
@@ -286,7 +290,7 @@ const Order = (props) => {
             <>
               <input
                 type="button"
-                className="btn btn-primary"
+                className={`btn btn-primary ${dis}`}
                 value="order"
                 onClick={handleOrderVip}
                 id="liveToastBtn"

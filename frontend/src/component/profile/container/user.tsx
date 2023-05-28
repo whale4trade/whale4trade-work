@@ -281,12 +281,12 @@ const UserProfile = () => {
       </div>
       <div className="count">
         <div className="tree">
-          <span className="title">`your affiliate: `</span>
+          <span className="title">your affiliate: </span>
           <span>{Tree.length}</span>
         </div>
         <div className="line"></div>
         <div className="bundle">
-          <span className="title">`your bundle: `</span>
+          <span className="title">your bundle: </span>
           <span>{dataBundle.length === 0 ? "" : dataBundle.length}</span>
         </div>
       </div>

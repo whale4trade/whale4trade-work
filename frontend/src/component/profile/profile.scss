@@ -34,8 +34,8 @@
   flex-wrap: wrap;
 
   > div {
-    min-height: 40vh;
-    height: 50vh;
+    min-height: 50vh;
+    max-height: fit-content;
 
     background-color: #fff;
     border-radius: 15px;
