@@ -26,6 +26,7 @@ app.use(
 		origin: [
 			'https://shimmering-phoenix-977e7f.netlify.app',
 			'https://www.whale4trade.com',
+			'https://whale4trade.com',
 			'http://localhost:3000',
 			'http://localhost:3001',
 		],
