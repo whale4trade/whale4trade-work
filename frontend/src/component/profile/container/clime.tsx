@@ -81,7 +81,7 @@ const Clime = (props) => {
     <>
       <input
         className={`btn btn-primary ${dis}`}
-        value={`${hour <= 0 ? `clime` : `${hour} hours`}   `}
+        value={`${hour <= 0 ? `clime` : `clime after ${hour} hours`}   `}
         onClick={checkWin}
       />
     </>
