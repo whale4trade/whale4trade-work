@@ -70,17 +70,11 @@ const TitleReq = (props) => {
                     .then((res) => {
                       window.location.reload();
                     });
-                } catch (error) {
-                  console.log(error);
-                }
+                } catch (error) {}
               });
-          } catch (error) {
-            console.log(error);
-          }
+          } catch (error) {}
         });
-    } catch (error) {
-      console.log(error);
-    }
+    } catch (error) {}
   };
 
   return (

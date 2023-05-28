@@ -14,7 +14,6 @@ const ConfirmUser = async () => {
       window.location.pathname = "/login";
     }
   };
-  // console.log(localStorage.user === "null");
 
   if (localStorage.user === "null") {
     window.location.pathname = "/login";

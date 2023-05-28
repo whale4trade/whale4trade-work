@@ -60,9 +60,7 @@ const AddBalance = (props) => {
         })
 
         .then(() => handleClick());
-    } catch (error) {
-      console.log(error);
-    }
+    } catch (error) {}
   };
   //third
   const thirdStep = (id, token) => {
@@ -97,9 +95,7 @@ const AddBalance = (props) => {
             (res) =>
               (window.location.href = `https://accept.paymob.com/api/acceptance/iframes/750171?payment_token=${res.data.token}`)
           );
-      } catch (error) {
-        console.log(error);
-      }
+      } catch (error) {}
     } else {
       try {
         axios
@@ -138,12 +134,9 @@ const AddBalance = (props) => {
 
               .then((res) => (window.location.href = res.data.redirect_url));
           });
-      } catch (error) {
-        console.log(error);
-      }
+      } catch (error) {}
     }
   };
-  // price.map((d: any): any => console.log(d));
   useEffect(() => {
     try {
       axios.get(`${env.url}/dol`).then((res) => setPrice(res.data.data.dollar));

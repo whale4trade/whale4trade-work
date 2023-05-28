@@ -49,9 +49,7 @@ const EditUser = (props) => {
             window.location.reload();
           }, 2000);
         });
-    } catch (error) {
-      console.log(error);
-    }
+    } catch (error) {}
   };
 
   const updateBalance = (id, bala) => {
@@ -60,9 +58,7 @@ const EditUser = (props) => {
         id: id,
         balance: bala,
       });
-    } catch (error) {
-      console.log(error);
-    }
+    } catch (error) {}
   };
   return (
     <>

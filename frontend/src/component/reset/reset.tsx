@@ -25,16 +25,12 @@ const Reset = () => {
             number: code,
           })
           .then((res) => {
-            console.log(code);
-
             setSend((current) => !current);
             setTimeout(() => {
               setSend("");
             }, 4000);
           });
-      } catch (error) {
-        console.log(error);
-      }
+      } catch (error) {}
     } else {
       setErr("please check your email");
       setTimeout(() => {

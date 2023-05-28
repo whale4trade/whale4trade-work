@@ -140,9 +140,7 @@ const Register = () => {
             navigate("/login");
           }, 3000);
         });
-    } catch (error) {
-      console.log(error);
-    }
+    } catch (error) {}
   };
 
   const ver = async (email) => {
@@ -153,16 +151,13 @@ const Register = () => {
           number: code,
         })
         .then((res) => {
-          console.log(code);
           const send = () => setSend((current) => !current);
           send();
           setTimeout(() => {
             setSend("");
           }, 4000);
         });
-    } catch (error) {
-      console.log(error);
-    }
+    } catch (error) {}
   };
   const con = () => {
     if (Number(code) === Number(input.sent)) {

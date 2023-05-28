@@ -15,9 +15,7 @@ const RequestsDash = (props) => {
       await axios.get(`${env.url}/req`).then((res) => {
         setGetAllReq(res.data.data);
       });
-    } catch (error) {
-      console.log(error);
-    }
+    } catch (error) {}
   };
   useEffect(() => {
     getReq();

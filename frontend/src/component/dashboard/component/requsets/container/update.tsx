@@ -31,22 +31,12 @@ const UpdateReq = (props) => {
                     .then(() => {
                       window.location.reload();
                     });
-                } catch (error) {
-                  console.log(error);
-                }
+                } catch (error) {}
               });
-            } catch (error) {
-              console.log(error);
-            }
+            } catch (error) {}
           } else if (input.status === "cancel") {
             try {
               axios.get(`${env.url}/users/${props.r.userid}`).then((res) => {
-                console.log(Number(res.data.data.balance));
-                console.log(Number(props.r.price));
-                console.log(
-                  Number(props.r.price) + Number(res.data.data.balance)
-                );
-
                 try {
                   axios
                     .patch(`${env.url}/users/balance/${props.r.userid}`, {
@@ -66,22 +56,14 @@ const UpdateReq = (props) => {
                           .then(() => {
                             window.location.reload();
                           });
-                      } catch (error) {
-                        console.log(error);
-                      }
+                      } catch (error) {}
                     });
-                } catch (error) {
-                  console.log(error);
-                }
+                } catch (error) {}
               });
-            } catch (error) {
-              console.log(error);
-            }
+            } catch (error) {}
           }
         });
-    } catch (err) {
-      console.log(err);
-    }
+    } catch (err) {}
   };
 
   return (

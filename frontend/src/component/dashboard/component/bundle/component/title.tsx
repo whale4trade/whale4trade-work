@@ -21,7 +21,6 @@ const BundleF = (props) => {
   const handleFileChange = (event) => {
     setFile(event.target.files[0]);
   };
-  console.log(input);
 
   const handleSubmit = (event) => {
     event.preventDefault();

@@ -19,7 +19,6 @@ const EditBundle = (props) => {
   const handelChange = (e) => {
     setInput((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
-  console.log(file);
   const updateUser = async () => {
     try {
       await axios
@@ -36,7 +35,7 @@ const EditBundle = (props) => {
           id: props.b.id,
         })
         .then((res) => {
-          console.log(res.data);
+          window.location.reload();
         });
     } catch (err: any) {
       setErr(err.response.data);

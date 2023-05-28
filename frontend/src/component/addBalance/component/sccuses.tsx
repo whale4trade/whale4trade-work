@@ -7,7 +7,6 @@ import queryString from "query-string";
 const Success = () => {
   const priceURl = Number(window.location.search.slice(41, -804)) / 100;
   const parsed = queryString.parse(window.location.search);
-  console.log(parsed.success);
 
   const updateBal = async (price) => {
     try {
@@ -23,22 +22,16 @@ const Success = () => {
               .then((res) => {
                 window.location.href = `${env.aff}/profile`;
               });
-          } catch (error) {
-            console.log(error);
-          }
+          } catch (error) {}
         });
-    } catch (error) {
-      console.log(error);
-    }
+    } catch (error) {}
   };
   const getDol = async () => {
     try {
       await axios.get(`${env.url}/dol`).then((res) => {
         updateBal(Number(priceURl) / Number(res.data.data.dollar));
       });
-    } catch (error) {
-      console.log(error);
-    }
+    } catch (error) {}
   };
   useEffect(() => {
     if (parsed.success === "true") {
