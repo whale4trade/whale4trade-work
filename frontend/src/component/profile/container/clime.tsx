@@ -7,9 +7,9 @@ const Clime = (props) => {
   const [minutes, setMinutes] = useState(0);
 
   const checkWin = () => {
-    // if (minutes <= 0) {
-    updateEveryDayBalance();
-    // }
+    if (minutes <= 0) {
+      updateEveryDayBalance();
+    }
   };
 
   const updateEveryDayBalance = async () => {

@@ -80,6 +80,9 @@
   .profile {
     > div {
       &.url {
+        #liveToast {
+          width: 53vw;
+        }
         .btn {
           margin: 0;
           font-size: 0.6em;
