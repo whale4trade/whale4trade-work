@@ -102,12 +102,18 @@ const Reset = () => {
             <input type="text" name="email" required onChange={handelChange} />
             <label>Email</label>
           </div>
-          <input
+          {/* <input
             type="button"
-            value="sent code to email"
+            value=""
             className="btn btn-dark"
-            onClick={() => search()}
-          />
+            onClick={}
+          /> */}
+          <Link to="" onClick={() => search()} className="send-res">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>send code
+          </Link>
           <div></div>
           <div className="user-box">
             <input type="number" name="sent" required onChange={handelChange} />

@@ -53,7 +53,7 @@
   display: none;
 }
 .profile > div.user div.photo {
-  width: 30%;
+  width: 45%;
   margin: 5px auto;
   position: relative;
   display: flex;
@@ -108,8 +108,9 @@
 .profile > div.user div.info {
   width: 100%;
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   position: relative;
+  top: 30px;
   flex-wrap: wrap;
 }
 .profile > div.user div.info svg {
@@ -122,6 +123,13 @@
 }
 .profile > div.user div.info .email {
   width: 100%;
+}
+.profile > div.user div.info .de,
+.profile > div.user div.info .da {
+  display: flex;
+  flex-wrap: wrap;
+  width: 50%;
+  justify-content: start;
 }
 .profile > div.user div.info .name,
 .profile > div.user div.info .email,
@@ -160,6 +168,8 @@
   align-items: center;
   width: 100%;
   text-transform: capitalize;
+  position: relative;
+  top: 25px;
 }
 .profile > div.user div.count .line {
   height: 100%;
@@ -175,8 +185,11 @@
   margin-top: 15px;
   align-items: center;
   flex-wrap: wrap;
+  position: relative;
+  top: 35px;
 }
 .button .edit-icon {
+  text-transform: capitalize;
   margin: 2px;
   width: -moz-fit-content;
   width: fit-content;
@@ -189,6 +202,10 @@
     width: -moz-fit-content;
     width: fit-content;
   }
+  .profile > div.user .photo {
+    width: 60% !important;
+    top: 0px;
+  }
   .profile > div div.count {
     margin: 1em 0 0 !important;
     padding: 0.5em !important;
@@ -197,14 +214,15 @@
     justify-content: center;
     margin-top: 0.5em;
   }
-  .profile .name .title,
+  .profile div.info {
+    top: 0 !important;
+  }
   .profile .email .title,
   .profile .number .title,
   .profile .balance .title,
   .profile .win .title {
     font-size: 0.6em !important;
   }
-  .profile .name .test,
   .profile .email .test,
   .profile .number .test,
   .profile .balance .test,
@@ -212,10 +230,14 @@
     color: cornflowerblue;
     font-size: 0.8em !important;
   }
+  .profile .button {
+    top: 0;
+  }
   .profile div.count {
     margin: 1em 0 0 !important;
     padding: 0.5em !important;
     font-size: 0.8em !important;
+    top: 0 !important;
   }
 }
 .modal-body {
@@ -580,7 +602,7 @@
 @media (max-width: 800px) {
   .profile > div.url .btn {
     margin: 0;
-    font-size: 0.7em;
+    font-size: 0.6em;
   }
 }
 .back {
@@ -612,10 +634,15 @@
   position: relative;
   margin: 20px 0;
 }
+.profile.container > div div.title {
+  bottom: 10px !important;
+  position: relative;
+}
 
 @media (max-width: 1000px) {
   .profile.container > div {
     width: 100%;
+    padding: 0.6em 0.7em 0em !important;
   }
 }
 .modal-dialog {

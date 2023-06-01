@@ -48,10 +48,10 @@ const URL = (props) => {
           <div className="toast-body">Copied</div>
         </div>
       </div>
-      <span className="icon " onClick={() => copy()}>
+      {/* <span className="icon " onClick={() => copy()}>
         <FontAwesomeIcon icon={faCopy} />
         Copy
-      </span>
+      </span> */}
     </div>
   );
 };

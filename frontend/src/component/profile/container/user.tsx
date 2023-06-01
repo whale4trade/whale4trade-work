@@ -135,150 +135,155 @@ const UserProfile = () => {
           </span>
         </span>
 
-        <span className="win">
-          <span>
-            <span className="title">win:</span>
-            <Win />
-            {/* <span className="test"></span> */}
-          </span>
-        </span>
-        <span className="name">
-          <span>
-            <span className="title">username:</span>
-            <span className="test">{`${dataUser!.username}`}</span>
-          </span>
-        </span>
-        <span className="number">
-          <span>
-            <span className="title">number:</span>
-            <span className="test">{`${dataUser!.number}`}</span>
-          </span>
-        </span>
-        <span className="balance">
-          <span>
-            <span className="title">balance: </span>
-            <span className="test">{`${Number(dataUser!.balance).toFixed(
-              2
-            )}$`}</span>
-          </span>
-        </span>
-
-        <div className="button">
-          {dataUser.statusaccess === "admin" ? (
-            <span className="access">
-              <NavLink to="/dashboard">
-                <input
-                  className="btn btn-primary edit-icon"
-                  type="button"
-                  value="dash board"
-                />
-              </NavLink>
+        <div className="de">
+          {" "}
+          <span className="name">
+            <span>
+              <span className="title">username:</span>
+              <span className="test">{`${dataUser!.username}`}</span>
             </span>
-          ) : (
-            ""
-          )}
+          </span>
+          <span className="balance">
+            <span>
+              <span className="title">balance: </span>
+              <span className="test">{`${Number(dataUser!.balance).toFixed(
+                2
+              )}$`}</span>
+            </span>
+          </span>
+        </div>
+        <div className="da">
+          <span className="number">
+            <span>
+              <span className="title">number:</span>
+              <span className="test">{`${dataUser!.number}`}</span>
+            </span>
+          </span>
+
+          <span className="win">
+            <span>
+              <span className="title">win:</span>
+              <Win />
+              {/* <span className="test"></span> */}
+            </span>
+          </span>
+        </div>
+      </div>
+      <div className="button">
+        {dataUser.statusaccess === "admin" ? (
+          <span className="access">
+            <NavLink to="/dashboard">
+              <input
+                className="btn btn-primary edit-icon"
+                type="button"
+                value="dash board"
+              />
+            </NavLink>
+          </span>
+        ) : (
+          ""
+        )}
+        <input
+          type="button"
+          value="withdraw"
+          className="btn btn-primary edit-icon"
+          onClick={() => {
+            navigate("/request");
+          }}
+        />
+        <span className="edit-icon">
           <input
             type="button"
-            value="withdraw"
             className="btn btn-primary edit-icon"
-            onClick={() => {
-              navigate("/request");
-            }}
+            value="update"
+            data-bs-toggle="modal"
+            data-bs-target="#exampleModal3"
           />
-          <span className="edit-icon">
-            <input
-              type="button"
-              className="btn btn-primary"
-              value="update"
-              data-bs-toggle="modal"
-              data-bs-target="#exampleModal3"
-            />
-            <div className="toast-container position-fixed bottom-0 end-0 p-3">
-              <div
-                id="liveToast"
-                className={`toast fade ${isActive ? "show" : "hide"} `}
-                role="alert"
-                aria-live="assertive"
-                aria-atomic="true"
-              >
-                <div className="toast-header">
-                  <strong className="me-auto">Whale4trade</strong>
-                  <small>Just Now</small>
+          <div className="toast-container position-fixed bottom-0 end-0 p-3">
+            <div
+              id="liveToast"
+              className={`toast fade ${isActive ? "show" : "hide"} `}
+              role="alert"
+              aria-live="assertive"
+              aria-atomic="true"
+            >
+              <div className="toast-header">
+                <strong className="me-auto">Whale4trade</strong>
+                <small>Just Now</small>
+                <button
+                  type="button"
+                  className="btn-close"
+                  data-bs-dismiss="toast"
+                  aria-label="Close"
+                ></button>
+              </div>
+              <div className="toast-body">update your profile</div>
+            </div>
+          </div>
+          <div
+            className="modal fade"
+            id="exampleModal3"
+            aria-labelledby="exampleModalLabel"
+            aria-hidden="true"
+          >
+            <div className="modal-dialog modal-dialog-centered">
+              <div className="modal-content">
+                <div className="modal-header">
+                  <h1 className="modal-title fs-5" id="exampleModalLabel">
+                    update your email
+                  </h1>
                   <button
                     type="button"
                     className="btn-close"
-                    data-bs-dismiss="toast"
+                    data-bs-dismiss="modal"
                     aria-label="Close"
                   ></button>
                 </div>
-                <div className="toast-body">update your profile</div>
-              </div>
-            </div>
-            <div
-              className="modal fade"
-              id="exampleModal3"
-              aria-labelledby="exampleModalLabel"
-              aria-hidden="true"
-            >
-              <div className="modal-dialog modal-dialog-centered">
-                <div className="modal-content">
-                  <div className="modal-header">
-                    <h1 className="modal-title fs-5" id="exampleModalLabel">
-                      update your email
-                    </h1>
-                    <button
-                      type="button"
-                      className="btn-close"
-                      data-bs-dismiss="modal"
-                      aria-label="Close"
-                    ></button>
-                  </div>
-                  <div className="modal-body">
-                    <input
-                      type="email"
-                      onChange={handelChange}
-                      name="email"
-                      placeholder="your new email"
-                    />
-                    <input
-                      type="username"
-                      onChange={handelChange}
-                      name="username"
-                      placeholder="your new username"
-                    />
-                    <input
-                      type="number"
-                      onChange={handelChange}
-                      name="number"
-                      placeholder="your new number"
-                    />
-                  </div>
-                  <div className="modal-footer">
-                    <button
-                      type="button"
-                      className="btn btn-secondary"
-                      data-bs-dismiss="modal"
-                    >
-                      Close
-                    </button>
-                    <button
-                      type="button"
-                      onClick={handleUpdate}
-                      className="btn btn-primary"
-                    >
-                      Save changes
-                    </button>
-                  </div>
+                <div className="modal-body">
+                  <input
+                    type="email"
+                    onChange={handelChange}
+                    name="email"
+                    placeholder="your new email"
+                  />
+                  <input
+                    type="username"
+                    onChange={handelChange}
+                    name="username"
+                    placeholder="your new username"
+                  />
+                  <input
+                    type="number"
+                    onChange={handelChange}
+                    name="number"
+                    placeholder="your new number"
+                  />
+                </div>
+                <div className="modal-footer">
+                  <button
+                    type="button"
+                    className="btn btn-secondary"
+                    data-bs-dismiss="modal"
+                  >
+                    Close
+                  </button>
+                  <button
+                    type="button"
+                    onClick={handleUpdate}
+                    className="btn btn-primary"
+                  >
+                    Save changes
+                  </button>
                 </div>
               </div>
             </div>
-          </span>
-          <NavLink to="/addBalance" className="edit-icon">
-            <span className="btn btn-primary">Add Balance</span>
-          </NavLink>
-        </div>
-        {err && err}
+          </div>
+        </span>
+        <NavLink to="/addBalance" className="edit-icon">
+          <span className="btn btn-primary">Add Balance</span>
+        </NavLink>
       </div>
+      {err && err}
       <div className="count">
         <div className="tree">
           <span className="title">your affiliate: </span>
