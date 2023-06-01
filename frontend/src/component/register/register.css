@@ -42,6 +42,7 @@
   color: white;
   margin: 0 0.6em;
   text-transform: capitalize;
+  display: inline;
 }
 .Register .login-box .label-check a {
   letter-spacing: 1px !important;
