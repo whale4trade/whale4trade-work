@@ -46,6 +46,13 @@
       color: white;
       margin: 0 0.6em;
       text-transform: capitalize;
+      a {
+        // background-color: #03e9f4;
+        letter-spacing: 1px !important;
+        margin: 0 !important;
+        padding: 0 0.5em !important;
+        display: inline-flex;
+      }
     }
   }
 }

@@ -177,4 +177,10 @@
 
 .err {
   color: white;
+}
+
+@media (max-width: 800px) {
+  .login-box {
+    width: 85%;
+  }
 }/*# sourceMappingURL=login.css.map */

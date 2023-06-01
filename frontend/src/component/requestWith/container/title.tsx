@@ -21,15 +21,24 @@ const TitleReq = (props) => {
     setInput((prev) => ({ ...prev, [e.target.name]: e.target.value }));
     setIsActive("");
   };
+
   const getBalance = async () => {
-    setIsActive("dis");
     try {
       await axios
         .get(`${env.url}/users/${JSON.parse(localStorage.user).id}`)
         .then((res) => {
           if (Number(input.price) <= Number(res.data.data.balance)) {
             if (Number(input.price) > 0) {
-              addReq();
+              if (input.phone.length !== 0) {
+                if (input.phone.length > 10) {
+                  setIsActive("dis");
+                  addReq();
+                } else {
+                  errorHandel("add number like 01234567****");
+                }
+              } else {
+                errorHandel("please add phone for withdraw");
+              }
             } else {
               errorHandel(`should add number up to 0 `);
             }
@@ -40,6 +49,8 @@ const TitleReq = (props) => {
     } catch (error) {}
   };
   const addReq = async () => {
+    setIsActive("dis");
+
     try {
       await axios
         .post(`${env.url}/req`, {
@@ -51,10 +62,14 @@ const TitleReq = (props) => {
           phone: input.phone,
         })
         .then(() => {
+          setIsActive("dis");
+
           try {
             axios
               .get(`${env.url}/users/${JSON.parse(localStorage.user).id}`)
               .then((res) => {
+                setIsActive("dis");
+
                 try {
                   axios
                     .patch(

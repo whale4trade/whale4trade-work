@@ -53,57 +53,52 @@ const Bundle = (props) => {
   return (
     <>
       {partyTime ? (
-        <>
-          <h1>you are should subscribe in bundle</h1>
-        </>
+        ""
       ) : (
         <>
           <div className="bundle">
             <span className="title-bundle">Bundle: </span>
             <span className="bundle">{props.bundleInfo.name}</span>
-          </div>
-          <CircularProgressbar
-            value={days}
-            text={`${days}days`}
-            maxValue={30}
-          />
+            <CircularProgressbar
+              value={days}
+              text={`${days}days`}
+              maxValue={30}
+            />
 
-          <div className="timer" aria-label="l">
-            <span className="s">days:</span>
-            <span className="time">{days}</span>
-            <span className="s">hours:</span>
-            <span className="time">{hours}</span>
-            <span className="s">minutes:</span>
-            <span className="time">{minutes}</span>
-            <span className="s">seconds:</span>
-            <span className="time">{seconds}</span>
+            <div className="timer" aria-label="l">
+              <span className="s">days:</span>
+              <span className="time">{days}</span>
+              <span className="s">hours:</span>
+              <span className="time">{hours}</span>
+              <span className="s">minutes:</span>
+              <span className="time">{minutes}</span>
+              <span className="s">seconds:</span>
+              <span className="time">{seconds}</span>
+            </div>
+            <div className="clime-container">
+              <Clime bundleInfo={props.bundleInfo} />
+            </div>
           </div>
-          <div className="clime-container">
-            <Clime bundleInfo={props.bundleInfo} />
-          </div>
-
-          <nav aria-label="Page navigation example" className="nav">
-            <ul className="pagination">
-              {props.numbers.map((n, i) => (
-                <li
-                  className={`page-item ${
-                    props.currentPage === n ? "active" : ""
-                  }`}
-                  key={i}
-                >
-                  <a
-                    href="#"
-                    className="page-link"
-                    onClick={() => props.changeCPage(n)}
-                  >
-                    {n}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </nav>
         </>
       )}
+      <nav aria-label="Page navigation example" className="nav">
+        <ul className="pagination">
+          {props.numbers.map((n, i) => (
+            <li
+              className={`page-item ${props.currentPage === n ? "active" : ""}`}
+              key={i}
+            >
+              <a
+                href="#"
+                className="page-link"
+                onClick={() => props.changeCPage(n)}
+              >
+                {n}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </nav>
     </>
   );
 };

@@ -11,6 +11,8 @@
         text-align: center;
       }
       .bundle {
+        // min-height: 50%;
+        // height: fit-content;
         .bundle {
           color: #3e98c7;
           font-size: 1.3em;
@@ -21,6 +23,8 @@
         flex-wrap: wrap;
         align-items: center;
         justify-content: center;
+        // min-height: 70%;
+        // height: fit-content;
         .s {
           text-transform: capitalize;
         }
@@ -38,16 +42,24 @@
   .nav {
     position: relative !important;
     height: fit-content;
+    display: flex;
     justify-content: center;
     margin: 0 auto;
     z-index: 12;
     padding: 1em 0 0 0;
     transform: translateX(0%);
     width: 100%;
-    .page-item {
-      width: 50%;
-      a {
-        font-size: 1.1em;
+    ul {
+      display: flex;
+      justify-content: start;
+      flex-wrap: wrap;
+      width: fit-content;
+
+      .page-item {
+        // width: 50%;
+        a {
+          font-size: 1.1em;
+        }
       }
     }
   }

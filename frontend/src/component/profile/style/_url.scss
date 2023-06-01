@@ -1,6 +1,10 @@
 .profile {
   > div {
     &.url {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
       width: 100% !important;
       min-height: fit-content !important;
       position: relative;

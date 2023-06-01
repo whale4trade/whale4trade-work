@@ -16,7 +16,7 @@ const Win = (props) => {
   }, []);
   // console.log(dataWin);
 
-  return <span className="test">{`${dataWin.win}$`}</span>;
+  return <span className="test">{`${Number(dataWin.win).toFixed(3)}$`}</span>;
 };
 
 export default Win;

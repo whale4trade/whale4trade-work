@@ -7,9 +7,9 @@ const Clime = (props) => {
   const [minutes, setMinutes] = useState(0);
 
   const checkWin = () => {
-    if (minutes <= 0) {
-      updateEveryDayBalance();
-    }
+    // if (minutes <= 0) {
+    updateEveryDayBalance();
+    // }
   };
 
   const updateEveryDayBalance = async () => {
@@ -44,13 +44,17 @@ const Clime = (props) => {
                     )
                     .then(() => {
                       try {
-                        axios.patch(
-                          `${env.url}/order/timeWin/${props.bundleInfo.id}`,
-                          {
-                            id: props.bundleInfo.id,
-                            timeWin: Date.now(),
-                          }
-                        );
+                        axios
+                          .patch(
+                            `${env.url}/order/timeWin/${props.bundleInfo.id}`,
+                            {
+                              id: props.bundleInfo.id,
+                              timeWin: Date.now(),
+                            }
+                          )
+                          .then(() => {
+                            window.location.reload();
+                          });
                       } catch (error) {}
                     });
                 } catch (error) {}

@@ -4,8 +4,8 @@
   > div {
     &.transaction {
       font-family: "Source Sans Pro", sans-serif;
-
-      height: fit-content;
+      min-height: 50vh;
+      max-height: fit-content;
       .title {
         font-style: italic;
         width: 100%;
@@ -16,6 +16,8 @@
         border-bottom: 2px solid #ddd;
       }
       .list {
+        min-height: 70%;
+        height: fit-content;
         > div {
           display: flex;
           flex-wrap: wrap;

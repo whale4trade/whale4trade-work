@@ -15,7 +15,7 @@ const Transaction = (props) => {
     handleDataTrans();
   }, []);
   const [currentPage, setCurrentPage] = useState(1);
-  const recordsPerPage: any = 5;
+  const recordsPerPage: any = 6;
   const lastIndex: any = currentPage * recordsPerPage;
   const firstIndex: any = lastIndex - recordsPerPage;
   const records: any = dataTran.slice(firstIndex, lastIndex);
@@ -29,7 +29,6 @@ const Transaction = (props) => {
   return (
     <div className="transaction">
       <div className="title">transaction</div>
-
       <div className="list">
         {records
           .sort((a, b) => (a.timejoin < b.timejoin ? 1 : -1))
@@ -47,25 +46,21 @@ const Transaction = (props) => {
               </div>
             </>
           ))}
-        <nav aria-label="Page navigation example" className="nav">
-          <ul className="pagination">
-            {numbers.map((n, i) => (
-              <li
-                className={`page-item ${currentPage === n ? "active" : ""}`}
-                key={i}
-              >
-                <Link
-                  to="#"
-                  className="page-link"
-                  onClick={() => changeCPage(n)}
-                >
-                  {n}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </nav>
       </div>
+      <nav aria-label="Page navigation example" className="nav">
+        <ul className="pagination">
+          {numbers.map((n, i) => (
+            <li
+              className={`page-item ${currentPage === n ? "active" : ""}`}
+              key={i}
+            >
+              <Link to="#" className="page-link" onClick={() => changeCPage(n)}>
+                {n}
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </nav>
     </div>
   );
 };

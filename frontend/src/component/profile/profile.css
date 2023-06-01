@@ -326,8 +326,9 @@
 
 .profile > div.transaction {
   font-family: "Source Sans Pro", sans-serif;
-  height: -moz-fit-content;
-  height: fit-content;
+  min-height: 50vh;
+  max-height: -moz-fit-content;
+  max-height: fit-content;
 }
 .profile > div.transaction .title {
   font-style: italic;
@@ -336,6 +337,11 @@
   font-size: 2em;
   text-align: center;
   border-bottom: 2px solid #ddd;
+}
+.profile > div.transaction .list {
+  min-height: 70%;
+  height: -moz-fit-content;
+  height: fit-content;
 }
 .profile > div.transaction .list > div {
   display: flex;
@@ -422,6 +428,7 @@
   position: relative !important;
   height: -moz-fit-content;
   height: fit-content;
+  display: flex;
   justify-content: center;
   margin: 0 auto;
   z-index: 12;
@@ -429,10 +436,14 @@
   transform: translateX(0%);
   width: 100%;
 }
-.profile .nav .page-item {
-  width: 50%;
+.profile .nav ul {
+  display: flex;
+  justify-content: start;
+  flex-wrap: wrap;
+  width: -moz-fit-content;
+  width: fit-content;
 }
-.profile .nav .page-item a {
+.profile .nav ul .page-item a {
   font-size: 1.1em;
 }
 .profile .CircularProgressbar {
@@ -507,6 +518,9 @@
 }
 
 .profile > div.url {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 100% !important;
   min-height: -moz-fit-content !important;
   min-height: fit-content !important;
@@ -588,7 +602,7 @@
   flex-wrap: wrap;
 }
 .profile.container > div {
-  min-height: 50vh;
+  min-height: 500px;
   max-height: -moz-fit-content;
   max-height: fit-content;
   background-color: #fff;
