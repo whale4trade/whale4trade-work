@@ -355,3 +355,21 @@ div.footer {
     transform-origin: top;
   }
 }
+
+::-webkit-scrollbar {
+  width: 20px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  border-radius: 10px;
+
+  color: transparent;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background-color: #626667;
+
+  border-radius: 10px;
+}

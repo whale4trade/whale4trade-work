@@ -159,7 +159,6 @@ const UserProfile = () => {
               )}$`}</span>
             </span>
           </span>
-
           <span className="win">
             <span>
               <span className="title">win:</span>

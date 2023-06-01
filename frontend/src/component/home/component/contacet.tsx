@@ -11,6 +11,7 @@ const Contact = (props) => {
   const handleClick = (event) => {
     setIsActive((current) => !current);
   };
+
   return (
     <>
       <div className="contact">
@@ -30,7 +31,11 @@ const Contact = (props) => {
             <span className="co">Chat</span>
             <FontAwesomeIcon icon={faComment} />
           </NavLink> */}
-          <NavLink target="_blank" to="https://t.me/Whale4trade">
+          <NavLink
+            target="_blank"
+            onClick={handleClick}
+            to="https://t.me/Whale4trade"
+          >
             <span className="co">Telegram</span>
             <FontAwesomeIcon icon={faTelegram} />
           </NavLink>

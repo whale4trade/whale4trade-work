@@ -322,4 +322,19 @@ div.footer div.contact .icon a svg {
     transform: scale(1.25) translateY(-15px);
     transform-origin: top;
   }
+}
+::-webkit-scrollbar {
+  width: 20px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  border-radius: 10px;
+  color: transparent;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background-color: #626667;
+  border-radius: 10px;
 }/*# sourceMappingURL=home.css.map */

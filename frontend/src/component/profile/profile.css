@@ -131,6 +131,9 @@
   width: 50%;
   justify-content: start;
 }
+.profile > div.user div.info .da .balance {
+  margin-right: 35px;
+}
 .profile > div.user div.info .name,
 .profile > div.user div.info .email,
 .profile > div.user div.info .number,
