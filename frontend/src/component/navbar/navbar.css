@@ -30,16 +30,19 @@ nav.bg-light .container-fluid .navbar-brand {
   color: #333 !important;
   font-size: 1em !important;
 }
-nav.bg-light .container-fluid .navbar-collapse ul li a {
+nav.bg-light .container-fluid .cc ul {
+  flex-direction: row;
+}
+nav.bg-light .container-fluid .cc ul li a {
   color: #333;
   opacity: 0.5;
   font-size: 1em;
 }
-nav.bg-light .container-fluid .navbar-collapse ul li a:hover {
+nav.bg-light .container-fluid .cc ul li a:hover {
   opacity: 1;
   font-size: 1.3em;
 }
-nav.bg-light .container-fluid .navbar-collapse ul li a.active {
+nav.bg-light .container-fluid .cc ul li a.active {
   font-size: 1.3em;
   background-color: #333 !important;
   color: white !important;
@@ -54,40 +57,44 @@ nav .container-fluid .navbar-toggler {
   font-size: 29px;
   box-shadow: none;
 }
-nav .container-fluid .navbar-collapse {
+nav .container-fluid .cc {
   transition: none;
 }
-nav .container-fluid .navbar-collapse.show ul {
+nav .container-fluid .cc.show ul {
   border-radius: 20px;
+  flex-direction: row;
 }
-nav .container-fluid .navbar-collapse.show ul li {
+nav .container-fluid .cc.show ul li {
   display: flex;
   justify-content: center;
   margin: 15px;
 }
-nav .container-fluid .navbar-collapse.show ul li a {
+nav .container-fluid .cc.show ul li a {
   font-size: 18px;
 }
-nav .container-fluid .navbar-collapse.show ul li a.active {
+nav .container-fluid .cc.show ul li a.active {
   background-color: #fff;
   font-size: 25px;
   color: #333;
 }
-nav .container-fluid .navbar-collapse ul li {
+nav .container-fluid .cc ul {
+  flex-direction: row;
+}
+nav .container-fluid .cc ul li {
   margin: 0 15px;
 }
-nav .container-fluid .navbar-collapse ul li a {
+nav .container-fluid .cc ul li a {
   font-size: 18px;
   align-items: center;
   display: flex;
 }
-nav .container-fluid .navbar-collapse ul li a.active {
+nav .container-fluid .cc ul li a.active {
   font-size: 25px;
   background-color: #fff;
   color: #333;
   transition-duration: 0.4s;
 }
-nav .container-fluid .navbar-collapse ul li a span {
+nav .container-fluid .cc ul li a span {
   background-color: #fff;
   display: none;
   margin: 0 10px;
@@ -96,10 +103,10 @@ nav .container-fluid .navbar-collapse ul li a span {
   height: fit-content;
   transition-duration: 0.3s;
 }
-nav .container-fluid .navbar-collapse ul li a:hover .login, nav .container-fluid .navbar-collapse ul li a:hover .logout {
+nav .container-fluid .cc ul li a:hover .login, nav .container-fluid .cc ul li a:hover .logout {
   transition-duration: 0.3s;
 }
-nav .container-fluid .navbar-collapse ul li a svg {
+nav .container-fluid .cc ul li a svg {
   font-size: 30px;
 }
 
@@ -119,5 +126,24 @@ nav .container-fluid .navbar-collapse ul li a svg {
   }
   nav.bg-light .navbar-toggler {
     color: #333 !important;
+  }
+}
+@media (max-width: 700px) {
+  nav .cc {
+    width: 100%;
+  }
+  nav .cc ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    width: 100%;
+    padding: 0;
+  }
+  nav .cc ul li {
+    margin: 0;
+  }
+  nav .cc ul li a {
+    font-size: 0.8em !important;
   }
 }/*# sourceMappingURL=navbar.css.map */

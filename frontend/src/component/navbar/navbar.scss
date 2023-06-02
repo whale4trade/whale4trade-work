@@ -29,8 +29,10 @@ nav {
         color: #333 !important;
         font-size: 1em !important;
       }
-      .navbar-collapse {
+      .cc {
         ul {
+          flex-direction: row;
+
           li {
             a {
               color: #333;
@@ -63,12 +65,13 @@ nav {
       box-shadow: none;
     }
 
-    .navbar-collapse {
+    .cc {
       transition: none;
       &.show {
         ul {
           border-radius: 20px;
-          // background-color: #212529;
+          flex-direction: row;
+
           li {
             display: flex;
             justify-content: center;
@@ -85,6 +88,8 @@ nav {
         }
       }
       ul {
+        flex-direction: row;
+
         li {
           margin: 0 15px;
           a {
@@ -136,6 +141,28 @@ nav {
         rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
       .navbar-toggler {
         color: #333 !important;
+      }
+    }
+  }
+}
+@media (max-width: 700px) {
+  nav {
+    .cc {
+      width: 100%;
+
+      ul {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0;
+        width: 100%;
+        padding: 0;
+        li {
+          margin: 0;
+          a {
+            font-size: 0.8em !important;
+          }
+        }
       }
     }
   }

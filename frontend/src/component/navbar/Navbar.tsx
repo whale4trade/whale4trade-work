@@ -47,7 +47,7 @@ class Navbar extends React.Component<NavbarProps, NavbarState> {
           <NavLink className="navbar-brand" to="/">
             Whale4Trade
           </NavLink>
-          <button
+          {/* <button
             className={`navbar-toggler`}
             type="button"
             data-bs-toggle="collapse"
@@ -57,9 +57,9 @@ class Navbar extends React.Component<NavbarProps, NavbarState> {
             aria-label="Toggle navigation"
           >
             <FontAwesomeIcon icon={faListUl} />
-          </button>
-          <div className={`collapse navbar-collapse  `} id="navbarNav">
-            <ul className="navbar-nav ms-auto me-2 nav-pills ">
+          </button> */}
+          <div className={` cc`} id="navbarNav">
+            <ul className="navbar-nav ms-auto  nav-pills ">
               <>
                 <li className="nav-item" onClick={this.handleClick}>
                   <NavLink className="nav-link " aria-current="page" to="/">
