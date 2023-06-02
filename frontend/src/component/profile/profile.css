@@ -165,7 +165,7 @@
 .profile > div.user div.info .number .test,
 .profile > div.user div.info .balance .test,
 .profile > div.user div.info .win .test {
-  color: cornflowerblue;
+  color: #3e98c7 !important;
   font-size: 1.3em;
 }
 .profile > div.user div.count {
@@ -236,7 +236,7 @@
   .profile .number .test,
   .profile .balance .test,
   .profile .win .test {
-    color: #3e98c7;
+    color: #3e98c7 !important;
     font-size: 0.8em !important;
   }
   .profile .button {
