@@ -236,7 +236,7 @@
   .profile .number .test,
   .profile .balance .test,
   .profile .win .test {
-    color: cornflowerblue;
+    color: #3e98c7;
     font-size: 0.8em !important;
   }
   .profile .button {
@@ -267,6 +267,11 @@
 }
 .modal-body input[name=number] {
   flex: 1 0 130px;
+}
+
+.btn.btn-primary {
+  background-color: #3e98c7 !important;
+  border-color: #3e98c7 !important;
 }
 
 .profile > div.tree {
@@ -386,7 +391,7 @@
   font-weight: bold;
 }
 .profile > div.transaction .list > div.with {
-  background-color: #0b5ed7;
+  background-color: #3e98c7;
   color: white;
   margin: 5px 0;
   border-radius: 15px;
@@ -561,7 +566,7 @@
   min-height: -moz-fit-content !important;
   min-height: fit-content !important;
   position: relative;
-  padding-top: 2em;
+  padding: 1em !important;
   height: -moz-fit-content !important;
   height: fit-content !important;
 }
@@ -623,8 +628,8 @@
   }
 }
 .back {
-  background: #e8cbc0; /* fallback for old browsers */ /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #636fa4, #e8cbc0); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: #076585; /* fallback for old browsers */ /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to left, #fff, #076585); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   position: fixed;
   top: 0;
   width: 100vw;

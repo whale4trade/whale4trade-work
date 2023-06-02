@@ -200,7 +200,7 @@
         font-size: 0.6em !important;
       }
       .test {
-        color: cornflowerblue;
+        color: #3e98c7;
         font-size: 0.8em !important;
       }
     }
@@ -233,4 +233,8 @@
   input[name="number"] {
     flex: 1 0 130px;
   }
+}
+.btn.btn-primary {
+  background-color: #3e98c7 !important;
+  border-color: #3e98c7 !important ;
 }
