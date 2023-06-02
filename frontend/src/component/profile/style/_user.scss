@@ -94,22 +94,29 @@
         .email {
           width: 100%;
         }
-        .de,
-        .da {
+        .ha {
           display: flex;
+          justify-content: space-between;
+          align-items: center;
+          width: 87%;
           flex-wrap: wrap;
-          width: 50%;
-          position: relative;
-          left: 3.5em;
-          justify-content: start;
-          > span {
-            display: flex;
-            justify-content: start;
-            align-items: center;
-            width: 100%;
-          }
+          // .de,
+          // .da {
+          //   display: flex;
+          //   flex-wrap: wrap;
+          //   position: relative;
+          //   justify-content: start;
+          //   > span {
+          //     display: flex;
+          //     justify-content: start;
+          //     align-items: center;
+          //   }
+          // }
         }
-
+        .email {
+          width: 100% !important;
+          justify-content: center !important;
+        }
         .name,
         .email,
         .number,
@@ -117,7 +124,8 @@
         .win {
           position: relative;
           display: flex;
-          justify-content: center;
+          justify-content: start;
+          width: 50%;
           align-items: center;
           .title {
             text-transform: capitalize;

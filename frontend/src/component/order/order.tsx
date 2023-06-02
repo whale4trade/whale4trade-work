@@ -67,7 +67,7 @@ const Order = (props) => {
         };
 
   const handleOrder = async () => {
-    // setDis("dis");
+    setDis("dis");
     try {
       if (Number(users.balance) >= Number(dataBundle.price)) {
         try {
@@ -133,7 +133,7 @@ const Order = (props) => {
   };
   const [err, setErr] = useState<any>(false);
   const handleOrderVip = async () => {
-    // setDis("dis");
+    setDis("dis");
     try {
       if (Number(input.price) >= Number(dataBundle.price)) {
         if (Number(input.price) <= Number(dataBundle.win)) {

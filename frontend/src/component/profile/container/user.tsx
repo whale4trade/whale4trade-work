@@ -134,24 +134,21 @@ const UserProfile = () => {
             <span className="test">{`${dataUser!.email}`}</span>
           </span>
         </span>
-
-        <div className="de">
+        <div className="ha">
           {" "}
           <span className="name">
             <span className="title">username:</span>
             <span className="test">{`${dataUser!.username}`}</span>
           </span>
-          <span className="number">
-            <span className="title">number:</span>
-            <span className="test">{`${dataUser!.number}`}</span>
-          </span>
-        </div>
-        <div className="da">
           <span className="balance">
             <span className="title">balance: </span>
             <span className="test">{`${Number(dataUser!.balance).toFixed(
               2
             )}$`}</span>
+          </span>
+          <span className="number">
+            <span className="title">number:</span>
+            <span className="test">{`${dataUser!.number}`}</span>
           </span>
           <span className="win">
             <span className="title">win:</span>

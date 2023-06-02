@@ -124,21 +124,16 @@
 .profile > div.user div.info .email {
   width: 100%;
 }
-.profile > div.user div.info .de,
-.profile > div.user div.info .da {
+.profile > div.user div.info .ha {
   display: flex;
-  flex-wrap: wrap;
-  width: 50%;
-  position: relative;
-  left: 3.5em;
-  justify-content: start;
-}
-.profile > div.user div.info .de > span,
-.profile > div.user div.info .da > span {
-  display: flex;
-  justify-content: start;
+  justify-content: space-between;
   align-items: center;
-  width: 100%;
+  width: 87%;
+  flex-wrap: wrap;
+}
+.profile > div.user div.info .email {
+  width: 100% !important;
+  justify-content: center !important;
 }
 .profile > div.user div.info .name,
 .profile > div.user div.info .email,
@@ -147,7 +142,8 @@
 .profile > div.user div.info .win {
   position: relative;
   display: flex;
-  justify-content: center;
+  justify-content: start;
+  width: 50%;
   align-items: center;
 }
 .profile > div.user div.info .name .title,
