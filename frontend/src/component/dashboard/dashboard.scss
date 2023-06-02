@@ -59,6 +59,11 @@
   top: 10em;
 }
 
+@media (max-width: 900px) {
+  .dashboard {
+    top: 13em;
+  }
+}
 .dollar-co {
   position: absolute;
   left: 50%;

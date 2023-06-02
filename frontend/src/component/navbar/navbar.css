@@ -129,6 +129,10 @@ nav .container-fluid .cc ul li a svg {
   }
 }
 @media (max-width: 700px) {
+  nav .navbar-brand {
+    text-align: center;
+    width: 100%;
+  }
   nav .cc {
     width: 100%;
   }
