@@ -129,10 +129,16 @@
   display: flex;
   flex-wrap: wrap;
   width: 50%;
+  position: relative;
+  left: 3.5em;
   justify-content: start;
 }
-.profile > div.user div.info .da .balance {
-  margin-right: 35px;
+.profile > div.user div.info .de > span,
+.profile > div.user div.info .da > span {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  width: 100%;
 }
 .profile > div.user div.info .name,
 .profile > div.user div.info .email,

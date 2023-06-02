@@ -75,7 +75,6 @@
             color: red;
           }
         }
-        // }
       }
       div.info {
         width: 100%;
@@ -100,13 +99,17 @@
           display: flex;
           flex-wrap: wrap;
           width: 50%;
+          position: relative;
+          left: 3.5em;
           justify-content: start;
-        }
-        .da {
-          .balance {
-            margin-right: 35px;
+          > span {
+            display: flex;
+            justify-content: start;
+            align-items: center;
+            width: 100%;
           }
         }
+
         .name,
         .email,
         .number,

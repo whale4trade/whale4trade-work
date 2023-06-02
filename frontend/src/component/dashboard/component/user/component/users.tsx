@@ -67,7 +67,7 @@ const UsersF = (props) => {
             </div>
             <div className="balance">
               <span className="title-u">balance: </span>
-              <span className="get">{`${u.balance}$`}</span>
+              <span className="get">{`${Number(u.balance).toFixed(2)}$`}</span>
             </div>
             <EditUser u={u} key={u.id} />
           </div>

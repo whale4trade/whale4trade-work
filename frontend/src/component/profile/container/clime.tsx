@@ -5,10 +5,15 @@ const Clime = (props) => {
   const [dis, setDis] = useState<any>("");
   const [hour, sethours] = useState<any>("");
   const [minutes, setMinutes] = useState(0);
+  const [seconds, setSeconds] = useState(0);
 
   const checkWin = () => {
-    if (minutes <= 0) {
-      updateEveryDayBalance();
+    if (hour <= 0) {
+      if (minutes <= 0) {
+        if (seconds <= 0) {
+          updateEveryDayBalance();
+        }
+      }
     }
   };
 
@@ -65,23 +70,29 @@ const Clime = (props) => {
   };
 
   useEffect(() => {
+    // console.log(props.bundleInfo);
+
     const target = new Date(Number(props.bundleInfo.timewin));
     target.setDate(target.getDate() + 1);
     const difference = target.getTime() - new Date().getTime();
     const h = Math.floor(
       (difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
     );
+    sethours(h);
     const m = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
     setMinutes(m);
-    sethours(h);
+    const s = Math.floor((difference % (1000 * 60)) / 1000);
+    setSeconds(s);
   }, [checkWin]);
 
   return (
     <>
       <input
-        className={`btn btn-primary clime ${dis}`}
+        className={`btn btn-${
+          hour <= 0 ? "primary" : "secondary"
+        } clime ${dis}`}
         value={`${
-          minutes <= 0 ? `clime` : `clime after ${hour} h : ${minutes} m`
+          hour <= 0 ? `clime` : `clime after ${hour} h : ${minutes} m`
         }   `}
         onClick={checkWin}
         readOnly={true}

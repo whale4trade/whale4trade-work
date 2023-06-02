@@ -53,7 +53,6 @@
     height: -moz-fit-content;
     height: fit-content;
     display: flex;
-    z-index: 45678;
     justify-content: space-around;
     align-items: center;
     top: -90px;

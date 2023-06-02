@@ -33,6 +33,24 @@ div.products .vip h1 {
   text-align: center;
   color: white;
   margin: 10px 0;
+  text-transform: uppercase;
+  font-size: 3em;
+  font-weight: bold;
+  margin: 0 auto 1.1em;
+  text-align: center;
+  padding: 10px 25px;
+  width: 100%;
+  background-image: linear-gradient(-225deg, #231557 0%, #44107a 29%, #ff1361 67%, #fff800 100%);
+  background-size: auto auto;
+  background-clip: border-box;
+  background-size: 200% auto;
+  color: #fff;
+  background-clip: text;
+  text-fill-color: transparent;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textclip 2s linear infinite;
+  display: inline-block;
 }
 div.products .bronze .container.con-bronze, div.products .bronze .container.con-silver, div.products .bronze .container.con-gold, div.products .bronze .container.con-platinum, div.products .bronze .container.con-vip,
 div.products .silver .container.con-bronze,
