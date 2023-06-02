@@ -24,9 +24,6 @@ class Navbar extends React.Component<NavbarProps, NavbarState> {
       this.setState({ bgDark });
     });
   }
-  handleClick = () => {
-    window.location.reload();
-  };
 
   handleBoxToggle = () => this.setState({ showBox: !this.state.showBox });
   render() {
@@ -61,25 +58,25 @@ class Navbar extends React.Component<NavbarProps, NavbarState> {
           <div className={` cc`} id="navbarNav">
             <ul className="navbar-nav ms-auto  nav-pills ">
               <>
-                <li className="nav-item" onClick={this.handleClick}>
+                <li className="nav-item">
                   <NavLink className="nav-link " aria-current="page" to="/">
                     Home
                   </NavLink>
                 </li>
-                <li className="nav-item" onClick={this.handleClick}>
+                <li className="nav-item">
                   <NavLink className="nav-link" to="/products">
                     Products
                   </NavLink>
                 </li>
                 {localStorage.length === 0 ? (
-                  <li className="nav-item" onClick={this.handleClick}>
+                  <li className="nav-item">
                     <NavLink className="nav-link" to="/login">
                       <FontAwesomeIcon icon={faRightFromBracket} />
                       <span className="logout ">LogIn</span>
                     </NavLink>
                   </li>
                 ) : localStorage.user === "null" ? (
-                  <li className="nav-item" onClick={this.handleClick}>
+                  <li className="nav-item">
                     <NavLink className="nav-link" to="/login">
                       <FontAwesomeIcon icon={faRightFromBracket} />
                       <span className="logout ">LogIn</span>
@@ -87,7 +84,7 @@ class Navbar extends React.Component<NavbarProps, NavbarState> {
                   </li>
                 ) : (
                   <>
-                    <li className="nav-item" onClick={this.handleClick}>
+                    <li className="nav-item">
                       <NavLink className="nav-link" to="/profile">
                         Profile
                       </NavLink>

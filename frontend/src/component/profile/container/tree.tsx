@@ -111,26 +111,22 @@ const TreeProfile = (props) => {
               ""
             )
           )}
-          <nav aria-label="Page navigation example" className="nav">
-            <ul className="pagination">
-              {numbers.map((n, i) => (
-                <li
-                  className={`page-item ${currentPage === n ? "active" : ""}`}
-                  key={i}
-                >
-                  <Link
-                    to="#"
-                    className="page-link"
-                    onClick={() => changeCPage(n)}
-                  >
-                    {n}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </nav>
         </table>
       </div>
+      <nav aria-label="Page navigation example" className="nav">
+        <ul className="pagination">
+          {numbers.map((n, i) => (
+            <li
+              className={`page-item ${currentPage === n ? "active" : ""}`}
+              key={i}
+            >
+              <Link to="#" className="page-link" onClick={() => changeCPage(n)}>
+                {n}
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </nav>
     </div>
   );
 };

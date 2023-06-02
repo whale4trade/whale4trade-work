@@ -470,14 +470,14 @@
   z-index: 12;
   padding: 1em 0 0 0;
   transform: translateX(0%);
-  width: 100%;
+  width: 30%;
 }
 .profile .nav ul {
   display: flex;
   justify-content: start;
-  flex-wrap: wrap;
   width: -moz-fit-content;
   width: fit-content;
+  overflow: scroll;
 }
 .profile .nav ul .page-item a {
   font-size: 1.1em;
