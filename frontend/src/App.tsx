@@ -27,6 +27,7 @@ import Do from "./component/dashboard/component/dollar/do";
 import ReqWith from "./component/requestWith/requet";
 import RequestsDash from "./component/dashboard/component/requsets/requestsDash";
 import Success from "./component/addBalance/component/sccuses";
+import Api from "./component/dashboard/component/api/api";
 function App() {
   return (
     <>
@@ -50,6 +51,7 @@ function App() {
           <Route path="bundle" element={<Bundle />} />
           <Route path="dollar" element={<Do />} />
           <Route path="req" element={<RequestsDash />} />
+          <Route path="api" element={<Api />} />
         </Route>
         <Route path="*" element={<NotFound />} />
       </Routes>

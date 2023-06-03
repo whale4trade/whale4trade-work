@@ -1,0 +1,16 @@
+.co-api {
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  position: relative;
+  top: 50px;
+  > div {
+    width: 100%;
+    text-align: center;
+    span:nth-child(even) {
+      color: #0e6988;
+      font-size: 1.5em;
+    }
+  }
+}

@@ -10,15 +10,14 @@ import KWD from "../../../image/forex/KWD.png";
 import CHF from "../../../image/forex/CHF.png";
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import env from "../../../environments/enviroments";
 
 const Forex = () => {
   const [chart, setChart] = useState<any>({});
   const fetchForex = async () => {
     try {
       await axios
-        .get(
-          "https://api.fastforex.io/fetch-all?api_key=8f70d9365b-e740ef24f1-rvop4g"
-        )
+        .get(`https://api.fastforex.io/fetch-all?api_key=${env.api_key}`)
         .then((res) => {
           setChart(res.data.results);
         });
@@ -31,16 +30,14 @@ const Forex = () => {
   useEffect(() => {
     axios
       .get(
-        "https://api.fastforex.io/crypto/currencies?api_key=8f70d9365b-e740ef24f1-rvop4g"
+        `https://api.fastforex.io/crypto/fetch-prices?pairs=BTC%2FUSDT&api_key=${env.api_key}`
       )
-      .then((response) => {
-        console.log(response.data.currencies.BTC);
-
-        setBtcToUsd(response.data.currencies.BTC);
+      .then((res) => {
+        setBtcToUsd(res.data.prices["BTC/USDT"]);
       })
       .catch((error) => {});
   }, []);
-
+  // const req = `${btcToUsd["BTC/USDT"]}`;
   return (
     <>
       <div className={`container-usd animate__animated animate__bounceInUp`}>
