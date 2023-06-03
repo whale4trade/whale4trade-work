@@ -9,6 +9,12 @@ import UpdateReq from "./container/update";
 
 const RequestsDash = (props) => {
   const [getAllReq, setGetAllReq] = useState<any>([]);
+  const [input, setInput] = useState({
+    reqSearch: "",
+  });
+  const handelChange = (e) => {
+    setInput((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+  };
 
   const getReq = async () => {
     try {
@@ -24,6 +30,16 @@ const RequestsDash = (props) => {
   return (
     <>
       <div className="request container">
+        {/* <form className="d-flex" role="search">
+          <input
+            className="form-control me-2"
+            type="search"
+            onChange={handelChange}
+            name="reqSearch"
+            placeholder="Search"
+            aria-label="Search"
+          />
+        </form> */}
         <Table striped bordered hover size="sm">
           <thead>
             <tr>
@@ -38,6 +54,11 @@ const RequestsDash = (props) => {
           <tbody>
             {getAllReq
               .sort((a, b) => (a.status > b.status ? -1 : 1))
+              .filter((r) => {
+                return input.reqSearch === ""
+                  ? r
+                  : r.useremail.toLowerCase().includes(input.reqSearch);
+              })
               .map((r, u): any => (
                 <>
                   <tr

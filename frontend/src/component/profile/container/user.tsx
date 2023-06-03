@@ -280,7 +280,7 @@ const UserProfile = () => {
         <div className="line"></div>
         <div className="bundle">
           <span className="title">your bundle: </span>
-          <span>{dataBundle.length === 0 ? "" : dataBundle.length}</span>
+          <span>{dataBundle.length}</span>
         </div>
       </div>
     </div>

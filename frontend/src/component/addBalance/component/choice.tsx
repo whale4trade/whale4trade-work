@@ -1,6 +1,5 @@
 import vodafoneCash from "../../../image/download (2).png";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCreditCard } from "@fortawesome/free-solid-svg-icons";
+import card from "../../../image/CARD.jpg";
 const Choice = (props) => {
   return (
     <>
@@ -36,7 +35,8 @@ const Choice = (props) => {
           id="flexRadioDefault2"
         />
         <label className="form-check-label" htmlFor="flexRadioDefault2">
-          <FontAwesomeIcon icon={faCreditCard} />
+          {/* <FontAwesomeIcon icon={faCreditCard} /> */}
+          <img src={card} alt="" />
         </label>
       </div>
     </>

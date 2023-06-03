@@ -17,7 +17,7 @@ const Forex = () => {
     try {
       await axios
         .get(
-          "https://api.fastforex.io/fetch-all?api_key=078e15c223-1576b07eea-rui0so"
+          "https://api.fastforex.io/fetch-all?api_key=8f70d9365b-e740ef24f1-rvop4g"
         )
         .then((res) => {
           setChart(res.data.results);
@@ -30,9 +30,13 @@ const Forex = () => {
   const [btcToUsd, setBtcToUsd] = useState<any>(null);
   useEffect(() => {
     axios
-      .get("https://api.coindesk.com/v1/bpi/currentprice.json")
+      .get(
+        "https://api.fastforex.io/crypto/currencies?api_key=8f70d9365b-e740ef24f1-rvop4g"
+      )
       .then((response) => {
-        setBtcToUsd(response.data.bpi.USD.rate);
+        console.log(response.data.currencies.BTC);
+
+        setBtcToUsd(response.data.currencies.BTC);
       })
       .catch((error) => {});
   }, []);
