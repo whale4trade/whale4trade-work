@@ -128,7 +128,8 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 87%;
+  width: 100%;
+  margin: 0 auto;
   flex-wrap: wrap;
 }
 .profile > div.user div.info .email {
@@ -143,7 +144,6 @@
   position: relative;
   display: flex;
   justify-content: start;
-  width: 50%;
   align-items: center;
 }
 .profile > div.user div.info .name .title,
@@ -202,7 +202,7 @@
   height: fit-content;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 950px) {
   .profile > div.user {
     width: -moz-fit-content;
     width: fit-content;
@@ -223,12 +223,14 @@
     top: 0 !important;
   }
   .profile .email .title,
+  .profile .name .title,
   .profile .number .title,
   .profile .balance .title,
   .profile .win .title {
     font-size: 0.6em !important;
   }
   .profile .email .test,
+  .profile .name .test,
   .profile .number .test,
   .profile .balance .test,
   .profile .win .test {
@@ -393,6 +395,11 @@
   border-radius: 15px;
 }
 
+@media (max-width: 990px) {
+  .profile > div.transaction .list > div.with > div.prog, .profile > div.transaction .list > div.dep > div.prog, .profile > div.transaction .list > div.con > div.prog, .profile > div.transaction .list > div.sub-b > div.prog, .profile > div.transaction .list > div.sub-p > div.prog {
+    font-size: 1em;
+  }
+}
 .profile > div.point {
   height: -moz-fit-content;
   height: fit-content;
@@ -466,7 +473,7 @@
   z-index: 12;
   padding: 1em 0 0 0;
   transform: translateX(0%);
-  width: 30%;
+  width: 100%;
 }
 .profile .nav ul {
   display: flex;
@@ -474,6 +481,7 @@
   width: -moz-fit-content;
   width: fit-content;
   overflow: scroll;
+  width: 30%;
 }
 .profile .nav ul .page-item a {
   font-size: 1.1em;
@@ -504,7 +512,7 @@
     font-size: 0.7em;
   }
   .profile > div.bundle .time {
-    font-size: 0.9em;
+    font-size: 1.3em !important;
     margin: 0 3px;
     color: #3e98c7;
   }
@@ -529,7 +537,7 @@
     text-transform: capitalize;
   }
   .profile > div.bundle .time {
-    font-size: 1.4em;
+    font-size: 1.1em !important;
   }
   .CircularProgressbar {
     display: block;
@@ -642,13 +650,11 @@
   flex-wrap: wrap;
 }
 .profile.container > div {
-  min-height: 500px;
-  max-height: -moz-fit-content;
-  max-height: fit-content;
+  height: 500px;
   background-color: #fff;
   border-radius: 15px;
   padding: 1em 1em 2em;
-  width: 40%;
+  width: 45%;
   position: relative;
   margin: 20px 0;
 }
@@ -657,10 +663,18 @@
   position: relative;
 }
 
-@media (max-width: 1000px) {
+@media (max-width: 900px) {
+  .profile.container > div {
+    width: 48%;
+    padding: 0.6em 0.7em 0em !important;
+    box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+  }
+}
+@media (max-width: 769px) {
   .profile.container > div {
     width: 100%;
     padding: 0.6em 0.7em 0em !important;
+    box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
   }
 }
 .modal-dialog {

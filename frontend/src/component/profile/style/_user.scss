@@ -98,7 +98,8 @@
           display: flex;
           justify-content: space-between;
           align-items: center;
-          width: 87%;
+          width: 100%;
+          margin: 0 auto;
           flex-wrap: wrap;
           // .de,
           // .da {
@@ -125,7 +126,6 @@
           position: relative;
           display: flex;
           justify-content: start;
-          width: 50%;
           align-items: center;
           .title {
             text-transform: capitalize;
@@ -178,7 +178,7 @@
     height: fit-content;
   }
 }
-@media (max-width: 900px) {
+@media (max-width: 950px) {
   .profile {
     > div {
       &.user {
@@ -201,6 +201,7 @@
       top: 0 !important;
     }
     .email,
+    .name,
     .number,
     .balance,
     .win {

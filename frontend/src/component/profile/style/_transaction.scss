@@ -45,3 +45,30 @@
     }
   }
 }
+@media (max-width: 990px) {
+  .profile {
+    > div {
+      &.transaction {
+        .title {
+        }
+        .list {
+          > div {
+            &.with,
+            &.dep,
+            &.con,
+            &.sub-b,
+            &.sub-p {
+              > div {
+                &.prog {
+                  font-size: 1em;
+                }
+              }
+            }
+            &.with {
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -56,8 +56,8 @@ const Profile = (props: any) => {
             );
           })}
         </div>
-        <TreeProfile />
         <Transaction />
+        <TreeProfile />
         <URL />
       </div>
     </>

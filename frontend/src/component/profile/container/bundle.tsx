@@ -88,11 +88,7 @@ const Bundle = (props) => {
               className={`page-item ${props.currentPage === n ? "active" : ""}`}
               key={i}
             >
-              <a
-                href="#"
-                className="page-link"
-                onClick={() => props.changeCPage(n)}
-              >
+              <a className="page-link" onClick={() => props.changeCPage(n)}>
                 {n}
               </a>
             </li>

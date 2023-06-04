@@ -135,26 +135,30 @@ const UserProfile = () => {
           </span>
         </span>
         <div className="ha">
-          {" "}
-          <span className="name">
-            <span className="title">username:</span>
-            <span className="test">{`${dataUser!.username}`}</span>
-          </span>
-          <span className="balance">
-            <span className="title">balance: </span>
-            <span className="test">{`${Number(dataUser!.balance).toFixed(
-              2
-            )}$`}</span>
-          </span>
-          <span className="number">
-            <span className="title">number:</span>
-            <span className="test">{`${dataUser!.number}`}</span>
-          </span>
-          <span className="win">
-            <span className="title">win:</span>
-            <Win />
-            {/* <span className="test"></span> */}
-          </span>
+          <div>
+            {" "}
+            <span className="name">
+              <span className="title">username:</span>
+              <span className="test">{`${dataUser!.username}`}</span>
+            </span>
+            <span className="balance">
+              <span className="title">balance: </span>
+              <span className="test">{`${Number(dataUser!.balance).toFixed(
+                2
+              )}$`}</span>
+            </span>
+          </div>
+          <div>
+            {" "}
+            <span className="number">
+              <span className="title">number:</span>
+              <span className="test">{`${dataUser!.number}`}</span>
+            </span>
+            <span className="win">
+              <span className="title">win:</span>
+              <Win />
+            </span>
+          </div>
         </div>
       </div>
       <div className="button">
@@ -274,12 +278,12 @@ const UserProfile = () => {
       {err && err}
       <div className="count">
         <div className="tree">
-          <span className="title">your affiliate: </span>
+          <span className="title"> affiliate: </span>
           <span>{Tree.length}</span>
         </div>
         <div className="line"></div>
         <div className="bundle">
-          <span className="title">your bundle: </span>
+          <span className="title"> bundle: </span>
           <span>{dataBundle.length}</span>
         </div>
       </div>
