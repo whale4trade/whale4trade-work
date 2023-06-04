@@ -154,7 +154,7 @@
   text-transform: capitalize;
   margin: 2px;
   padding: 0 2px;
-  font-size: 0.8em;
+  font-size: 1em;
 }
 .profile > div.user div.info .name .test,
 .profile > div.user div.info .email .test,
@@ -162,7 +162,7 @@
 .profile > div.user div.info .balance .test,
 .profile > div.user div.info .win .test {
   color: #3e98c7 !important;
-  font-size: 1.3em;
+  font-size: 1.5em;
 }
 .profile > div.user div.count {
   border-top: 2px solid #ddd;
@@ -227,7 +227,7 @@
   .profile .number .title,
   .profile .balance .title,
   .profile .win .title {
-    font-size: 0.6em !important;
+    font-size: 1em !important;
   }
   .profile .email .test,
   .profile .name .test,
@@ -235,7 +235,7 @@
   .profile .balance .test,
   .profile .win .test {
     color: #3e98c7 !important;
-    font-size: 0.8em !important;
+    font-size: 0.9em !important;
   }
   .profile .button {
     top: 0;
