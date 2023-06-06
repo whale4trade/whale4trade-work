@@ -275,7 +275,7 @@ const UserProfile = () => {
           <span className="btn btn-primary">Add Balance</span>
         </NavLink>
       </div>
-      {err && err}
+      <div className="err">{err && err}</div>
       <div className="count">
         <div className="tree">
           <span className="title"> affiliate: </span>

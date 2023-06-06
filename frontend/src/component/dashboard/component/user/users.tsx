@@ -17,6 +17,7 @@ const Users = (props) => {
   useEffect(() => {
     userDash();
   }, []);
+  console.log(dataUser);
 
   return (
     <>

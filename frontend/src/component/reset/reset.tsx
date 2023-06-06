@@ -119,7 +119,7 @@ const Reset = () => {
             <input type="number" name="sent" required onChange={handelChange} />
             <label>your code</label>
           </div>
-          <div className="active">{err && err}</div>
+          <div className="err">{err && err}</div>
 
           <Link to="" onClick={con}>
             <span></span>

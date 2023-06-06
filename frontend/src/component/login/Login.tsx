@@ -92,7 +92,7 @@ const Login = () => {
             />
             <label>Password</label>
           </div>
-          <div className="active">{err && err}</div>
+          <div className="err">{err && err}</div>
 
           <Link to="#" onClick={(e) => handleClick(e)} type="submit">
             <span></span>

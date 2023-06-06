@@ -287,6 +287,9 @@
   text-align: center;
   border-bottom: 2px solid #ddd;
 }
+.profile > div.tree .list {
+  min-height: 70%;
+}
 .profile > div.tree .list table {
   width: 100%;
 }

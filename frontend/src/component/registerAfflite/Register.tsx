@@ -49,7 +49,20 @@ const Register = () => {
             if (input.password !== "") {
               // if (input.fileIdFront !== "") {
               if (input.conditions) {
-                shareEmail();
+                if (Number(code) === Number(input.sent)) {
+                  const confirm = () => setConfirm((current) => !current);
+                  shareEmail();
+
+                  confirm();
+                  setTimeout(() => {
+                    setConfirm("");
+                  }, 4000);
+                } else {
+                  setErr("wrong");
+                  setTimeout(() => {
+                    setErr("");
+                  }, 3000);
+                }
               } else {
                 errorFunction("agreement");
               }
@@ -357,7 +370,7 @@ const Register = () => {
               Submit
             </Link>
 
-            <div>{err}</div>
+            <div className="err">{err}</div>
             <Link to="/login">
               <span></span>
               <span></span>

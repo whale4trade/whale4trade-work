@@ -84,16 +84,28 @@ const Clime = (props) => {
     const s = Math.floor((difference % (1000 * 60)) / 1000);
     setSeconds(s);
   }, [checkWin]);
-
+  //
   return (
     <>
       <input
         className={`btn btn-${
-          hour <= 0 ? "primary" : "secondary"
+          hour > 0
+            ? "secondary"
+            : minutes > 0
+            ? "secondary"
+            : seconds > 0
+            ? "secondary"
+            : "primary"
         } clime ${dis}`}
         value={`${
-          hour <= 0 ? `clime` : `clime after ${hour} h : ${minutes} m`
-        }   `}
+          hour > 0
+            ? `clime after ${hour} h : ${minutes} m`
+            : minutes > 0
+            ? `clime after ${hour} h : ${minutes} m`
+            : seconds > 0
+            ? `clime after ${hour} h : ${minutes} m`
+            : `clime`
+        }  `}
         onClick={checkWin}
         readOnly={true}
       />

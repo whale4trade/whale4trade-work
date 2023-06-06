@@ -27,7 +27,6 @@ const TreeProfile = (props) => {
         .then((res: any): any =>
           res.data.data.tree === "" ? bundleFree() : null
         );
-      // .then(() => bundleFree());
     } catch (error) {}
   };
   const bundleFree = async () => {
@@ -45,9 +44,7 @@ const TreeProfile = (props) => {
         .get(`${env.url}/bundle`)
         .then((res) => setDataBundleFree(res.data.data));
     } catch (error) {}
-    dataBundleFree.map((b) =>
-      b === "sai whale" ? setDataBundleFreeId(b) : null
-    );
+    dataBundleFree.map((b) => (b === "gift" ? setDataBundleFreeId(b) : null));
 
     try {
       await axios
@@ -62,7 +59,7 @@ const TreeProfile = (props) => {
           try {
             await axios.post(`${env.url}/transaction/`, {
               userId: JSON.parse(localStorage.user).id,
-              category: "win bundle sai whale",
+              category: "win free bundle for gift ",
               price: `10`,
               timeJoin: new Date(),
             });

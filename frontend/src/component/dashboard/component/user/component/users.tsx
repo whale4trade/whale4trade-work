@@ -120,6 +120,10 @@ const UsersF = (props) => {
                       <span className="title-u">tree: </span>
                       <span className="get">{u.tree}</span>
                     </div>
+                    <div className="tree">
+                      <span className="title-u">win: </span>
+                      <span className="get">{u.win}$</span>
+                    </div>
                   </div>
                   <div className="bundle">
                     <h2 className="h2">bundle</h2>
