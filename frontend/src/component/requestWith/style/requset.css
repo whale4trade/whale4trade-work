@@ -1,4 +1,4 @@
-.request.container {
+.request {
   position: relative;
   top: 100px;
   background-color: #fff;
@@ -7,10 +7,10 @@
   border-radius: 23px;
   overflow: scroll;
 }
-.request.container .hide {
+.request .hide {
   display: none;
 }
-.request.container .title {
+.request .title {
   width: 100%;
   display: flex;
   justify-content: space-between;
@@ -18,27 +18,27 @@
   border-bottom: 1px solid black;
   padding: 1em;
 }
-.request.container .title .req-title {
+.request .title .req-title {
   font-size: 1.6em;
   font-weight: bold;
 }
-.request.container .err {
+.request .err {
   color: red;
   width: 100%;
   text-align: center;
   text-transform: capitalize;
 }
-.request.container table {
+.request table {
   text-align: center;
   margin: 1em auto 0;
 }
-.request.container table tbody tr.pending {
+.request table tbody tr.pending {
   background-color: #eae129;
 }
-.request.container table tbody tr.cancel {
+.request table tbody tr.cancel {
   background-color: #fe2f5b;
 }
-.request.container table tbody tr.done {
+.request table tbody tr.done {
   background-color: #3ff467;
 }
 

@@ -57,18 +57,18 @@
 .dashboard {
   position: relative;
   top: 10em;
+  .con {
+    > div {
+      top: 50%;
+      margin: 0 auto;
+      width: 80vw;
+    }
+  }
 }
 
 @media (max-width: 900px) {
   .dashboard {
     top: 13em;
-    .con {
-      > div {
-        top: 50%;
-        margin: 0 auto;
-        width: 80vw;
-      }
-    }
   }
 }
 .dollar-co {

@@ -34,7 +34,7 @@ const RequestsDash = (props) => {
 
   return (
     <>
-      <div className="request container">
+      <div className="request">
         {/* <form className="d-flex" role="search">
           <input
             className="form-control me-2"
