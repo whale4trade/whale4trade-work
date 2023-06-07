@@ -7,3 +7,11 @@
 .dis {
   pointer-events: none;
 }
+.done,
+.cancel {
+  transition-duration: 3s;
+  &.true {
+    transition-duration: 3s;
+    display: none;
+  }
+}

@@ -117,7 +117,7 @@ const TreeProfile = (props) => {
               className={`page-item ${currentPage === n ? "active" : ""}`}
               key={i}
             >
-              <Link to="#" className="page-link" onClick={() => changeCPage(n)}>
+              <Link to="" className="page-link" onClick={() => changeCPage(n)}>
                 {n}
               </Link>
             </li>

@@ -34,7 +34,7 @@ const Transaction = (props) => {
           .sort((a, b) => (a.timejoin < b.timejoin ? 1 : -1))
           .map((t: any) => (
             <>
-              <div key={t.id} className="with">
+              <div key={t.id} className={`with ${t.category}`}>
                 <div className="prog">{t.category}</div>
                 <div className="price">
                   <span>price:</span>
@@ -54,7 +54,7 @@ const Transaction = (props) => {
               className={`page-item ${currentPage === n ? "active" : ""}`}
               key={i}
             >
-              <Link to="#" className="page-link" onClick={() => changeCPage(n)}>
+              <Link to="" className="page-link" onClick={() => changeCPage(n)}>
                 {n}
               </Link>
             </li>

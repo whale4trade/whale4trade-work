@@ -6,67 +6,75 @@ const UpdateReq = (props) => {
     status: "",
   });
   const [dis, setDis] = useState<any>("");
+  const [err, setErr] = useState<any>("");
 
   const handelChange = (e) => {
     setInput((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+    setErr("");
+    setDis("");
   };
 
   const update = async (id) => {
     setDis("dis");
-    try {
-      await axios
-        .patch(`${env.url}/req/${props.r.id}`, {
-          id: id,
-          status: input.status,
-        })
-        .then(() => {
-          if (input.status === "done") {
-            try {
-              axios.get(`${env.url}/users/${props.r.userid}`).then((res) => {
-                try {
-                  axios
-                    .post(`${env.url}/transaction/`, {
-                      userId: props.r.userid,
-                      category: ` done your request withdraw ${props.r.price}$`,
-                      price: `${props.r.price}`,
-                      timeJoin: new Date(),
-                    })
-                    .then(() => {
-                      window.location.reload();
-                    });
-                } catch (error) {}
-              });
-            } catch (error) {}
-          } else if (input.status === "cancel") {
-            try {
-              axios.get(`${env.url}/users/${props.r.userid}`).then((res) => {
-                try {
-                  axios
-                    .patch(`${env.url}/users/balance/${props.r.userid}`, {
-                      balance:
-                        Number(res.data.data.balance) + Number(props.r.price),
-                      id: props.r.userid,
-                    })
-                    .then(() => {
-                      try {
-                        axios
-                          .post(`${env.url}/transaction/`, {
-                            userId: props.r.userid,
-                            category: `cancel your  request withdraw ${props.r.price}$`,
-                            price: `${props.r.price}`,
-                            timeJoin: new Date(),
-                          })
-                          .then(() => {
-                            window.location.reload();
-                          });
-                      } catch (error) {}
-                    });
-                } catch (error) {}
-              });
-            } catch (error) {}
-          }
-        });
-    } catch (err) {}
+
+    if (String(props.r.status) !== String(input.status)) {
+      try {
+        await axios
+          .patch(`${env.url}/req/${props.r.id}`, {
+            id: id,
+            status: input.status,
+          })
+          .then(() => {
+            if (input.status === "done") {
+              try {
+                axios.get(`${env.url}/users/${props.r.userid}`).then((res) => {
+                  try {
+                    axios
+                      .post(`${env.url}/transaction/`, {
+                        userId: props.r.userid,
+                        category: ` done your request withdraw ${props.r.price}$`,
+                        price: `${props.r.price}`,
+                        timeJoin: new Date(),
+                      })
+                      .then(() => {
+                        window.location.reload();
+                      });
+                  } catch (error) {}
+                });
+              } catch (error) {}
+            } else if (input.status === "cancel") {
+              try {
+                axios.get(`${env.url}/users/${props.r.userid}`).then((res) => {
+                  try {
+                    axios
+                      .patch(`${env.url}/users/balance/${props.r.userid}`, {
+                        balance:
+                          Number(res.data.data.balance) + Number(props.r.price),
+                        id: props.r.userid,
+                      })
+                      .then(() => {
+                        try {
+                          axios
+                            .post(`${env.url}/transaction/`, {
+                              userId: props.r.userid,
+                              category: `cancel your  request withdraw ${props.r.price}$`,
+                              price: `${props.r.price}`,
+                              timeJoin: new Date(),
+                            })
+                            .then(() => {
+                              window.location.reload();
+                            });
+                        } catch (error) {}
+                      });
+                  } catch (error) {}
+                });
+              } catch (error) {}
+            }
+          });
+      } catch (err) {}
+    } else {
+      setErr("this last request please change request");
+    }
   };
 
   return (
@@ -115,6 +123,7 @@ const UpdateReq = (props) => {
                 <option value="done">done</option>
                 <option value="cancel">cancel</option>
               </select>
+              {err}
             </div>
             <div className="modal-footer">
               <button
@@ -124,6 +133,7 @@ const UpdateReq = (props) => {
               >
                 Close
               </button>
+
               <button
                 type="button"
                 onClick={() => update(props.r.id)}

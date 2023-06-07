@@ -119,7 +119,7 @@ const Order = (props) => {
                       .then(() =>
                         setTimeout(() => {
                           navigate("/profile");
-                        }, 3000)
+                        }, 1000)
                       );
                   } catch (error) {}
                 });

@@ -51,9 +51,12 @@ div.container.home-page div.container-usd > div {
   margin: 2em 0;
 }
 div.container.home-page div.container-usd > div img {
-  max-width: 3em;
-  height: 2em;
-  border-radius: 18px;
+  width: 10%;
+  height: 3em;
+  border-radius: 50%;
+  aspect-ratio: 3/2;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 div.container.home-page div.container-usd > div span.name-usd {
   margin: 0 1em;

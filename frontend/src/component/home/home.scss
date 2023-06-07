@@ -45,9 +45,11 @@ div.container.home-page {
       font-size: 1em;
       margin: 2em 0;
       img {
-        max-width: 3em;
-        height: 2em;
-        border-radius: 18px;
+        width: 10%;
+        height: 3em;
+        border-radius: 50%;
+        aspect-ratio: 3/2;
+        object-fit: contain;
       }
       span.name-usd {
         margin: 0 1em;

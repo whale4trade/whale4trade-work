@@ -15,6 +15,11 @@ const RequestsDash = (props) => {
   const handelChange = (e) => {
     setInput((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
+  const [clear, setClear] = useState(false);
+  const hideDoneAndCancel = () => {
+    setClear((current) => !current);
+  };
+  console.log(clear);
 
   const getReq = async () => {
     try {
@@ -40,6 +45,12 @@ const RequestsDash = (props) => {
             aria-label="Search"
           />
         </form> */}
+        {/* <input
+          type="button"
+          value={`${clear ? "visible" : "hide"}`}
+          onClick={hideDoneAndCancel}
+          className="clear "
+        /> */}
         <Table striped bordered hover size="sm">
           <thead>
             <tr>
@@ -62,7 +73,7 @@ const RequestsDash = (props) => {
               .map((r, u): any => (
                 <>
                   <tr
-                    className={`${r.status}`}
+                    className={`${r.status} ${clear}`}
                     data-bs-toggle="modal"
                     data-bs-target={`#model${r.id}`}
                     key={u}

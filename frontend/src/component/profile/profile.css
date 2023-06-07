@@ -397,6 +397,12 @@
   margin: 5px 0;
   border-radius: 15px;
 }
+.profile > div.transaction .list > div.with.cancel {
+  background-color: red;
+}
+.profile > div.transaction .list > div.with.done {
+  background-color: green;
+}
 
 @media (max-width: 990px) {
   .profile > div.transaction .list > div.with > div.prog, .profile > div.transaction .list > div.dep > div.prog, .profile > div.transaction .list > div.con > div.prog, .profile > div.transaction .list > div.sub-b > div.prog, .profile > div.transaction .list > div.sub-p > div.prog {

@@ -77,6 +77,8 @@
   border-radius: 32px;
   position: relative;
   top: 50%;
+  margin: 0 auto;
+  width: 80vw;
 }
 .dashboard .users .title {
   font-style: italic;
@@ -116,6 +118,9 @@
   cursor: pointer;
   text-align: center;
   transition-duration: 0.3s;
+}
+.dashboard .users .con-users div.container-user.admin {
+  background-color: #d4d1fa;
 }
 .dashboard .users .con-users div.container-user .title-u {
   text-transform: capitalize;
@@ -283,6 +288,16 @@
   pointer-events: none;
 }
 
+.done,
+.cancel {
+  transition-duration: 3s;
+}
+.done.true,
+.cancel.true {
+  transition-duration: 3s;
+  display: none;
+}
+
 * {
   box-sizing: border-box;
   font-family: "DM Sans", sans-serif;
@@ -337,6 +352,11 @@
 @media (max-width: 900px) {
   .dashboard {
     top: 13em;
+  }
+  .dashboard .con > div {
+    top: 50%;
+    margin: 0 auto;
+    width: 80vw;
   }
 }
 .dollar-co {

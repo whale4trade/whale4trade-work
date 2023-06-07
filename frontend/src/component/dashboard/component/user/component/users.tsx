@@ -34,7 +34,7 @@ const UsersF = (props) => {
     <>
       {props.dataUser.map((u: any): any => (
         <>
-          <div className="container-user">
+          <div className={`container-user ${u.statusaccess}`}>
             <div
               className="photo"
               data-bs-toggle="modal"
@@ -113,7 +113,7 @@ const UsersF = (props) => {
                     </div>
                     <IdUser u={u} />
                     <div className="statusaccess">
-                      <span className="title-u">statusaccess: </span>
+                      <span className="title-u">status Access: </span>
                       <span className="get">{u.statusaccess}</span>
                     </div>
                     <div className="tree">

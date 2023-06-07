@@ -32,7 +32,7 @@
         position: relative;
         display: inline-block;
         padding: 0.5em 1em;
-        color: #03e9f4;
+        color: white;
         font-size: 0.9em;
         text-decoration: none;
         text-transform: uppercase;
@@ -40,19 +40,31 @@
         transition: 0.5s;
         margin-top: 0.9em;
         letter-spacing: 4px;
+        span:nth-child(4) {
+          bottom: -100%;
+          left: 0;
+          width: 2px;
+          height: 100%;
+          background: linear-gradient(360deg, transparent, #03e9f4);
+          animation: btn-anim4 1s linear infinite;
+          animation-delay: 0.75s;
+        }
       }
     }
     .label-check {
       color: white;
       margin: 0 0.6em;
-      text-transform: capitalize;
       display: inline;
       a {
-        // background-color: #03e9f4;
+        color: #03e9f4;
+
         letter-spacing: 1px !important;
         margin: 0 !important;
         padding: 0 0.5em !important;
         display: inline-flex;
+        &:hover {
+          color: white;
+        }
       }
     }
   }

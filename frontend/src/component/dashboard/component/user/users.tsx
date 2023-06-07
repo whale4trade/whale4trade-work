@@ -21,7 +21,7 @@ const Users = (props) => {
 
   return (
     <>
-      <div className="users container">
+      <div className="users ">
         <Title dataUser={dataUser} />
         <div className="con-users">
           <UsersF dataUser={dataUser} />

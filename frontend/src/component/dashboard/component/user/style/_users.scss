@@ -5,6 +5,9 @@
     border-radius: 32px;
     position: relative;
     top: 50%;
+    margin: 0 auto;
+    width: 80vw;
+
     .title {
       font-style: italic;
       width: 100%;
@@ -41,7 +44,9 @@
         cursor: pointer;
         text-align: center;
         transition-duration: 0.3s;
-
+        &.admin {
+          background-color: #d4d1fa;
+        }
         .title-u {
           text-transform: capitalize;
         }

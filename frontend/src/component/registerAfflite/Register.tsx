@@ -47,28 +47,33 @@ const Register = () => {
         if (input.username !== "") {
           if (input.number !== "") {
             if (input.password !== "") {
-              // if (input.fileIdFront !== "") {
-              if (input.conditions) {
-                if (Number(code) === Number(input.sent)) {
-                  const confirm = () => setConfirm((current) => !current);
-                  shareEmail();
+              if (input.fileIdFront !== "") {
+                if (input.fileIdBack !== "") {
+                  if (input.conditions) {
+                    if (Number(code) === Number(input.sent)) {
+                      const confirm = () => setConfirm((current) => !current);
 
-                  confirm();
-                  setTimeout(() => {
-                    setConfirm("");
-                  }, 4000);
+                      confirm();
+                      shareEmail();
+
+                      setTimeout(() => {
+                        setConfirm("");
+                      }, 4000);
+                    } else {
+                      setErr("wrong");
+                      setTimeout(() => {
+                        setErr("");
+                      }, 3000);
+                    }
+                  } else {
+                    errorFunction("agreement");
+                  }
                 } else {
-                  setErr("wrong");
-                  setTimeout(() => {
-                    setErr("");
-                  }, 3000);
+                  errorFunction("your Id back");
                 }
               } else {
-                errorFunction("agreement");
+                errorFunction("your Id front");
               }
-              // } else {
-              //   errorFunction("your Id front");
-              // }
             } else {
               errorFunction("password");
             }
@@ -330,18 +335,28 @@ const Register = () => {
               <label>password</label>
             </div>
             <div className="user-box">
+              <div className="id">your ID front</div>
+
               <input
                 type="file"
-                name="fileIdBack"
-                onChange={handleFileChange}
+                name="fileIdFront"
+                onChange={(e) => {
+                  handleFileChange(e);
+                  input.fileIdFront = e.target.value;
+                }}
                 required
               />
             </div>
             <div className="user-box">
+              <div className="id">your ID back</div>
+
               <input
                 type="file"
-                name="fileIdFront"
-                onChange={handleFileChange}
+                name="fileIdBack"
+                onChange={(e) => {
+                  handleFileChange(e);
+                  input.fileIdBack = e.target.value;
+                }}
                 required
               />
             </div>
