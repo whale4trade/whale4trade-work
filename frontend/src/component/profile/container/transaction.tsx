@@ -34,7 +34,10 @@ const Transaction = (props) => {
           .sort((a, b) => (a.timejoin < b.timejoin ? 1 : -1))
           .map((t: any) => (
             <>
-              <div key={t.id} className={`with ${t.category}`}>
+              <div
+                key={t.id}
+                className={`with ${String(t.category.split(" ", 1))}`}
+              >
                 <div className="prog">{t.category}</div>
                 <div className="price">
                   <span>price:</span>

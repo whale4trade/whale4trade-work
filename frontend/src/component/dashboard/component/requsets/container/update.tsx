@@ -13,43 +13,23 @@ const UpdateReq = (props) => {
     setErr("");
     setDis("");
   };
-
-  const update = async (id) => {
-    setDis("dis");
-
-    if (String(props.r.status) !== String(input.status)) {
-      try {
-        await axios
-          .patch(`${env.url}/req/${props.r.id}`, {
-            id: id,
-            status: input.status,
-          })
-          .then(() => {
-            if (input.status === "done") {
-              try {
-                axios.get(`${env.url}/users/${props.r.userid}`).then((res) => {
-                  try {
-                    axios
-                      .post(`${env.url}/transaction/`, {
-                        userId: props.r.userid,
-                        category: ` done your request withdraw ${props.r.price}$`,
-                        price: `${props.r.price}`,
-                        timeJoin: new Date(),
-                      })
-                      .then(() => {
-                        window.location.reload();
-                      });
-                  } catch (error) {}
-                });
-              } catch (error) {}
-            } else if (input.status === "cancel") {
+  const formCancelToDone = async () => {
+    if (String(props.r.status) === "cancel") {
+      if (input.status === "done") {
+        try {
+          await axios
+            .patch(`${env.url}/req/${props.r.id}`, {
+              id: props.r.id,
+              status: input.status,
+            })
+            .then(() => {
               try {
                 axios.get(`${env.url}/users/${props.r.userid}`).then((res) => {
                   try {
                     axios
                       .patch(`${env.url}/users/balance/${props.r.userid}`, {
                         balance:
-                          Number(res.data.data.balance) + Number(props.r.price),
+                          Number(res.data.data.balance) - Number(props.r.price),
                         id: props.r.userid,
                       })
                       .then(() => {
@@ -57,7 +37,7 @@ const UpdateReq = (props) => {
                           axios
                             .post(`${env.url}/transaction/`, {
                               userId: props.r.userid,
-                              category: `cancel your  request withdraw ${props.r.price}$`,
+                              category: `done your  request withdraw ${props.r.price}$`,
                               price: `${props.r.price}`,
                               timeJoin: new Date(),
                             })
@@ -69,12 +49,79 @@ const UpdateReq = (props) => {
                   } catch (error) {}
                 });
               } catch (error) {}
-            }
-          });
-      } catch (err) {}
+            });
+        } catch (error) {}
+      }
+    } else {
+      ifSameStat();
+    }
+  };
+  const ifSameStat = () => {
+    if (String(props.r.status) !== String(input.status)) {
+      update();
     } else {
       setErr("this last request please change request");
     }
+  };
+  const update = async () => {
+    setDis("dis");
+
+    try {
+      await axios
+        .patch(`${env.url}/req/${props.r.id}`, {
+          id: props.r.id,
+          status: input.status,
+        })
+        .then((res) => {
+          console.log(res.data.data);
+
+          if (input.status === "done") {
+            try {
+              axios.get(`${env.url}/users/${props.r.userid}`).then((res) => {
+                try {
+                  axios
+                    .post(`${env.url}/transaction/`, {
+                      userId: props.r.userid,
+                      category: ` done your request withdraw ${props.r.price}$`,
+                      price: `${props.r.price}`,
+                      timeJoin: new Date(),
+                    })
+                    .then(() => {
+                      window.location.reload();
+                    });
+                } catch (error) {}
+              });
+            } catch (error) {}
+          } else if (input.status === "cancel") {
+            try {
+              axios.get(`${env.url}/users/${props.r.userid}`).then((res) => {
+                try {
+                  axios
+                    .patch(`${env.url}/users/balance/${props.r.userid}`, {
+                      balance:
+                        Number(res.data.data.balance) + Number(props.r.price),
+                      id: props.r.userid,
+                    })
+                    .then(() => {
+                      try {
+                        axios
+                          .post(`${env.url}/transaction/`, {
+                            userId: props.r.userid,
+                            category: `cancel your  request withdraw ${props.r.price}$`,
+                            price: `${props.r.price}`,
+                            timeJoin: new Date(),
+                          })
+                          .then(() => {
+                            window.location.reload();
+                          });
+                      } catch (error) {}
+                    });
+                } catch (error) {}
+              });
+            } catch (error) {}
+          }
+        });
+    } catch (err) {}
   };
 
   return (
@@ -82,13 +129,13 @@ const UpdateReq = (props) => {
       <div
         className="modal fade"
         id={`model${props.r.id}`}
-        aria-labelledby="exampleModalLabel"
+        aria-labelledby={`updateReq${props.r.id}`}
         aria-hidden="true"
       >
         <div className="modal-dialog">
           <div className="modal-content">
             <div className="modal-header">
-              <h1 className="modal-title fs-5" id="exampleModalLabel">
+              <h1 className="modal-title fs-5" id={`updateReq${props.r.id}`}>
                 Whale4trade
               </h1>
               <button
@@ -136,7 +183,7 @@ const UpdateReq = (props) => {
 
               <button
                 type="button"
-                onClick={() => update(props.r.id)}
+                onClick={() => formCancelToDone()}
                 className={`btn btn-primary ${dis} `}
               >
                 Save changes
