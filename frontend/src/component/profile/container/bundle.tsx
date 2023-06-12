@@ -76,7 +76,7 @@ const Bundle = (props) => {
               <span className="time">{seconds}</span>
             </div>
             <div className="clime-container">
-              <Clime bundleInfo={props.bundleInfo} />
+              <Clime bundleInfo={props.bundleInfo} key={props.bundleInfo.id} />
             </div>
           </div>
         </>

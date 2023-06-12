@@ -37,7 +37,7 @@ const UpdateReq = (props) => {
                           axios
                             .post(`${env.url}/transaction/`, {
                               userId: props.r.userid,
-                              category: `done your  request withdraw ${props.r.price}$`,
+                              category: `done your request withdraw ${props.r.price}$`,
                               price: `${props.r.price}`,
                               timeJoin: new Date(),
                             })
@@ -82,7 +82,7 @@ const UpdateReq = (props) => {
                   axios
                     .post(`${env.url}/transaction/`, {
                       userId: props.r.userid,
-                      category: ` done your request withdraw ${props.r.price}$`,
+                      category: `done your request withdraw ${props.r.price}$`,
                       price: `${props.r.price}`,
                       timeJoin: new Date(),
                     })
