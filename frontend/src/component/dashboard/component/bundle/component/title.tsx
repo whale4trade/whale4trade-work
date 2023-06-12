@@ -144,6 +144,7 @@ const BundleF = (props) => {
                   onChange={handelChange}
                 >
                   <option value="sel">select category</option>
+                  <option value="hide">Hide</option>
                   <option value="bronze">bronze</option>
                   <option value="silver">silver</option>
                   <option value="gold">gold</option>

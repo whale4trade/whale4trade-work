@@ -23,7 +23,7 @@ const EditBundle = (props) => {
     try {
       await axios
         .patch(`${env.url}/bundle/${props.b.id}`, {
-          name: input.name === "" ? props.b.name : input.name,
+          name: props.b.name,
           price: input.price === "" ? props.b.price : input.price,
           win: input.win === "" ? props.b.win : input.win,
           ImgBundle:
@@ -95,12 +95,6 @@ const EditBundle = (props) => {
               ></button>
             </div>
             <div className="modal-body">
-              <input
-                type="text"
-                name="name"
-                onChange={handelChange}
-                placeholder="name"
-              />
               <input
                 type="number"
                 name="price"
