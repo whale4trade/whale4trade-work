@@ -5,7 +5,7 @@
 		"watch": "tsc-watch --esModuleInterop index.ts --outDir ./build --onSuccess \"node ./build/server.js\"",
 		"build": "tsc -p .",
 		"start": "npm run build && nodemon index.ts",
-		"start:prod": "pm2 start --name whale4trade \"npx ts-node --transpile-only index.ts\"",
+		"start:prod": "pm2 delete whale4trade; pm2 start --name whale4trade \"npx ts-node --transpile-only index.ts\"",
 		"mig-up": "db-migrate up",
 		"mig-down": "db-migrate reset",
 		"jasmine": "jasmine-ts  --config=./spec/support/jasmine.json",
