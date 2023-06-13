@@ -107,6 +107,10 @@ const UsersF = (props) => {
                       <span className="title-u">number: </span>
                       <span className="get">{u.number}</span>
                     </div>
+                    <div className="number">
+                      <span className="title-u">username: </span>
+                      <span className="get">{u.username}</span>
+                    </div>
                     <div className="balance">
                       <span className="title-u">balance: </span>
                       <span className="get">{u.balance}$</span>
