@@ -32,7 +32,7 @@
   border-radius: 32px !important;
 }
 .container-order > div .con {
-  margin: 0 3em;
+  margin: 0 1em;
 }
 .container-order > div .con .price .title,
 .container-order > div .con .win .title,
@@ -71,9 +71,10 @@
   background-color: transparent;
   border: none;
 }
-.container-order > div .con .description .co {
-  width: 10em;
-  font-size: 1.8em;
+.container-order > div .con .description .di {
+  font-weight: bold;
+  font-size: 2.3em;
+  color: #3e98c7;
 }
 .container-order input {
   width: 80%;

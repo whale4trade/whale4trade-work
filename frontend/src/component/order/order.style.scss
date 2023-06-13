@@ -30,7 +30,7 @@
       border-radius: 32px !important;
     }
     .con {
-      margin: 0 3em;
+      margin: 0 1em;
 
       .price,
       .win,
@@ -48,6 +48,7 @@
           font-weight: bold;
           color: #0b5ed7;
         }
+
         .price-vip {
           width: 30%;
           border: none;
@@ -60,9 +61,10 @@
         }
       }
       .description {
-        .co {
-          width: 10em;
-          font-size: 1.8em;
+        .di {
+          font-weight: bold;
+          font-size: 2.3em;
+          color: #3e98c7;
         }
       }
     }
