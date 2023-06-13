@@ -2,6 +2,9 @@ import axios from "axios";
 import env from "../../../environments/enviroments";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import img1 from "../../../image/bundle/beluga.jpg";
+import img2 from "../../../image/bundle/mink.jpg";
+import img3 from "../../../image/bundle/blue.jpg";
 
 const Bundle = (props) => {
   const navigate = useNavigate();
@@ -34,24 +37,30 @@ const Bundle = (props) => {
         <h3 className="animate-charcter"> Bundle</h3>
 
         <div className="carousel-inner">
-          {saveGetBundle
-            .filter((p: any) => p.category !== "hide")
-            .map((p: any): any => (
-              <>
-                <div
-                  key={p.id}
-                  className="carousel-item active"
-                  data-bs-interval="10000"
-                >
-                  <img
-                    src={`${env.ver}/image/${p.imgbundle}`}
-                    onClick={() => handelNavigate()}
-                    className="d-block w-50"
-                    alt="..."
-                  />
-                </div>
-              </>
-            ))}
+          <div className="carousel-item active" data-bs-interval="10000">
+            <img
+              src={img1}
+              onClick={() => handelNavigate()}
+              className="d-block w-50"
+              alt="..."
+            />
+          </div>
+          <div className="carousel-item " data-bs-interval="10000">
+            <img
+              src={img2}
+              onClick={() => handelNavigate()}
+              className="d-block w-50"
+              alt="..."
+            />
+          </div>
+          <div className="carousel-item " data-bs-interval="10000">
+            <img
+              src={img3}
+              onClick={() => handelNavigate()}
+              className="d-block w-50"
+              alt="..."
+            />
+          </div>
         </div>
         <button
           className="carousel-control-prev"
