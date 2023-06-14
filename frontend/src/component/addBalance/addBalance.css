@@ -132,6 +132,14 @@
     width: 90vw;
     left: 50%;
     top: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -47%);
+    height: 80%;
+  }
+  .balance.container .choice {
+    width: 100%;
+    flex-wrap: wrap;
+  }
+  .balance.container .choice .form-check {
+    margin: 1em auto;
   }
 }/*# sourceMappingURL=addBalance.css.map */

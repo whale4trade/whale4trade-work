@@ -130,6 +130,14 @@
     width: 90vw;
     left: 50%;
     top: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -47%);
+    height: 80%;
+    .choice {
+      width: 100%;
+      flex-wrap: wrap;
+      .form-check {
+        margin: 1em auto;
+      }
+    }
   }
 }
