@@ -5,6 +5,8 @@ import { useNavigate } from "react-router-dom";
 import img1 from "../../../image/bundle/beluga.jpg";
 import img2 from "../../../image/bundle/mink.jpg";
 import img3 from "../../../image/bundle/blue.jpg";
+import img4 from "../../../image/bundle/finback.jpg";
+import img5 from "../../../image/bundle/orca.jpg";
 
 const Bundle = (props) => {
   const navigate = useNavigate();
@@ -56,6 +58,22 @@ const Bundle = (props) => {
           <div className="carousel-item " data-bs-interval="10000">
             <img
               src={img3}
+              onClick={() => handelNavigate()}
+              className="d-block w-50"
+              alt="..."
+            />
+          </div>
+          <div className="carousel-item " data-bs-interval="10000">
+            <img
+              src={img4}
+              onClick={() => handelNavigate()}
+              className="d-block w-50"
+              alt="..."
+            />
+          </div>
+          <div className="carousel-item " data-bs-interval="10000">
+            <img
+              src={img5}
               onClick={() => handelNavigate()}
               className="d-block w-50"
               alt="..."
