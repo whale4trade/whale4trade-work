@@ -90,7 +90,7 @@
   .Register {
     .login-box {
       transform: translate(-50%, -41%) !important;
-      height: 27em !important;
+      height: 22em !important;
       h2 {
         font-size: 1em;
       }
@@ -109,13 +109,17 @@
     }
     .conf {
       margin: 0 !important;
+      input {
+        font-size: 0.5em;
+        margin: 0 !important;
+      }
     }
     .label-check {
-      font-size: 0.5em;
+      font-size: 0.2em;
     }
     a {
-      padding: 0.5em 1em !important;
-      font-size: 0.6em !important;
+      padding: 0.2em 0.4em !important;
+      font-size: 0.4em !important;
     }
   }
 }
