@@ -190,3 +190,22 @@
     transform: translate(-50%, -45%) !important;
   }
 }
+
+@media (max-width: 350px) {
+  .login-box {
+    width: 85%;
+    height: 22em;
+    padding: 1em;
+    transform: translate(-50%, -45%) !important;
+    h2 {
+      margin: 0 !important;
+    }
+    input {
+      margin-bottom: 0.6em !important;
+    }
+    a {
+      padding: 0.5em 1em !important;
+      font-size: 0.8em !important;
+    }
+  }
+}

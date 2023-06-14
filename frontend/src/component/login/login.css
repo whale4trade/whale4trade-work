@@ -188,4 +188,22 @@
     width: 85%;
     transform: translate(-50%, -45%) !important;
   }
+}
+@media (max-width: 350px) {
+  .login-box {
+    width: 85%;
+    height: 22em;
+    padding: 1em;
+    transform: translate(-50%, -45%) !important;
+  }
+  .login-box h2 {
+    margin: 0 !important;
+  }
+  .login-box input {
+    margin-bottom: 0.6em !important;
+  }
+  .login-box a {
+    padding: 0.5em 1em !important;
+    font-size: 0.8em !important;
+  }
 }/*# sourceMappingURL=login.css.map */
