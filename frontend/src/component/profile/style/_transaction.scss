@@ -78,3 +78,34 @@
     }
   }
 }
+@media (max-width: 350px) {
+  .profile {
+    > div {
+      &.transaction {
+        .title {
+        }
+        .list {
+          > div {
+            &.with,
+            &.dep,
+            &.con,
+            &.sub-b,
+            &.sub-p {
+              > div {
+                &.prog {
+                  font-size: 0.8em;
+                }
+              }
+            }
+            &.with {
+              .price,
+              .time {
+                font-size: 0.6em;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

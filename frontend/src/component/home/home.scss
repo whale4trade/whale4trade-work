@@ -253,7 +253,7 @@ div.footer {
 @media (max-width: 990px) {
   div.img-background {
     background-image: url("../../image/photo_2023-05-14_05-05-59.jpg"); /* replace with your image path */
-    width: 98vw;
+    width: 100%;
   }
   div.container-usd {
     transform: translateX(0%) !important;
@@ -296,7 +296,7 @@ div.footer {
 }
 @media (max-width: 800px) {
   img.img-background {
-    width: 96vw !important;
+    width: 100% !important;
   }
   div.container.home-page {
     width: 90vw;
@@ -375,4 +375,39 @@ div.footer {
   background-color: #626667;
 
   border-radius: 10px;
+}
+
+@media (max-width: 355px) {
+  div.container.home-page {
+    div.container-usd {
+      width: 100% !important;
+
+      > div {
+        padding: 10px !important;
+        width: 100% !important;
+        img {
+          width: 38% !important;
+        }
+        span.name-usd {
+          margin: 0 5px;
+          font-size: 1em !important;
+        }
+        span.number-used {
+          font-size: 1em !important;
+        }
+      }
+    }
+    .carousel-inner {
+      .carousel-item {
+        &.active {
+          img {
+            width: 100% !important;
+          }
+        }
+      }
+    }
+  }
+  div.footer {
+    height: 22em;
+  }
 }

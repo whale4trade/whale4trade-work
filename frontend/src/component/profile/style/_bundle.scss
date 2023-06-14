@@ -105,6 +105,34 @@
     }
   }
 }
+@media (max-width: 350px) {
+  .profile {
+    > div {
+      &.bundle {
+        .title {
+          font-size: 1.4em;
+          border-bottom: 2px solid #ddd;
+        }
+        .bundle {
+          .bundle {
+            color: #3e98c7;
+            font-size: 1em;
+          }
+        }
+        .s {
+          text-transform: capitalize;
+        }
+        .time {
+          font-size: 1.1em !important;
+        }
+      }
+    }
+  }
+  .CircularProgressbar {
+    display: block;
+    max-width: 300px;
+  }
+}
 @media (max-width: 800) {
   .profile {
     > div {

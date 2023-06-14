@@ -410,6 +410,15 @@
     font-size: 1em;
   }
 }
+@media (max-width: 350px) {
+  .profile > div.transaction .list > div.with > div.prog, .profile > div.transaction .list > div.dep > div.prog, .profile > div.transaction .list > div.con > div.prog, .profile > div.transaction .list > div.sub-b > div.prog, .profile > div.transaction .list > div.sub-p > div.prog {
+    font-size: 0.8em;
+  }
+  .profile > div.transaction .list > div.with .price,
+  .profile > div.transaction .list > div.with .time {
+    font-size: 0.6em;
+  }
+}
 .profile > div.point {
   height: -moz-fit-content;
   height: fit-content;
@@ -525,6 +534,26 @@
     font-size: 1.3em !important;
     margin: 0 3px;
     color: #3e98c7;
+  }
+}
+@media (max-width: 350px) {
+  .profile > div.bundle .title {
+    font-size: 1.4em;
+    border-bottom: 2px solid #ddd;
+  }
+  .profile > div.bundle .bundle .bundle {
+    color: #3e98c7;
+    font-size: 1em;
+  }
+  .profile > div.bundle .s {
+    text-transform: capitalize;
+  }
+  .profile > div.bundle .time {
+    font-size: 1.1em !important;
+  }
+  .CircularProgressbar {
+    display: block;
+    max-width: 300px;
   }
 }
 @media (max-width: 800) {

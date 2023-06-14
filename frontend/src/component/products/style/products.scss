@@ -338,3 +338,51 @@ div .dot {
     }
   }
 }
+@media (max-width: 350px) {
+  div.products {
+    .bronze,
+    .silver,
+    .gold,
+    .platinum,
+    .vip {
+      margin-bottom: 2em;
+      h1 {
+        font-size: 2em;
+      }
+
+      .container {
+        &.con-bronze,
+        &.con-silver,
+        &.con-gold,
+        &.con-platinum,
+        &.con-vip {
+          margin: 1em 0;
+          .container {
+            margin: 1em 0;
+            .con-img {
+              img {
+                width: 100%;
+                cursor: pointer;
+                border-radius: 17px;
+                margin: 0 auto;
+              }
+            }
+            .pra {
+              font-size: 1em;
+              .name {
+              }
+              .price,
+              .win {
+                width: 17%;
+              }
+
+              input.order {
+                width: 100%;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
