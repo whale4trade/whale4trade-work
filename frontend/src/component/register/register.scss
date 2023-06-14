@@ -86,3 +86,37 @@
     }
   }
 }
+@media (max-width: 350px) {
+  .Register {
+    .login-box {
+      transform: translate(-50%, -41%) !important;
+      height: 27em !important;
+      h2 {
+        font-size: 1em;
+      }
+    }
+    .user-box {
+      input {
+        padding: 0.2em 0 !important;
+        font-size: 0.7em;
+      }
+      label {
+        font-size: 0.5em !important;
+      }
+    }
+    .id {
+      font-size: 0.5em;
+    }
+    .conf {
+      margin: 0 !important;
+    }
+    .label-check {
+      font-size: 0.8em;
+    }
+    a {
+      padding: 0.5em 0.6em !important;
+      font-size: 0.7em !important;
+      margin: 0 !important;
+    }
+  }
+}

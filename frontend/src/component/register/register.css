@@ -74,4 +74,34 @@
     padding: 0.5em 1em;
     width: 90vw;
   }
+}
+@media (max-width: 350px) {
+  .Register .login-box {
+    transform: translate(-50%, -41%) !important;
+    height: 27em !important;
+  }
+  .Register .login-box h2 {
+    font-size: 1em;
+  }
+  .Register .user-box input {
+    padding: 0.2em 0 !important;
+    font-size: 0.7em;
+  }
+  .Register .user-box label {
+    font-size: 0.5em !important;
+  }
+  .Register .id {
+    font-size: 0.5em;
+  }
+  .Register .conf {
+    margin: 0 !important;
+  }
+  .Register .label-check {
+    font-size: 0.8em;
+  }
+  .Register a {
+    padding: 0.5em 0.6em !important;
+    font-size: 0.7em !important;
+    margin: 0 !important;
+  }
 }/*# sourceMappingURL=register.css.map */
