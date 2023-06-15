@@ -32,7 +32,7 @@
         position: relative;
         display: inline-block;
         padding: 0.5em 1em;
-        color: white;
+        color: #03e9f4;
         font-size: 0.9em;
         text-decoration: none;
         text-transform: uppercase;
@@ -40,6 +40,9 @@
         transition: 0.5s;
         margin-top: 0.9em;
         letter-spacing: 4px;
+        &:hover {
+          color: white !important;
+        }
         span:nth-child(4) {
           bottom: -100%;
           left: 0;
