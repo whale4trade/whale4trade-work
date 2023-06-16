@@ -166,7 +166,9 @@ const UpdateReq = (props) => {
                 name="status"
                 aria-label="Default select example"
               >
-                <option value="pending">pending</option>
+                <option value="select" disabled selected>
+                  select
+                </option>
                 <option value="done">done</option>
                 <option value="cancel">cancel</option>
               </select>

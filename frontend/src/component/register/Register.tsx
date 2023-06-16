@@ -356,7 +356,8 @@ const Register = () => {
               <label htmlFor="con" className="label-check">
                 i confirm that i am 18 years old or older and accept
                 <Link
-                  to="https://broker-qx.com/documents/en/Service_Agreement_QTX.pdf"
+                  // to="https://broker-qx.com/documents/en/Service_Agreement_QTX.pdf"
+                  to=""
                   target="_blank"
                 >
                   service agreement

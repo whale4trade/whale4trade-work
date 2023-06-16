@@ -25,6 +25,7 @@ const AllReq = (props) => {
             <th>Price</th>
             <th>phone</th>
             <th>date</th>
+            <th>req</th>
             <th>status</th>
           </tr>
         </thead>
@@ -37,6 +38,7 @@ const AllReq = (props) => {
                 <td>{r.price}$</td>
                 <td>{r.phone}</td>
                 <td>{new Date(Number(r.timereq)).toLocaleString("en-AU")}</td>
+                <td>add</td>
                 <td>{r.status}</td>
               </tr>
             ))}
