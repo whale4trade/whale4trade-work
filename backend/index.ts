@@ -21,7 +21,7 @@ app.use(morgan('common'))
 app.use(express.json())
 app.use(cookieParser())
 
-app.use(function (req, res, next) {
+app.use((req, res, next): any => {
 	// Allow access request from any computers
 	res.header('Access-Control-Allow-Origin', '*')
 	res.header(
@@ -29,7 +29,6 @@ app.use(function (req, res, next) {
 		'Origin, X-Requested-With, Content-Type, Accept'
 	)
 	res.header('Access-Control-Allow-Methods', 'POST, GET, PUT, DELETE, PATCH')
-	res.header('Access-Control-Allow-Credentials', true)
 	if ('OPTIONS' == req.method) {
 		res.sendStatus(200)
 	} else {
