@@ -21,20 +21,21 @@ app.use(morgan('common'))
 app.use(express.json())
 app.use(cookieParser())
 
-app.use((req, res, next): any => {
-	// Allow access request from any computers
-	res.header('Access-Control-Allow-Origin', '*')
-	res.header(
-		'Access-Control-Allow-Headers',
-		'Origin, X-Requested-With, Content-Type, Accept'
-	)
-	res.header('Access-Control-Allow-Methods', 'POST, GET, PUT, DELETE, PATCH')
-	if ('OPTIONS' == req.method) {
-		res.sendStatus(200)
-	} else {
-		next()
-	}
-})
+app.use(
+	cors({
+		credentials: true,
+		methods: ['GET', 'POST', 'DELETE', 'UPDATE', 'PUT', 'PATCH'],
+		optionsSuccessStatus: 200,
+		origin: [
+			'https://shimmering-phoenix-977e7f.netlify.app',
+			'https://www.whale4trade.com',
+			'https://whale4trade.com',
+			'http://localhost:3000',
+			'http://localhost:3001',
+		],
+	})
+)
+
 // app.use(helmet())
 app.use(helmet.crossOriginResourcePolicy({policy: 'cross-origin'}))
 app.use('/api', routes)
