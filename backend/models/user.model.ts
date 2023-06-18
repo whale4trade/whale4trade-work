@@ -43,7 +43,7 @@ class UserModel {
 				u.email,
 				u.number,
 				hashPassword(u.password),
-				u.imgprofile,
+				u.imgprofile === '' ? 'image-1687075732968.png' : u.imgprofile,
 				u.balance === '' ? 0 : u.balance,
 				u.idNF,
 				u.idNB,

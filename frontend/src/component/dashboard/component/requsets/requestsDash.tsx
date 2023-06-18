@@ -35,7 +35,7 @@ const RequestsDash = (props) => {
   return (
     <>
       <div className="request">
-        {/* <form className="d-flex" role="search">
+        <form className="d-flex" role="search">
           <input
             className="form-control me-2"
             type="search"
@@ -44,13 +44,13 @@ const RequestsDash = (props) => {
             placeholder="Search"
             aria-label="Search"
           />
-        </form> */}
-        {/* <input
+        </form>
+        <input
           type="button"
           value={`${clear ? "visible" : "hide"}`}
           onClick={hideDoneAndCancel}
-          className="clear "
-        /> */}
+          className="clear btn btn-primary"
+        />
         <Table striped bordered hover size="sm">
           <thead>
             <tr>

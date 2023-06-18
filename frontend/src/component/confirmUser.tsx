@@ -6,9 +6,13 @@ const ConfirmUser = async () => {
       axios
         .get(`${env.url}/users/${JSON.parse(localStorage.user).id}`)
         .then((res) => {
-          res.data.data === undefined
-            ? (window.location.pathname = "/login")
-            : console.log();
+          res.data.data === undefined ? (
+            <>
+              window.location.pathname = "/login" , window.localStorage.clear()
+            </>
+          ) : (
+            console.log()
+          );
         });
     } catch (error) {
       window.location.pathname = "/login";
@@ -17,8 +21,10 @@ const ConfirmUser = async () => {
 
   if (localStorage.user === "null") {
     window.location.pathname = "/login";
+    window.localStorage.clear();
   } else if (localStorage.user === undefined) {
     window.location.pathname = "/login";
+    window.localStorage.clear();
   } else {
     check();
   }

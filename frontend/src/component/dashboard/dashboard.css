@@ -296,6 +296,15 @@
   display: none;
 }
 
+.clear {
+  margin-top: 2em;
+  width: -moz-fit-content;
+  width: fit-content;
+  font-size: 1em;
+  padding: 0.5em 1em;
+  text-transform: capitalize;
+}
+
 :root {
   --app-container: #f3f6fd;
   --main-color: #1f1c2e;

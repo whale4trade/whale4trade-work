@@ -9,11 +9,11 @@ import ImgUser from "./imgUser";
 const UserProfile = () => {
   const [isActive, setIsActive] = useState(false);
   const [dataUser, setDataUser] = useState<any>({
-    username: "ll",
-    email: "dd",
-    number: "2",
-    balance: "0",
-    imgprofile: "w",
+    username: JSON.parse(localStorage.user).username,
+    email: JSON.parse(localStorage.user).email,
+    number: JSON.parse(localStorage.user).number,
+    balance: JSON.parse(localStorage.user).balance,
+    imgprofile: JSON.parse(localStorage.user).imgprofile,
     statusaccess: "d",
   });
   const [err, setErr] = useState("");
