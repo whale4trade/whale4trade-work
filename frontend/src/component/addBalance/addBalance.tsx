@@ -58,8 +58,8 @@ const AddBalance = (props) => {
         </div>
         <div className="phones">
           <div>phones for vodafone cash payment</div>
-          {phones.map((ph, i) => (
-            <div className="con-phon">
+          {Object.values(phones).map((ph: any, i) => (
+            <div className="con-phon" key={i}>
               <span>phone{++i}: </span>
               <span className="num">0{ph.phonenumber}</span>
             </div>

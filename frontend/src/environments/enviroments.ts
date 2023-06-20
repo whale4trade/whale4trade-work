@@ -1,7 +1,7 @@
 const env = {
   aff: "http://localhost:3000",
-  url: "http://localhost:8000/api",
-  ver: "http://localhost:8000",
+  url: "http://localhost:8800/api",
+  ver: "http://localhost:8800",
   // aff: "https://www.whale4trade.com",
   // url: "https://whale-6c0p.onrender.com/api",
   // ver: "https://whale-6c0p.onrender.com",
