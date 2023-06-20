@@ -1,4 +1,4 @@
-PORT =5000
+PORT =5501
 NODE_ENV=dev
 DB_HOST=127.0.0.1
 DB_PORT=5432
@@ -9,5 +9,6 @@ DB_DATABASE_PASS=4523asdf
 BCRYPT_PASSWORD=pass4563
 SALT_ROUNDS=10
 TOKEN_SECRET=jass
-PASS=tcmservlccrwqbgv
-USER=whale4trade@gmail.com
+UE=whale4trade@gmail.com
+PE=qdjmhqfqyvgaatrk
+DBConnLink=postgres://whale:voMgBfmwT7meeTrk3vb8GebX4uSRk6ZU@dpg-chdunlndvk4r607cnfc0-a.oregon-postgres.render.com/whale_vhyh

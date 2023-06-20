@@ -2,7 +2,6 @@ import db from '../database/index'
 import User from '../types/user.types'
 import bcrypt from 'bcrypt'
 import config from '../config'
-import Error from '../interface/error.interface'
 import Share from '../types/share.types'
 
 const hashPassword = (password: string) => {

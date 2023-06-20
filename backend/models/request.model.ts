@@ -1,6 +1,5 @@
 import db from '../database/index'
 import config from '../config'
-import Error from '../interface/error.interface'
 import Request from '../types/request.types'
 
 class ReqModel {

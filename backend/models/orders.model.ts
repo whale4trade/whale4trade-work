@@ -2,7 +2,6 @@ import db from '../database/index'
 import Orders from '../types/orders.types'
 import bcrypt from 'bcrypt'
 import config from '../config'
-import Error from '../interface/error.interface'
 
 class OrdersModel {
 	//create user

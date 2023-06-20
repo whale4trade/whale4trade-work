@@ -8,12 +8,6 @@ const pool = new Pool({
 	user: config.user,
 	password: config.pass,
 })
-// const pool = new Pool({
-// 	connectionString: config.ConnLink,
-// 	ssl: {
-// 		rejectUnauthorized: false,
-// 	},
-// })
 
 pool.on('error', (error: Error) => {
 	console.log(error)

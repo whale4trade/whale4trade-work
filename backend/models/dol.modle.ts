@@ -1,5 +1,4 @@
 import db from '../database/index'
-import Error from '../interface/error.interface'
 import config from '../config'
 import Dollar from '../types/dol.types'
 

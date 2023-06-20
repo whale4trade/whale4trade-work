@@ -1,7 +1,6 @@
 import db from '../database/index'
 import bcrypt from 'bcrypt'
 import config from '../config'
-import Error from '../interface/error.interface'
 import Tree from '../types/tree.types'
 
 class TreeModel {

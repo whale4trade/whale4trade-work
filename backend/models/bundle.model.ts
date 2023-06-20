@@ -2,7 +2,6 @@ import db from '../database/index'
 import Bundle from '../types/bundle.types'
 import bcrypt from 'bcrypt'
 import config from '../config'
-import Error from '../interface/error.interface'
 
 class BundleModel {
 	//create user

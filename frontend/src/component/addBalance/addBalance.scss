@@ -15,6 +15,11 @@
   .input-group {
     width: 100%;
   }
+  .form-control-plaintext {
+    padding: 0 10px !important;
+    color: rgb(62, 152, 199);
+    font-size: 1.2em;
+  }
   input.phone {
     margin-top: 0.5em;
     border-radius: 7px;
@@ -22,55 +27,26 @@
     padding: 0.5em 0.5em 0.5em;
     text-transform: capitalize;
   }
-  div.fal {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    label {
-      display: inline;
-      width: fit-content;
-    }
-    .col-sm-10 {
-      display: inline;
-      width: fit-content;
-    }
+  .num {
+    color: rgb(62, 152, 199);
+    font-size: 1.2em;
   }
-  svg {
-    font-size: 8em;
-  }
-  .back {
-    position: fixed;
-    width: 100vw;
-    height: 100vh;
-    background-color: #ddd;
-  }
-  img {
-    width: 10em;
-    height: 8em;
-    position: relative;
-  }
-
-  .balance.btn-primary {
-    position: relative;
-    width: 100%;
-    margin-top: 15px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    > div {
-      display: none;
-    }
-    &.active > div {
-      display: block;
-    }
-  }
-  .choice {
-    width: 64%;
-    display: flex;
+  .con-phon {
+    display: inline-flex;
     justify-content: space-between;
     align-items: center;
-    margin: 5px auto;
-    flex-wrap: wrap;
+    width: 55%;
+    margin: 0.5em 0;
+  }
+  .con-edit {
+    display: inline-flex;
+    justify-content: space-evenly;
+    align-items: center;
+    // width: 50%;
+    svg {
+      width: 1em;
+      margin: 0 0.5em;
+    }
   }
 
   .back {
@@ -79,51 +55,6 @@
     height: 100vh;
     background-color: #ddd;
   }
-  img {
-    width: 10em;
-    height: 8em;
-    position: relative;
-  }
-
-  .balance.btn-primary {
-    position: relative;
-    width: 100%;
-    margin-top: 15px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    > div {
-      display: none;
-    }
-    &.active > div {
-      display: block;
-    }
-  }
-  .choice {
-    width: 64%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    // margin: 2em auto;
-    flex-wrap: wrap;
-    .form-check {
-      margin: 2em auto;
-    }
-  }
-}
-.icon-suc {
-  color: green;
-}
-.icon-suc,
-.icon-fail {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  font-size: 10em;
-  transform: translate(-50%, -50%);
-}
-.icon-fail {
-  color: red;
 }
 @media (max-width: 650px) {
   .balance.container {
@@ -131,7 +62,7 @@
     left: 50%;
     top: 50%;
     transform: translate(-50%, -47%);
-    height: 80%;
+    height: fit-content;
     .choice {
       width: 100%;
       flex-wrap: wrap;
