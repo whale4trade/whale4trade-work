@@ -8,6 +8,7 @@ import Do from "./component/dollar/do";
 import ConfirmUser from "../confirmUser";
 import RequestsDash from "./component/requsets/requestsDash";
 import Api from "./component/api/api";
+import Phones from "./component/phones/phones";
 const Dashboard = () => {
   ConfirmUser();
   return (
@@ -23,6 +24,7 @@ const Dashboard = () => {
             <Route path="/dollar" element={<Do />} />
             <Route path="/req" element={<RequestsDash />} />
             <Route path="/api" element={<Api />} />
+            <Route path="/phones" element={<Phones />} />
           </Routes>
         </div>
       </div>

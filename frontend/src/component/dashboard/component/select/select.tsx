@@ -4,6 +4,7 @@ import {
   faB,
   faDollarSign,
   faR,
+  faPhone,
   faA,
 } from "@fortawesome/free-solid-svg-icons";
 import { NavLink } from "react-router-dom";
@@ -30,6 +31,10 @@ const Select = () => {
 
       <NavLink className="select-server" to="api">
         <FontAwesomeIcon icon={faA} />
+        <span className="title-s">server</span>
+      </NavLink>
+      <NavLink className="select-server" to="phones">
+        <FontAwesomeIcon icon={faPhone} />
         <span className="title-s">server</span>
       </NavLink>
     </>
