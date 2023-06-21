@@ -24,6 +24,15 @@ const EditPhones = (props) => {
     } else {
     }
   };
+  const deletePhone = async () => {
+    try {
+      await axios
+        .delete(`${env.url}/phones/${props.ph.id}`)
+        .then(() => window.location.reload());
+    } catch (error) {
+      console.log(error);
+    }
+  };
   return (
     <>
       <div
@@ -59,6 +68,14 @@ const EditPhones = (props) => {
             <div className="modal-footer">
               <button
                 type="button"
+                onClick={deletePhone}
+                className="btn btn-danger"
+                data-bs-dismiss="modal"
+              >
+                Delete
+              </button>
+              <button
+                type="button"
                 className="btn btn-secondary"
                 data-bs-dismiss="modal"
               >
@@ -67,6 +84,7 @@ const EditPhones = (props) => {
               <button
                 type="button"
                 onClick={editPhone}
+                data-bs-dismiss="modal"
                 className="btn btn-primary"
               >
                 Edit
