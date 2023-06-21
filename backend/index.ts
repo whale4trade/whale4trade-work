@@ -21,30 +21,11 @@ app.use(morgan('common'))
 app.use(express.json())
 app.use(cookieParser())
 
-// app.use(
-// 	cors({
-// 		credentials: true,
-// 		optionsSuccessStatus: 200,
-// 		methods: '*',
-//
-// 	})
-// )
-
 app.use(
 	cors({
-		allowedHeaders: [
-			'Origin',
-			'X-Requested-With',
-			'Content-Type',
-			'Accept',
-			'X-Access-Token',
-			'Authorization',
-			'Access-Control-Allow-Origin',
-			'Access-Control-Allow-Headers',
-			'Access-Control-Allow-Methods',
-		],
-		methods: 'GET,HEAD,OPTIONS,PUT,PATCH,POST,DELETE',
-		preflightContinue: true,
+		credentials: true,
+		optionsSuccessStatus: 200,
+		methods: '*',
 		origin: [
 			'wondrous-kitsune-5d59b5.netlify.app',
 			'https://www.whale4trade.com',
@@ -54,6 +35,25 @@ app.use(
 		],
 	})
 )
+
+//   app.use(
+// 			cors({
+// 				allowedHeaders: [
+// 					'Origin',
+// 					'X-Requested-With',
+// 					'Content-Type',
+// 					'Accept',
+// 					'X-Access-Token',
+// 					'Authorization',
+// 					'Access-Control-Allow-Origin',
+// 					'Access-Control-Allow-Headers',
+// 					'Access-Control-Allow-Methods',
+// 				],
+// 				methods: 'GET,HEAD,OPTIONS,PUT,PATCH,POST,DELETE',
+// 				preflightContinue: true,
+// 				origin: '*',
+// 			})
+// 		)
 
 // app.use(helmet())
 app.use(helmet.crossOriginResourcePolicy({policy: 'cross-origin'}))
