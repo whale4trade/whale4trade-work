@@ -67,6 +67,8 @@
     ]
   },
   "devDependencies": {
-    "react-copy-to-clipboard": "^5.1.0"
+    "@types/react-pdf": "^7.0.0",
+    "react-copy-to-clipboard": "^5.1.0",
+    "react-pdf": "^7.1.2"
   }
 }

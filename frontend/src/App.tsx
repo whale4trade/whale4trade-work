@@ -1,7 +1,7 @@
 //import react component
 import React from "react";
 import { Routes, Route } from "react-router-dom";
-
+import "./";
 // import files
 // import Chat from "./component/chat/chat";
 import NotFound from "./component/notFound/NotFound";

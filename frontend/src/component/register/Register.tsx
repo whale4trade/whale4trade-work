@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 
 import axios from "axios";
 import env from "../../environments/enviroments";
-
+import resume from "./whale4trade.com.pdf";
 const Register = () => {
   const navigate = useNavigate();
   const [input, setInput] = useState({
@@ -355,7 +355,7 @@ const Register = () => {
               />
               <label htmlFor="con" className="label-check">
                 i confirm that i am 18 years old or older and accept
-                <Link to="" target="_blank" rel="noreferrer">
+                <Link to={resume} target="_blank" rel="noreferrer">
                   service agreement
                 </Link>
               </label>
