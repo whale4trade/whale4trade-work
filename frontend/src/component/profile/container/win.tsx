@@ -3,7 +3,9 @@ import axios from "axios";
 import React, { useState, useEffect } from "react";
 
 const Win = (props) => {
-  const [dataWin, setDataWin] = useState<any>([]);
+  const [dataWin, setDataWin] = useState<any>({
+    win: JSON.parse(localStorage.user).win,
+  });
   const win = async () => {
     try {
       await axios

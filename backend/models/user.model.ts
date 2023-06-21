@@ -240,7 +240,7 @@ class UserModel {
 				)
 				if (isPassValid) {
 					const userInfo = await connect.query(
-						`SELECT id, email, username, number, imgprofile, balance, idNF, idNB, statusAccess, bundleName, bundleId FROM users WHERE email=($1)`,
+						`SELECT id, email, username, number, imgprofile, balance, idNF, idNB, statusAccess, bundleName, bundleId, win FROM users WHERE email=($1)`,
 						[email]
 					)
 					return userInfo.rows[0]
