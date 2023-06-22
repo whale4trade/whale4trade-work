@@ -19,23 +19,22 @@ const Select = () => {
         <FontAwesomeIcon className="select-bundle" icon={faB} />
         <span className="title-s">Bundle</span>
       </NavLink>
-      <NavLink className="select-server" to="dollar">
-        <FontAwesomeIcon className="select-server" icon={faDollarSign} />
-        <span className="title-s">server</span>
-      </NavLink>
-
       <NavLink className="select-server" to="req">
         <FontAwesomeIcon icon={faR} />
-        <span className="title-s">server</span>
+        <span className="title-s">req</span>
+      </NavLink>
+      <NavLink className="select-server" to="phones">
+        <FontAwesomeIcon icon={faPhone} />
+        <span className="title-s">phones</span>
+      </NavLink>
+      <NavLink className="select-server" to="dollar">
+        <FontAwesomeIcon className="select-server" icon={faDollarSign} />
+        <span className="title-s">dollar</span>
       </NavLink>
 
       <NavLink className="select-server" to="api">
         <FontAwesomeIcon icon={faA} />
-        <span className="title-s">server</span>
-      </NavLink>
-      <NavLink className="select-server" to="phones">
-        <FontAwesomeIcon icon={faPhone} />
-        <span className="title-s">server</span>
+        <span className="title-s">api</span>
       </NavLink>
     </>
   );
