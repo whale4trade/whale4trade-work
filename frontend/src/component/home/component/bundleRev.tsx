@@ -2,7 +2,7 @@ import axios from "axios";
 import env from "../../../environments/enviroments";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import img1 from "../../../image/bundle/photo_2023-06-18_20-59-06.jpg";
+import img1 from "../../../image/bundle/My project-1 (2).png";
 import img2 from "../../../image/bundle/photo_2023-06-18_20-59-21.jpg";
 import img3 from "../../../image/bundle/photo_2023-06-18_20-59-34.jpg";
 import img4 from "../../../image/bundle/photo_2023-06-18_20-59-40.jpg";
