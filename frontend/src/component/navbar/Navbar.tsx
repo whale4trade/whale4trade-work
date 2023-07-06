@@ -37,6 +37,11 @@ class Navbar extends React.Component<NavbarProps, NavbarState> {
           }, 2000)
         );
     };
+    const reload = () => {
+      setTimeout(() => {
+        window.location.reload();
+      }, 200);
+    };
 
     return (
       <nav className={`navbar  navbar-expand-sm bg-light h-70`}>
@@ -59,25 +64,30 @@ class Navbar extends React.Component<NavbarProps, NavbarState> {
             <ul className="navbar-nav ms-auto  nav-pills ">
               <>
                 <li className="nav-item">
-                  <NavLink className="nav-link " aria-current="page" to="/">
+                  <NavLink
+                    className="nav-link "
+                    onClick={reload}
+                    aria-current="page"
+                    to="/"
+                  >
                     Home
                   </NavLink>
                 </li>
                 <li className="nav-item">
-                  <NavLink className="nav-link" to="/products">
+                  <NavLink className="nav-link" onClick={reload} to="/products">
                     Products
                   </NavLink>
                 </li>
                 {localStorage.length === 0 ? (
                   <li className="nav-item">
-                    <NavLink className="nav-link" to="/login">
+                    <NavLink className="nav-link" onClick={reload} to="/login">
                       <FontAwesomeIcon icon={faRightFromBracket} />
                       <span className="logout ">LogIn</span>
                     </NavLink>
                   </li>
                 ) : localStorage.user === "null" ? (
                   <li className="nav-item">
-                    <NavLink className="nav-link" to="/login">
+                    <NavLink className="nav-link" onClick={reload} to="/login">
                       <FontAwesomeIcon icon={faRightFromBracket} />
                       <span className="logout ">LogIn</span>
                     </NavLink>
@@ -85,14 +95,21 @@ class Navbar extends React.Component<NavbarProps, NavbarState> {
                 ) : (
                   <>
                     <li className="nav-item">
-                      <NavLink className="nav-link" to="/profile">
+                      <NavLink
+                        className="nav-link"
+                        onClick={reload}
+                        to="/profile"
+                      >
                         Profile
                       </NavLink>
                     </li>
                     <li className="nav-item" onClick={handleLogoutClick}>
                       <NavLink
                         className="nav-link"
-                        onClick={handleLogoutClick}
+                        onClick={() => {
+                          handleLogoutClick();
+                          reload();
+                        }}
                         to="/login"
                       >
                         <FontAwesomeIcon

@@ -48,15 +48,14 @@ const Forex = () => {
         </div>
 
         <div>
-          <img src={logoEUR} alt="" />
-          <span className="name-usd">EUR/USD :</span>
-          <span className="number-used">{`${chart.EUR}$`}</span>
-        </div>
-
-        <div>
           <img src={logoAED} alt="" />
           <span className="name-usd">AED/USD :</span>
           <span className="number-used">{`${chart.AED}$`}</span>
+        </div>
+        <div>
+          <img src={logoEUR} alt="" />
+          <span className="name-usd">EUR/USD :</span>
+          <span className="number-used">{`${chart.EUR}$`}</span>
         </div>
         <div>
           <img src={logoBRL} alt="" />
