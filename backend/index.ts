@@ -27,7 +27,7 @@ app.use(
 		optionsSuccessStatus: 200,
 		methods: '*',
 		origin: [
-			'wondrous-kitsune-5d59b5.netlify.app',
+			'https://whale4trade-work.vercel.app/',
 			'https://www.whale4trade.com',
 			'https://whale4trade.com',
 			'http://localhost:3000',
