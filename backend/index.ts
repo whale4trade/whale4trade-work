@@ -27,7 +27,7 @@ app.use(
 		optionsSuccessStatus: 200,
 		methods: '*',
 		origin: [
-			'https://whale4trade-work.vercel.app/',
+			'whale4trade-work.vercel.app',
 			'https://www.whale4trade.com',
 			'https://whale4trade.com',
 			'http://localhost:3000',
@@ -36,26 +36,6 @@ app.use(
 	})
 )
 
-//   app.use(
-// 			cors({
-// 				allowedHeaders: [
-// 					'Origin',
-// 					'X-Requested-With',
-// 					'Content-Type',
-// 					'Accept',
-// 					'X-Access-Token',
-// 					'Authorization',
-// 					'Access-Control-Allow-Origin',
-// 					'Access-Control-Allow-Headers',
-// 					'Access-Control-Allow-Methods',
-// 				],
-// 				methods: 'GET,HEAD,OPTIONS,PUT,PATCH,POST,DELETE',
-// 				preflightContinue: true,
-// 				origin: '*',
-// 			})
-// 		)
-
-// app.use(helmet())
 app.use(helmet.crossOriginResourcePolicy({policy: 'cross-origin'}))
 app.use('/api', routes)
 
