@@ -27,7 +27,7 @@ app.use(
 		optionsSuccessStatus: 200,
 		methods: '*',
 		origin: [
-			'whale4trade-work.vercel.app',
+			'https://whale4trade-work.vercel.app',
 			'https://www.whale4trade.com',
 			'https://whale4trade.com',
 			'http://localhost:3000',
